@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CadastrarPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastrarPaciente.Designer.cs">
+      <DependentUpon>CadastrarPaciente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Janela2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,9 @@
     <Compile Include="objetos\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CadastrarPaciente.resx">
+      <DependentUpon>CadastrarPaciente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Janela2.resx">
       <DependentUpon>Janela2.cs</DependentUpon>
     </EmbeddedResource>

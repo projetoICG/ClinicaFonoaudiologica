@@ -16,7 +16,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             this.CenterToScreen();
-
+            
         }
         public bool operacaoConfirmada()
         {
@@ -65,8 +65,19 @@ namespace WindowsFormsApp1
             this.Hide();
             JanelaInicial janela = new JanelaInicial();
             janela.ShowDialog();
-            
+            //caralho
             this.Close();
+        }
+
+        private void funcionárioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void maiorDeIdadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadastrarPaciente cadastrarpaciente = new CadastrarPaciente();
+            cadastrarpaciente.Show();
         }
     }
 }
