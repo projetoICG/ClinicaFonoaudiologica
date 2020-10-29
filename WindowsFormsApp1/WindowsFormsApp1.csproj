@@ -69,6 +69,7 @@
     <Compile Include="JanelaInicial.Designer.cs">
       <DependentUpon>JanelaInicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="objetos\BancoDeDados.cs" />
     <Compile Include="objetos\Medico.cs" />
     <Compile Include="objetos\OperacaoCadastro.cs" />
     <Compile Include="objetos\Paciente.cs" />
@@ -107,6 +108,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="objetos\modeloBD_ClinicaFono.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,96 @@
+create database clinicafono;
+use clinicafono;
+
+CREATE TABLE `Consulta`
+(
+ `idConsulta`      int NOT NULL ,
+ `idMedico`        int NOT NULL ,
+ `idPaciente`      int NOT NULL ,
+ `nomePaciente`    varchar(100) NOT NULL ,
+ `nomeResponsavel` varchar(100) NULL ,
+ `horaInicio`      varchar(20) NOT NULL ,
+ `horaFim`         varchar(20) NOT NULL ,
+ `data`            varchar(20) NOT NULL ,
+ `rua`             varchar(100) NOT NULL ,
+ `bairro`          varchar(50) NOT NULL ,
+ `numero`          int NOT NULL ,
+ `complemento`     varchar(20) NOT NULL ,
+ `nomeMedico`      varchar(100) NULL ,
+
+PRIMARY KEY (`idConsulta`, `idMedico`, `idPaciente`)
+);
+
+CREATE TABLE `Medico`
+(
+ `cpf`            varchar(30) NOT NULL ,
+ `id_medico`      int NOT NULL ,
+ `nome`           varchar(100) NOT NULL ,
+ `sexo`           binary NOT NULL ,
+ `rua`            varchar(100) NULL ,
+ `bairro`         varchar(100) NULL ,
+ `número`         int NULL ,
+ `complemento`    varchar(100) NULL ,
+ `telefone1`      varchar(45) NULL ,
+ `telefone2`      varchar(45) NULL ,
+ `email`          varchar(70) NULL ,
+ `dataNascimento` varchar(45) NULL ,
+ `crm`            varchar(50) NULL ,
+ `formacao`       varchar(1000) NOT NULL ,
+
+PRIMARY KEY (`cpf`, `id_medico`)
+);
+
+CREATE TABLE `Paciente_Maior_Idade`
+(
+ `cpf`            varchar(30) NOT NULL ,
+ `id_paciente`    int NOT NULL ,
+ `nome`           varchar(100) NOT NULL ,
+ `sexo`           binary NOT NULL ,
+ `rua`            varchar(100) NULL ,
+ `bairro`         varchar(100) NULL ,
+ `número`         int NULL ,
+ `complemento`    varchar(100) NULL ,
+ `telefone1`      varchar(45) NULL ,
+ `telefone2`      varchar(45) NULL ,
+ `email`          varchar(70) NULL ,
+ `dataNascimento` varchar(45) NULL ,
+ `observações`    varchar(5000) NOT NULL ,
+
+PRIMARY KEY (`cpf`, `id_paciente`)
+);
+
+CREATE TABLE `Paciente_Menor_Idade`
+(
+ `cpf`            varchar(30) NOT NULL ,
+ `id_paciente`    int NOT NULL ,
+ `nome`           varchar(100) NOT NULL ,
+ `sexo`           binary NULL ,
+ `rua`            varchar(100) NULL ,
+ `bairro`         varchar(100) NULL ,
+ `número`         int NULL ,
+ `complemento`    varchar(100) NULL ,
+ `telefone1`      varchar(45) NULL ,
+ `telefone2`      varchar(45) NULL ,
+ `email`          varchar(70) NULL ,
+ `dataNascimento` varchar(45) NULL ,
+ `observações`    varchar(5000) NULL ,
+ `nomeMae`        varchar(100) NULL ,
+ `nomePai`        varchar(100) NULL ,
+ `nomeParente`    varchar(100) NULL ,
+ `cpfMae`         varchar(30) NULL ,
+ `cpfPai`         varchar(30) NULL ,
+ `cpfParente`     varchar(30) NULL ,
+
+PRIMARY KEY (`cpf`, `id_paciente`)
+);
+
+CREATE TABLE `Usuario`
+(
+ `id`               int NOT NULL ,
+ `login`            varchar(50) NOT NULL ,
+ `senha`            varchar(50) NOT NULL ,
+ `dicaSenha`        varchar(50) NOT NULL ,
+ `emailRecuperacao` varchar(70) NULL ,
+
+PRIMARY KEY (`id`)
+);
