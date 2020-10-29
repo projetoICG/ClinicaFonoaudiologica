@@ -57,11 +57,11 @@
     <Compile Include="CadastrarPaciente.Designer.cs">
       <DependentUpon>CadastrarPaciente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Janela2.cs">
+    <Compile Include="JanelaMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Janela2.Designer.cs">
-      <DependentUpon>Janela2.cs</DependentUpon>
+    <Compile Include="JanelaMenu.Designer.cs">
+      <DependentUpon>JanelaMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="JanelaInicial.cs">
       <SubType>Form</SubType>
@@ -81,8 +81,8 @@
     <EmbeddedResource Include="CadastrarPaciente.resx">
       <DependentUpon>CadastrarPaciente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Janela2.resx">
-      <DependentUpon>Janela2.cs</DependentUpon>
+    <EmbeddedResource Include="JanelaMenu.resx">
+      <DependentUpon>JanelaMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="JanelaInicial.resx">
       <DependentUpon>JanelaInicial.cs</DependentUpon>
@@ -110,7 +110,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="objetos\modeloBD_ClinicaFono.txt" />
+    <Content Include="modeloBD_ClinicaFono.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

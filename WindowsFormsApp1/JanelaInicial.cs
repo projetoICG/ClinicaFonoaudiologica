@@ -39,7 +39,7 @@ namespace WindowsFormsApp1
             string senha = campoSenha.Text;
             //Vitor Carlos
             this.Hide();
-            Janela2 janela2 = new Janela2();
+            JanelaMenu janela2 = new JanelaMenu();
             janela2.ShowDialog();
             this.Close();
 

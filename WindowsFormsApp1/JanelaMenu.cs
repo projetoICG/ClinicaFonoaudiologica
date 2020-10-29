@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Janela2 : Form
+    public partial class JanelaMenu : Form
     {
-        public Janela2()
+        public JanelaMenu()
         {
             InitializeComponent();
             this.CenterToScreen();
@@ -26,7 +26,7 @@ namespace WindowsFormsApp1
 
         public static bool executar()
         {
-            Janela2 janela2 = new Janela2();
+            JanelaMenu janela2 = new JanelaMenu();
             janela2.Visible = true;
 
             return janela2.operacaoConfirmada();

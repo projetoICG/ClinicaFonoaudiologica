@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class Janela2
+    partial class JanelaMenu
     {
         /// <summary>
         /// Required designer variable.
