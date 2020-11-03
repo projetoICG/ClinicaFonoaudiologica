@@ -87,6 +87,7 @@ PRIMARY KEY (`cpf`, `id_paciente`)
 CREATE TABLE `Usuario`
 (
  `id`               int NOT NULL ,
+ `funcao`           varchar(50) NOT NULL ,
  `login`            varchar(50) NOT NULL ,
  `senha`            varchar(50) NOT NULL ,
  `dicaSenha`        varchar(50) NOT NULL ,
