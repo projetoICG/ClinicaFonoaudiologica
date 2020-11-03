@@ -15,6 +15,30 @@ namespace WindowsFormsApp1
 
     public partial class CadastrarPaciente : Form
     {
+        public void habilitarMenor(bool decisao)
+        {
+            campoCPFMae.Enabled = decisao;
+            campoNomeMae.Enabled = decisao;
+            campoRGMae.Enabled = decisao;
+            labelNomeMae.Enabled = decisao;
+            labelCPFMae.Enabled = decisao;
+            labelRGMae.Enabled = decisao;
+
+            campoCPFPai.Enabled = decisao;
+            campoNomePai.Enabled = decisao;
+            campoRGPai.Enabled = decisao;
+            labelNomePai.Enabled = decisao;
+            labelCPFPai.Enabled = decisao;
+            labelRGPai.Enabled = decisao;
+
+            campoCPFParente.Enabled = decisao;
+            campoNomeParente.Enabled = decisao;
+            campoRGParente.Enabled = decisao;
+            labelNomeParente.Enabled = decisao;
+            labelCPFParente.Enabled = decisao;
+            labelRGParente.Enabled = decisao;
+        }
+
         public int retornarIdade(string idadeSemFormatar)
         {
             int ano, mes, dia;
@@ -109,6 +133,14 @@ namespace WindowsFormsApp1
             if (campoDataNascimento.MaskCompleted)
             {
                 int idade = retornarIdade(campoDataNascimento.Text);
+                if (idade < 18)
+                {
+                    habilitarMenor(true);
+                } else
+                {
+                    habilitarMenor(false);
+                }
+
                 if (idade != 0)
                 {
                     campoIdade.Text = Convert.ToString(idade);
@@ -122,41 +154,10 @@ namespace WindowsFormsApp1
             {
                 campoIdade.Text = "";
             } 
-        }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
 
         }
 
-        private void campoDataNascimento_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label22_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void maskedTextBox4_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
+        
     }
 }
