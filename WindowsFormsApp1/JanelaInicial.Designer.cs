@@ -70,7 +70,7 @@
             this.label1.Location = new System.Drawing.Point(9, 7);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 48);
+            this.label1.Size = new System.Drawing.Size(100, 39);
             this.label1.TabIndex = 2;
             this.label1.Text = "label1";
             // 
@@ -86,7 +86,7 @@
             this.campoLogin.Margin = new System.Windows.Forms.Padding(2);
             this.campoLogin.MaxLength = 39000;
             this.campoLogin.Name = "campoLogin";
-            this.campoLogin.Size = new System.Drawing.Size(193, 41);
+            this.campoLogin.Size = new System.Drawing.Size(193, 35);
             this.campoLogin.TabIndex = 3;
             this.campoLogin.TextChanged += new System.EventHandler(this.campoLogin_TextChanged);
             // 
@@ -98,7 +98,7 @@
             this.campoSenha.MaxLength = 39000;
             this.campoSenha.Name = "campoSenha";
             this.campoSenha.PasswordChar = '*';
-            this.campoSenha.Size = new System.Drawing.Size(193, 41);
+            this.campoSenha.Size = new System.Drawing.Size(193, 35);
             this.campoSenha.TabIndex = 4;
             // 
             // label2
@@ -108,7 +108,7 @@
             this.label2.Location = new System.Drawing.Point(174, 74);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 39);
+            this.label2.Size = new System.Drawing.Size(85, 31);
             this.label2.TabIndex = 5;
             this.label2.Text = "Login";
             // 
@@ -119,7 +119,7 @@
             this.label3.Location = new System.Drawing.Point(174, 166);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(121, 39);
+            this.label3.Size = new System.Drawing.Size(97, 31);
             this.label3.TabIndex = 6;
             this.label3.Text = "Senha";
             // 
@@ -127,9 +127,9 @@
             // 
             this.button1.Location = new System.Drawing.Point(248, 31);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(88, 40);
             this.button1.TabIndex = 7;
-            this.button1.Text = "button1";
+            this.button1.Text = "testar banco";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 

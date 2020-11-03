@@ -18,20 +18,26 @@ namespace WindowsFormsApp1
         public int retornarIdade(string idadeSemFormatar)
         {
             int ano, mes, dia;
-            string[] att = idadeSemFormatar.Split('/');
-            dia = Convert.ToInt32(att[0]);
-            mes = Convert.ToInt32(att[1]);
-            ano = Convert.ToInt32(att[2]);
 
-            DateTime birthDate = new DateTime(ano, mes, dia);
-            DateTime now = DateTime.Today;
+            try
+            {
+                string[] att = idadeSemFormatar.Split('/');
+                dia = Convert.ToInt32(att[0]);
+                mes = Convert.ToInt32(att[1]);
+                ano = Convert.ToInt32(att[2]);
 
-            int age = now.Year - birthDate.Year;
+                DateTime birthDate = new DateTime(ano, mes, dia);
+                DateTime now = DateTime.Today;
 
-            if (now.Month < birthDate.Month || (now.Month == birthDate.Month && now.Day < birthDate.Day))
-                age--;
+                int age = now.Year - birthDate.Year;
 
-            return age;
+                if (now.Month < birthDate.Month || (now.Month == birthDate.Month && now.Day < birthDate.Day))
+                    age--;
+                return age;
+            }
+            catch {
+                return 0;
+            }
         }
 
         public CadastrarPaciente()
@@ -76,11 +82,6 @@ namespace WindowsFormsApp1
             //}
         }
 
-        private void textBox1_Leave(object sender, EventArgs e)
-        {
-            Console.WriteLine("saiu");
-        }
-
         private void label6_Click(object sender, EventArgs e)
         {
 
@@ -93,10 +94,30 @@ namespace WindowsFormsApp1
          
         private void button1_Click_1(object sender, EventArgs e)
         {
+        }
 
-            int idade = retornarIdade(campoDataNascimento.Text);
-            campoIdade.Text = Convert.ToString(idade);
+        private void somenteNumero(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
 
+        private void campoDataNascimento_TypeValidationCompleted(object sender, TypeValidationEventArgs e)
+        {
+            if (campoDataNascimento.MaskCompleted)
+            {
+                int idade = retornarIdade(campoDataNascimento.Text);
+                if (idade != 0)
+                {
+                    campoIdade.Text = Convert.ToString(idade);
+                }
+                else
+                {
+                    campoIdade.Text = "7";
+                }
+            }
         }
     }
 }
