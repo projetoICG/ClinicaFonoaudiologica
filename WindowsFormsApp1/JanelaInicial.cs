@@ -60,7 +60,7 @@ namespace WindowsFormsApp1
         {
             try
             {
-                MySqlConnection objetoConexao = new MySqlConnection("server=localhost;port=3306;User Id=root;database=bdteste;password=123456");
+                MySqlConnection objetoConexao = new MySqlConnection("server=localhost;port=3306;User Id=root;database=clinicafono;password=123456");
                 objetoConexao.Open(); //abrir banco
                 MessageBox.Show("banco funcionando");
                 objetoConexao.Close(); //sempre fechar conexao

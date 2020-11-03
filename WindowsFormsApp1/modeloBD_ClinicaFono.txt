@@ -23,12 +23,13 @@ PRIMARY KEY (`idConsulta`, `idMedico`, `idPaciente`)
 CREATE TABLE `Medico`
 (
  `cpf`            varchar(30) NOT NULL ,
+ `rg`             varchar(30) NULL ,
  `id_medico`      int NOT NULL ,
  `nome`           varchar(100) NOT NULL ,
  `sexo`           binary NOT NULL ,
  `rua`            varchar(100) NULL ,
  `bairro`         varchar(100) NULL ,
- `número`         int NULL ,
+ `numero`         int NULL ,
  `complemento`    varchar(100) NULL ,
  `telefone1`      varchar(45) NULL ,
  `telefone2`      varchar(45) NULL ,
@@ -43,18 +44,19 @@ PRIMARY KEY (`cpf`, `id_medico`)
 CREATE TABLE `Paciente_Maior_Idade`
 (
  `cpf`            varchar(30) NOT NULL ,
+ `rg`             varchar(30) NULL ,
  `id_paciente`    int NOT NULL ,
  `nome`           varchar(100) NOT NULL ,
  `sexo`           binary NOT NULL ,
  `rua`            varchar(100) NULL ,
  `bairro`         varchar(100) NULL ,
- `número`         int NULL ,
+ `numero`         int NULL ,
  `complemento`    varchar(100) NULL ,
  `telefone1`      varchar(45) NULL ,
  `telefone2`      varchar(45) NULL ,
  `email`          varchar(70) NULL ,
  `dataNascimento` varchar(45) NULL ,
- `observações`    varchar(5000) NOT NULL ,
+ `observacoes`    varchar(5000) NOT NULL ,
 
 PRIMARY KEY (`cpf`, `id_paciente`)
 );
@@ -62,18 +64,19 @@ PRIMARY KEY (`cpf`, `id_paciente`)
 CREATE TABLE `Paciente_Menor_Idade`
 (
  `cpf`            varchar(30) NOT NULL ,
+ `rg`             varchar(30) NULL ,
  `id_paciente`    int NOT NULL ,
  `nome`           varchar(100) NOT NULL ,
  `sexo`           binary NULL ,
  `rua`            varchar(100) NULL ,
  `bairro`         varchar(100) NULL ,
- `número`         int NULL ,
+ `numero`         int NULL ,
  `complemento`    varchar(100) NULL ,
  `telefone1`      varchar(45) NULL ,
  `telefone2`      varchar(45) NULL ,
  `email`          varchar(70) NULL ,
  `dataNascimento` varchar(45) NULL ,
- `observações`    varchar(5000) NULL ,
+ `observacoes`    varchar(5000) NULL ,
  `nomeMae`        varchar(100) NULL ,
  `nomePai`        varchar(100) NULL ,
  `nomeParente`    varchar(100) NULL ,
