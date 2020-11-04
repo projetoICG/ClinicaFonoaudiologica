@@ -3,7 +3,7 @@ use clinicafono;
 
 CREATE TABLE `Consulta`
 (
- `idConsulta`      int NOT NULL auto_increment,
+ `idConsulta`      int NOT NULL AUTO_INCREMENT,
  `idMedico`        int NOT NULL ,
  `idPaciente`      int NOT NULL ,
  `nomePaciente`    varchar(100) NOT NULL ,
@@ -17,14 +17,14 @@ CREATE TABLE `Consulta`
  `complemento`     varchar(20) NULL ,
  `nomeMedico`      varchar(100) NULL ,
 
-PRIMARY KEY (`idConsulta`, `idMedico`, `idPaciente`)
+PRIMARY KEY (`idConsulta`,`idPaciente`, `idMedico`)
 );
 
 CREATE TABLE `Medico`
 (
  `cpf`            varchar(30) NOT NULL ,
  `rg`             varchar(30) NULL ,
- `id_medico`      int NOT NULL auto_increment,
+ `id_medico`      int NOT NULL AUTO_INCREMENT,
  `nome`           varchar(100) NOT NULL ,
  `sexo`           binary NOT NULL ,
  `rua`            varchar(100) NULL ,
@@ -38,14 +38,14 @@ CREATE TABLE `Medico`
  `crm`            varchar(50) NULL ,
  `formacao`       varchar(1000) NOT NULL ,
 
-PRIMARY KEY (`cpf`, `id_medico`)
+PRIMARY KEY (`id_medico`,`cpf`)
 );
 
 CREATE TABLE `Paciente_Maior_Idade`
 (
  `cpf`            varchar(30) NOT NULL ,
  `rg`             varchar(30) NULL ,
- `id_paciente`    int NOT NULL auto_increment,
+ `id_paciente`    int NOT NULL AUTO_INCREMENT,
  `nome`           varchar(100) NOT NULL ,
  `sexo`           binary NOT NULL ,
  `rua`            varchar(100) NULL ,
@@ -58,14 +58,14 @@ CREATE TABLE `Paciente_Maior_Idade`
  `dataNascimento` varchar(45) NULL ,
  `observacoes`    varchar(5000) NOT NULL ,
 
-PRIMARY KEY (`cpf`, `id_paciente`)
+PRIMARY KEY (`id_paciente`,`cpf`)
 );
 
 CREATE TABLE `Paciente_Menor_Idade`
 (
  `cpf`            varchar(30) NOT NULL ,
  `rg`             varchar(30) NULL ,
- `id_paciente`    int NOT NULL auto_increment,
+ `id_paciente`    int NOT NULL AUTO_INCREMENT,
  `nome`           varchar(100) NOT NULL ,
  `sexo`           binary NULL ,
  `rua`            varchar(100) NULL ,
@@ -84,12 +84,12 @@ CREATE TABLE `Paciente_Menor_Idade`
  `cpfPai`         varchar(30) NULL ,
  `cpfParente`     varchar(30) NULL ,
 
-PRIMARY KEY (`cpf`, `id_paciente`)
+PRIMARY KEY (`id_paciente`,`cpf`)
 );
 
 CREATE TABLE `Usuario`
 (
- `id`               int NOT NULL auto_increment,
+ `id`               int NOT NULL AUTO_INCREMENT,
  `funcao`           varchar(50) NOT NULL ,
  `login`            varchar(50) NOT NULL ,
  `senha`            varchar(50) NOT NULL ,
