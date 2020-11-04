@@ -8,8 +8,8 @@ namespace WindowsFormsApp1.objetos
 {
     class Paciente:Pessoa
     {
-        private string Observacoes;
+        private string observacoes;
 
-        public string Observacoes1 { get => Observacoes; set => Observacoes = value; }
+        public string Observacoes { get => observacoes; set => observacoes = value; }
     }
 }

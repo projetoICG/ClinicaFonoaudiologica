@@ -30,14 +30,7 @@ namespace WindowsFormsApp1
             ObjetoConexao.Close();
         }
 
-        public MySqlCommand PacienteMaiorIdade()
-        {
-            
-            
-           
-
-            return objetoComando;
-        }
+        
 
 
     }
