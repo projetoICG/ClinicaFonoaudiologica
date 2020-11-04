@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.objetos;
 
 namespace WindowsFormsApp1
 {
@@ -106,20 +107,6 @@ namespace WindowsFormsApp1
             //}
         }
 
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-         
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-        }
-
         private void somenteNumero(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -158,6 +145,33 @@ namespace WindowsFormsApp1
 
         }
 
-        
+        private void botaoCadastrar_Click(object sender, EventArgs e)
+        {
+            if (int.Parse(campoIdade.Text) < 18)
+            {
+                PacienteMenor menor = new PacienteMenor();
+            } else
+            {
+
+                Paciente maior = new Paciente();
+
+                maior.Cpf = campoCPF.Text;
+                maior.Nome = campoNome.Text;
+                if (radioBotaoFeminino.Checked)
+                    maior.Sexo = false;
+                else
+                    maior.Sexo = true;
+                maior.Rua = campoRua.Text;
+                maior.Bairro = campoBairro.Text;
+                maior.Numero = campoNumero.Text;
+                maior.Complemento = campoComplemento.Text;
+                maior.Telefone1 = campoTelefone1.Text;
+                maior.Telefone2 = campoTelefone2.Text;
+                maior.Email = campoEmail.Text;
+                maior.DataNascimento = campoDataNascimento.Text;
+                maior.Observacoes = campoObservacao.Text;
+            }
+        }
+
     }
 }

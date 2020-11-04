@@ -12,10 +12,10 @@ namespace WindowsFormsApp1.objetos
         private string rg;
         private string nome;
         private bool sexo;
-        //0 == mulher 1==homem
+        //false == mulher true==homem
         private string rua;
         private string bairro;
-        private int numero;
+        private string numero;
         private string complemento;
         private string telefone1;
         private string telefone2;
@@ -27,7 +27,7 @@ namespace WindowsFormsApp1.objetos
         public bool Sexo { get => sexo; set => sexo = value; }
         public string Rua { get => rua; set => rua = value; }
         public string Bairro { get => bairro; set => bairro = value; }
-        public int Numero { get => numero; set => numero = value; }
+        public string Numero { get => numero; set => numero = value; }
         public string Complemento { get => complemento; set => complemento = value; }
         public string Telefone1 { get => telefone1; set => telefone1 = value; }
         public string Telefone2 { get => telefone2; set => telefone2 = value; }

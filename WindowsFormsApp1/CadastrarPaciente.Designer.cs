@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioBotaoMasculino = new System.Windows.Forms.RadioButton();
+            this.radioBotaoFeminino = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.campoNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,7 +54,7 @@
             this.campoTelefone1 = new System.Windows.Forms.TextBox();
             this.campoTelefone2 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.campoObservacao = new System.Windows.Forms.TextBox();
             this.botaoCancelar = new System.Windows.Forms.Button();
             this.labelNomeMae = new System.Windows.Forms.Label();
             this.campoNomeMae = new System.Windows.Forms.TextBox();
@@ -80,34 +80,36 @@
             this.labelRGMae = new System.Windows.Forms.Label();
             this.campoRGPai = new System.Windows.Forms.MaskedTextBox();
             this.labelRGPai = new System.Windows.Forms.Label();
+            this.campoEmail = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // radioButton1
+            // radioBotaoMasculino
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(384, 36);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(94, 22);
-            this.radioButton1.TabIndex = 1;
-            this.radioButton1.Text = "Masculino";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.radioBotaoMasculino.AutoSize = true;
+            this.radioBotaoMasculino.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBotaoMasculino.Location = new System.Drawing.Point(384, 36);
+            this.radioBotaoMasculino.Margin = new System.Windows.Forms.Padding(2);
+            this.radioBotaoMasculino.Name = "radioBotaoMasculino";
+            this.radioBotaoMasculino.Size = new System.Drawing.Size(94, 22);
+            this.radioBotaoMasculino.TabIndex = 1;
+            this.radioBotaoMasculino.Text = "Masculino";
+            this.radioBotaoMasculino.UseVisualStyleBackColor = true;
+            this.radioBotaoMasculino.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // radioButton2
+            // radioBotaoFeminino
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(384, 18);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(87, 22);
-            this.radioButton2.TabIndex = 2;
-            this.radioButton2.Text = "Feminino";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioBotaoFeminino.AutoSize = true;
+            this.radioBotaoFeminino.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBotaoFeminino.Location = new System.Drawing.Point(384, 18);
+            this.radioBotaoFeminino.Margin = new System.Windows.Forms.Padding(2);
+            this.radioBotaoFeminino.Name = "radioBotaoFeminino";
+            this.radioBotaoFeminino.Size = new System.Drawing.Size(87, 22);
+            this.radioBotaoFeminino.TabIndex = 2;
+            this.radioBotaoFeminino.Text = "Feminino";
+            this.radioBotaoFeminino.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -172,7 +174,6 @@
             this.label5.Size = new System.Drawing.Size(47, 17);
             this.label5.TabIndex = 11;
             this.label5.Text = "Idade:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label7
             // 
@@ -188,14 +189,14 @@
             // botaoCadastrar
             // 
             this.botaoCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.botaoCadastrar.Location = new System.Drawing.Point(385, 589);
+            this.botaoCadastrar.Location = new System.Drawing.Point(385, 616);
             this.botaoCadastrar.Margin = new System.Windows.Forms.Padding(2);
             this.botaoCadastrar.Name = "botaoCadastrar";
             this.botaoCadastrar.Size = new System.Drawing.Size(96, 47);
             this.botaoCadastrar.TabIndex = 14;
             this.botaoCadastrar.Text = "Cadastrar";
             this.botaoCadastrar.UseVisualStyleBackColor = true;
-            this.botaoCadastrar.Click += new System.EventHandler(this.button1_Click_1);
+            this.botaoCadastrar.Click += new System.EventHandler(this.botaoCadastrar_Click);
             // 
             // campoDataNascimento
             // 
@@ -249,7 +250,6 @@
             this.campoIdade.Size = new System.Drawing.Size(48, 17);
             this.campoIdade.TabIndex = 12;
             this.campoIdade.Text = "          ";
-            this.campoIdade.Click += new System.EventHandler(this.label6_Click);
             // 
             // campoBairro
             // 
@@ -356,27 +356,27 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(15, 517);
+            this.label13.Location = new System.Drawing.Point(15, 544);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(96, 17);
             this.label13.TabIndex = 29;
             this.label13.Text = "Observações:";
             // 
-            // textBox4
+            // campoObservacao
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(116, 496);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(401, 80);
-            this.textBox4.TabIndex = 30;
+            this.campoObservacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoObservacao.Location = new System.Drawing.Point(116, 523);
+            this.campoObservacao.Margin = new System.Windows.Forms.Padding(2);
+            this.campoObservacao.Multiline = true;
+            this.campoObservacao.Name = "campoObservacao";
+            this.campoObservacao.Size = new System.Drawing.Size(401, 80);
+            this.campoObservacao.TabIndex = 30;
             // 
             // botaoCancelar
             // 
             this.botaoCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.botaoCancelar.Location = new System.Drawing.Point(76, 589);
+            this.botaoCancelar.Location = new System.Drawing.Point(76, 616);
             this.botaoCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.botaoCancelar.Name = "botaoCancelar";
             this.botaoCancelar.Size = new System.Drawing.Size(96, 47);
@@ -388,7 +388,7 @@
             // 
             this.labelNomeMae.AutoSize = true;
             this.labelNomeMae.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNomeMae.Location = new System.Drawing.Point(2, 24);
+            this.labelNomeMae.Location = new System.Drawing.Point(2, 36);
             this.labelNomeMae.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNomeMae.Name = "labelNomeMae";
             this.labelNomeMae.Size = new System.Drawing.Size(80, 17);
@@ -398,7 +398,7 @@
             // campoNomeMae
             // 
             this.campoNomeMae.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.campoNomeMae.Location = new System.Drawing.Point(116, 299);
+            this.campoNomeMae.Location = new System.Drawing.Point(116, 340);
             this.campoNomeMae.Margin = new System.Windows.Forms.Padding(2);
             this.campoNomeMae.Name = "campoNomeMae";
             this.campoNomeMae.Size = new System.Drawing.Size(242, 23);
@@ -412,7 +412,7 @@
             this.panel1.Controls.Add(this.label15);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(533, 252);
+            this.panel1.Size = new System.Drawing.Size(533, 287);
             this.panel1.TabIndex = 34;
             // 
             // label15
@@ -444,7 +444,7 @@
             this.panel2.Controls.Add(this.labelNomeMae);
             this.panel2.Controls.Add(this.labelCPFMae);
             this.panel2.Controls.Add(this.label16);
-            this.panel2.Location = new System.Drawing.Point(12, 277);
+            this.panel2.Location = new System.Drawing.Point(12, 305);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(533, 205);
             this.panel2.TabIndex = 35;
@@ -473,7 +473,7 @@
             // campoNomeParente
             // 
             this.campoNomeParente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.campoNomeParente.Location = new System.Drawing.Point(103, 146);
+            this.campoNomeParente.Location = new System.Drawing.Point(103, 156);
             this.campoNomeParente.Margin = new System.Windows.Forms.Padding(2);
             this.campoNomeParente.Name = "campoNomeParente";
             this.campoNomeParente.Size = new System.Drawing.Size(242, 23);
@@ -493,7 +493,7 @@
             // 
             this.labelNomeParente.AutoSize = true;
             this.labelNomeParente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNomeParente.Location = new System.Drawing.Point(3, 145);
+            this.labelNomeParente.Location = new System.Drawing.Point(3, 155);
             this.labelNomeParente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNomeParente.Name = "labelNomeParente";
             this.labelNomeParente.Size = new System.Drawing.Size(103, 17);
@@ -525,7 +525,7 @@
             // 
             this.labelNomePai.AutoSize = true;
             this.labelNomePai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNomePai.Location = new System.Drawing.Point(3, 85);
+            this.labelNomePai.Location = new System.Drawing.Point(3, 97);
             this.labelNomePai.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNomePai.Name = "labelNomePai";
             this.labelNomePai.Size = new System.Drawing.Size(73, 17);
@@ -578,7 +578,7 @@
             // campoNomePai
             // 
             this.campoNomePai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.campoNomePai.Location = new System.Drawing.Point(116, 362);
+            this.campoNomePai.Location = new System.Drawing.Point(116, 402);
             this.campoNomePai.Margin = new System.Windows.Forms.Padding(2);
             this.campoNomePai.Name = "campoNomePai";
             this.campoNomePai.Size = new System.Drawing.Size(242, 23);
@@ -608,7 +608,7 @@
             // campoRGMae
             // 
             this.campoRGMae.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.campoRGMae.Location = new System.Drawing.Point(417, 325);
+            this.campoRGMae.Location = new System.Drawing.Point(417, 353);
             this.campoRGMae.Margin = new System.Windows.Forms.Padding(2);
             this.campoRGMae.Mask = "00.000.000-0";
             this.campoRGMae.Name = "campoRGMae";
@@ -619,7 +619,7 @@
             // 
             this.labelRGMae.AutoSize = true;
             this.labelRGMae.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRGMae.Location = new System.Drawing.Point(381, 328);
+            this.labelRGMae.Location = new System.Drawing.Point(381, 356);
             this.labelRGMae.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelRGMae.Name = "labelRGMae";
             this.labelRGMae.Size = new System.Drawing.Size(33, 17);
@@ -629,7 +629,7 @@
             // campoRGPai
             // 
             this.campoRGPai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.campoRGPai.Location = new System.Drawing.Point(418, 385);
+            this.campoRGPai.Location = new System.Drawing.Point(418, 413);
             this.campoRGPai.Margin = new System.Windows.Forms.Padding(2);
             this.campoRGPai.Mask = "00.000.000-0";
             this.campoRGPai.Name = "campoRGPai";
@@ -640,18 +640,40 @@
             // 
             this.labelRGPai.AutoSize = true;
             this.labelRGPai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRGPai.Location = new System.Drawing.Point(382, 388);
+            this.labelRGPai.Location = new System.Drawing.Point(382, 416);
             this.labelRGPai.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelRGPai.Name = "labelRGPai";
             this.labelRGPai.Size = new System.Drawing.Size(33, 17);
             this.labelRGPai.TabIndex = 41;
             this.labelRGPai.Text = "RG:";
             // 
+            // campoEmail
+            // 
+            this.campoEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoEmail.Location = new System.Drawing.Point(85, 260);
+            this.campoEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.campoEmail.Name = "campoEmail";
+            this.campoEmail.Size = new System.Drawing.Size(440, 23);
+            this.campoEmail.TabIndex = 44;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(24, 262);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(46, 17);
+            this.label14.TabIndex = 43;
+            this.label14.Text = "Email:";
+            // 
             // CadastrarPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(557, 644);
+            this.ClientSize = new System.Drawing.Size(557, 673);
+            this.Controls.Add(this.campoEmail);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.campoRGPai);
             this.Controls.Add(this.labelRGPai);
             this.Controls.Add(this.campoRGMae);
@@ -661,7 +683,7 @@
             this.Controls.Add(this.campoNomePai);
             this.Controls.Add(this.campoNomeMae);
             this.Controls.Add(this.botaoCancelar);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.campoObservacao);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.campoTelefone2);
             this.Controls.Add(this.campoTelefone1);
@@ -686,8 +708,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.campoNome);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.radioBotaoFeminino);
+            this.Controls.Add(this.radioBotaoMasculino);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -705,8 +727,8 @@
 
         #endregion
 
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioBotaoMasculino;
+        private System.Windows.Forms.RadioButton radioBotaoFeminino;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox campoNome;
         private System.Windows.Forms.Label label2;
@@ -732,7 +754,7 @@
         private System.Windows.Forms.TextBox campoTelefone1;
         private System.Windows.Forms.TextBox campoTelefone2;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox campoObservacao;
         private System.Windows.Forms.Button botaoCancelar;
         private System.Windows.Forms.Label labelNomeMae;
         private System.Windows.Forms.TextBox campoNomeMae;
@@ -758,5 +780,7 @@
         private System.Windows.Forms.Label labelRGMae;
         private System.Windows.Forms.MaskedTextBox campoRGPai;
         private System.Windows.Forms.Label labelRGPai;
+        private System.Windows.Forms.TextBox campoEmail;
+        private System.Windows.Forms.Label label14;
     }
 }
