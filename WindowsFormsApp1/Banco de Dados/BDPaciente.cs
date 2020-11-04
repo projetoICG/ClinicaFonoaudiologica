@@ -22,7 +22,7 @@ namespace WindowsFormsApp1.Banco_de_Dados
             objetoComando.Parameters.Add("@cpf", MySqlDbType.VarChar).Value = paciente.Cpf;
             objetoComando.Parameters.Add("@rg", MySqlDbType.VarChar).Value = paciente.Rg;
             objetoComando.Parameters.Add("@nome", MySqlDbType.VarChar).Value = paciente.Nome;
-            objetoComando.Parameters.Add("@sexo", MySqlDbType.Binary).Value = paciente.Sexo;
+            objetoComando.Parameters.Add("@sexo", MySqlDbType.VarChar).Value = paciente.Sexo;
             objetoComando.Parameters.Add("@rua", MySqlDbType.VarChar).Value = paciente.Rua;
             objetoComando.Parameters.Add("@bairro", MySqlDbType.VarChar).Value = paciente.Bairro;
             objetoComando.Parameters.Add("@numero", MySqlDbType.VarChar).Value = paciente.Numero;
@@ -36,25 +36,28 @@ namespace WindowsFormsApp1.Banco_de_Dados
 
         public int cadastrarPacienteMaiorDeIdade(Paciente paciente)
         {
-
+            Console.WriteLine(paciente.Cpf);
             try
             {
-                conexaobanco.abrirConexao();
+                ConexaoBanco conexao = new ConexaoBanco();
 
-                MySqlCommand objetoComando = new MySqlCommand("insert into" +
+                conexao.ObjetoConexao.Open();
+                MySqlCommand objetoComando = new MySqlCommand("insert into " +
                     "paciente_maior_idade (cpf, rg, nome, sexo, " +
                     "rua, bairro, numero, complemento, telefone1, telefone2, " +
                     "email, dataNascimento, observacoes) values (? , ? , ?, " +
-                    "?, ?, ?, ?, ?, ?, ?, ?, ?, ?);", conexaobanco.ObjetoConexao);
+                    "?, ?, ?, ?, ?, ?, ?, ?, ?, ?);", conexao.ObjetoConexao);
 
                 prepararCadastrarPacienteMaiorDeIdade(paciente, objetoComando);
 
-                conexaobanco.fecharConexao();
-            return 0;
+                objetoComando.ExecuteNonQuery();
+
+                conexao.ObjetoConexao.Close();
+                return 0;
             }
-            catch
+            catch(Exception e)
             {
-                Console.WriteLine("Deu merda na hora de inserir paciente maior de idade");
+                Console.WriteLine(e);
             }
             return 1;
         }

@@ -11,7 +11,7 @@ namespace WindowsFormsApp1.objetos
         private string cpf;
         private string rg;
         private string nome;
-        private bool sexo;
+        private char sexo;
         //false == mulher true==homem
         private string rua;
         private string bairro;
@@ -24,7 +24,7 @@ namespace WindowsFormsApp1.objetos
 
         public string Cpf { get => cpf; set => cpf = value; }
         public string Nome { get => nome; set => nome = value; }
-        public bool Sexo { get => sexo; set => sexo = value; }
+        public char Sexo { get => sexo; set => sexo = value; }
         public string Rua { get => rua; set => rua = value; }
         public string Bairro { get => bairro; set => bairro = value; }
         public string Numero { get => numero; set => numero = value; }

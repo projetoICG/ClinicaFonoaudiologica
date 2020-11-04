@@ -51,8 +51,6 @@
             this.campoComplemento = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.campoTelefone1 = new System.Windows.Forms.TextBox();
-            this.campoTelefone2 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.campoObservacao = new System.Windows.Forms.TextBox();
             this.botaoCancelar = new System.Windows.Forms.Button();
@@ -82,6 +80,8 @@
             this.labelRGPai = new System.Windows.Forms.Label();
             this.campoEmail = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.campoTelefone2 = new System.Windows.Forms.MaskedTextBox();
+            this.campoTelefone1 = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -93,7 +93,7 @@
             this.radioBotaoMasculino.Location = new System.Drawing.Point(384, 36);
             this.radioBotaoMasculino.Margin = new System.Windows.Forms.Padding(2);
             this.radioBotaoMasculino.Name = "radioBotaoMasculino";
-            this.radioBotaoMasculino.Size = new System.Drawing.Size(94, 22);
+            this.radioBotaoMasculino.Size = new System.Drawing.Size(117, 28);
             this.radioBotaoMasculino.TabIndex = 1;
             this.radioBotaoMasculino.Text = "Masculino";
             this.radioBotaoMasculino.UseVisualStyleBackColor = true;
@@ -106,7 +106,7 @@
             this.radioBotaoFeminino.Location = new System.Drawing.Point(384, 18);
             this.radioBotaoFeminino.Margin = new System.Windows.Forms.Padding(2);
             this.radioBotaoFeminino.Name = "radioBotaoFeminino";
-            this.radioBotaoFeminino.Size = new System.Drawing.Size(87, 22);
+            this.radioBotaoFeminino.Size = new System.Drawing.Size(111, 28);
             this.radioBotaoFeminino.TabIndex = 2;
             this.radioBotaoFeminino.Text = "Feminino";
             this.radioBotaoFeminino.UseVisualStyleBackColor = true;
@@ -118,7 +118,7 @@
             this.label1.Location = new System.Drawing.Point(16, 23);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 17);
+            this.label1.Size = new System.Drawing.Size(58, 20);
             this.label1.TabIndex = 3;
             this.label1.Text = "Nome:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -129,7 +129,7 @@
             this.campoNome.Location = new System.Drawing.Point(69, 23);
             this.campoNome.Margin = new System.Windows.Forms.Padding(2);
             this.campoNome.Name = "campoNome";
-            this.campoNome.Size = new System.Drawing.Size(242, 23);
+            this.campoNome.Size = new System.Drawing.Size(242, 27);
             this.campoNome.TabIndex = 5;
             // 
             // label2
@@ -139,7 +139,7 @@
             this.label2.Location = new System.Drawing.Point(339, 26);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 17);
+            this.label2.Size = new System.Drawing.Size(51, 20);
             this.label2.TabIndex = 6;
             this.label2.Text = "Sexo:";
             // 
@@ -150,7 +150,7 @@
             this.label3.Location = new System.Drawing.Point(397, 177);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 17);
+            this.label3.Size = new System.Drawing.Size(0, 20);
             this.label3.TabIndex = 7;
             // 
             // label4
@@ -160,7 +160,7 @@
             this.label4.Location = new System.Drawing.Point(16, 99);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 17);
+            this.label4.Size = new System.Drawing.Size(144, 20);
             this.label4.TabIndex = 9;
             this.label4.Text = "Data Nascimento:";
             // 
@@ -171,7 +171,7 @@
             this.label5.Location = new System.Drawing.Point(274, 99);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 17);
+            this.label5.Size = new System.Drawing.Size(54, 20);
             this.label5.TabIndex = 11;
             this.label5.Text = "Idade:";
             // 
@@ -182,7 +182,7 @@
             this.label7.Location = new System.Drawing.Point(16, 65);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(33, 17);
+            this.label7.Size = new System.Drawing.Size(40, 20);
             this.label7.TabIndex = 13;
             this.label7.Text = "Cpf:";
             // 
@@ -205,7 +205,7 @@
             this.campoDataNascimento.Margin = new System.Windows.Forms.Padding(2);
             this.campoDataNascimento.Mask = "00/00/0000";
             this.campoDataNascimento.Name = "campoDataNascimento";
-            this.campoDataNascimento.Size = new System.Drawing.Size(97, 23);
+            this.campoDataNascimento.Size = new System.Drawing.Size(97, 27);
             this.campoDataNascimento.TabIndex = 15;
             this.campoDataNascimento.ValidatingType = typeof(System.DateTime);
             this.campoDataNascimento.TypeValidationCompleted += new System.Windows.Forms.TypeValidationEventHandler(this.campoDataNascimento_TypeValidationCompleted);
@@ -217,7 +217,7 @@
             this.campoCPF.Margin = new System.Windows.Forms.Padding(2);
             this.campoCPF.Mask = "000.000.000-00";
             this.campoCPF.Name = "campoCPF";
-            this.campoCPF.Size = new System.Drawing.Size(122, 23);
+            this.campoCPF.Size = new System.Drawing.Size(122, 27);
             this.campoCPF.TabIndex = 16;
             // 
             // label6
@@ -227,7 +227,7 @@
             this.label6.Location = new System.Drawing.Point(16, 138);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 17);
+            this.label6.Size = new System.Drawing.Size(44, 20);
             this.label6.TabIndex = 17;
             this.label6.Text = "Rua:";
             // 
@@ -237,7 +237,7 @@
             this.campoRua.Location = new System.Drawing.Point(69, 132);
             this.campoRua.Margin = new System.Windows.Forms.Padding(2);
             this.campoRua.Name = "campoRua";
-            this.campoRua.Size = new System.Drawing.Size(213, 23);
+            this.campoRua.Size = new System.Drawing.Size(213, 27);
             this.campoRua.TabIndex = 18;
             // 
             // campoIdade
@@ -247,7 +247,7 @@
             this.campoIdade.Location = new System.Drawing.Point(325, 99);
             this.campoIdade.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.campoIdade.Name = "campoIdade";
-            this.campoIdade.Size = new System.Drawing.Size(48, 17);
+            this.campoIdade.Size = new System.Drawing.Size(59, 20);
             this.campoIdade.TabIndex = 12;
             this.campoIdade.Text = "          ";
             // 
@@ -257,7 +257,7 @@
             this.campoBairro.Location = new System.Drawing.Point(350, 135);
             this.campoBairro.Margin = new System.Windows.Forms.Padding(2);
             this.campoBairro.Name = "campoBairro";
-            this.campoBairro.Size = new System.Drawing.Size(181, 23);
+            this.campoBairro.Size = new System.Drawing.Size(181, 27);
             this.campoBairro.TabIndex = 20;
             // 
             // label8
@@ -267,7 +267,7 @@
             this.label8.Location = new System.Drawing.Point(296, 135);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(50, 17);
+            this.label8.Size = new System.Drawing.Size(60, 20);
             this.label8.TabIndex = 19;
             this.label8.Text = "Bairro:";
             // 
@@ -277,7 +277,7 @@
             this.campoNumero.Location = new System.Drawing.Point(83, 177);
             this.campoNumero.Margin = new System.Windows.Forms.Padding(2);
             this.campoNumero.Name = "campoNumero";
-            this.campoNumero.Size = new System.Drawing.Size(53, 23);
+            this.campoNumero.Size = new System.Drawing.Size(53, 27);
             this.campoNumero.TabIndex = 22;
             this.campoNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.somenteNumero);
             // 
@@ -288,7 +288,7 @@
             this.label9.Location = new System.Drawing.Point(16, 177);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(62, 17);
+            this.label9.Size = new System.Drawing.Size(73, 20);
             this.label9.TabIndex = 21;
             this.label9.Text = "Número:";
             // 
@@ -299,7 +299,7 @@
             this.label10.Location = new System.Drawing.Point(150, 177);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(98, 17);
+            this.label10.Size = new System.Drawing.Size(117, 20);
             this.label10.TabIndex = 23;
             this.label10.Text = "Complemento:";
             // 
@@ -309,7 +309,7 @@
             this.campoComplemento.Location = new System.Drawing.Point(252, 177);
             this.campoComplemento.Margin = new System.Windows.Forms.Padding(2);
             this.campoComplemento.Name = "campoComplemento";
-            this.campoComplemento.Size = new System.Drawing.Size(279, 23);
+            this.campoComplemento.Size = new System.Drawing.Size(279, 27);
             this.campoComplemento.TabIndex = 24;
             // 
             // label11
@@ -319,7 +319,7 @@
             this.label11.Location = new System.Drawing.Point(16, 223);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(80, 17);
+            this.label11.Size = new System.Drawing.Size(92, 20);
             this.label11.TabIndex = 25;
             this.label11.Text = "Telefone 1:";
             // 
@@ -330,27 +330,9 @@
             this.label12.Location = new System.Drawing.Point(274, 226);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(80, 17);
+            this.label12.Size = new System.Drawing.Size(92, 20);
             this.label12.TabIndex = 26;
             this.label12.Text = "Telefone 2:";
-            // 
-            // campoTelefone1
-            // 
-            this.campoTelefone1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.campoTelefone1.Location = new System.Drawing.Point(97, 223);
-            this.campoTelefone1.Margin = new System.Windows.Forms.Padding(2);
-            this.campoTelefone1.Name = "campoTelefone1";
-            this.campoTelefone1.Size = new System.Drawing.Size(151, 23);
-            this.campoTelefone1.TabIndex = 27;
-            // 
-            // campoTelefone2
-            // 
-            this.campoTelefone2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.campoTelefone2.Location = new System.Drawing.Point(363, 220);
-            this.campoTelefone2.Margin = new System.Windows.Forms.Padding(2);
-            this.campoTelefone2.Name = "campoTelefone2";
-            this.campoTelefone2.Size = new System.Drawing.Size(154, 23);
-            this.campoTelefone2.TabIndex = 28;
             // 
             // label13
             // 
@@ -359,7 +341,7 @@
             this.label13.Location = new System.Drawing.Point(15, 544);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(96, 17);
+            this.label13.Size = new System.Drawing.Size(113, 20);
             this.label13.TabIndex = 29;
             this.label13.Text = "Observações:";
             // 
@@ -391,7 +373,7 @@
             this.labelNomeMae.Location = new System.Drawing.Point(2, 36);
             this.labelNomeMae.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNomeMae.Name = "labelNomeMae";
-            this.labelNomeMae.Size = new System.Drawing.Size(80, 17);
+            this.labelNomeMae.Size = new System.Drawing.Size(95, 20);
             this.labelNomeMae.TabIndex = 32;
             this.labelNomeMae.Text = "Nome Mãe:";
             // 
@@ -401,7 +383,7 @@
             this.campoNomeMae.Location = new System.Drawing.Point(116, 340);
             this.campoNomeMae.Margin = new System.Windows.Forms.Padding(2);
             this.campoNomeMae.Name = "campoNomeMae";
-            this.campoNomeMae.Size = new System.Drawing.Size(242, 23);
+            this.campoNomeMae.Size = new System.Drawing.Size(242, 27);
             this.campoNomeMae.TabIndex = 33;
             // 
             // panel1
@@ -409,6 +391,8 @@
             this.panel1.AccessibleDescription = "";
             this.panel1.AccessibleName = "";
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.campoTelefone1);
+            this.panel1.Controls.Add(this.campoTelefone2);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
@@ -422,7 +406,7 @@
             this.label15.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label15.Location = new System.Drawing.Point(487, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(41, 12);
+            this.label15.Size = new System.Drawing.Size(55, 15);
             this.label15.TabIndex = 35;
             this.label15.Text = "Paciente";
             // 
@@ -456,7 +440,7 @@
             this.campoRGParente.Margin = new System.Windows.Forms.Padding(2);
             this.campoRGParente.Mask = "00.000.000-0";
             this.campoRGParente.Name = "campoRGParente";
-            this.campoRGParente.Size = new System.Drawing.Size(122, 23);
+            this.campoRGParente.Size = new System.Drawing.Size(122, 27);
             this.campoRGParente.TabIndex = 46;
             // 
             // labelRGParente
@@ -466,7 +450,7 @@
             this.labelRGParente.Location = new System.Drawing.Point(369, 171);
             this.labelRGParente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelRGParente.Name = "labelRGParente";
-            this.labelRGParente.Size = new System.Drawing.Size(33, 17);
+            this.labelRGParente.Size = new System.Drawing.Size(39, 20);
             this.labelRGParente.TabIndex = 45;
             this.labelRGParente.Text = "RG:";
             // 
@@ -476,7 +460,7 @@
             this.campoNomeParente.Location = new System.Drawing.Point(103, 156);
             this.campoNomeParente.Margin = new System.Windows.Forms.Padding(2);
             this.campoNomeParente.Name = "campoNomeParente";
-            this.campoNomeParente.Size = new System.Drawing.Size(242, 23);
+            this.campoNomeParente.Size = new System.Drawing.Size(242, 27);
             this.campoNomeParente.TabIndex = 44;
             // 
             // campoCPFParente
@@ -486,7 +470,7 @@
             this.campoCPFParente.Margin = new System.Windows.Forms.Padding(2);
             this.campoCPFParente.Mask = "000.000.000-00";
             this.campoCPFParente.Name = "campoCPFParente";
-            this.campoCPFParente.Size = new System.Drawing.Size(122, 23);
+            this.campoCPFParente.Size = new System.Drawing.Size(122, 27);
             this.campoCPFParente.TabIndex = 43;
             // 
             // labelNomeParente
@@ -496,7 +480,7 @@
             this.labelNomeParente.Location = new System.Drawing.Point(3, 155);
             this.labelNomeParente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNomeParente.Name = "labelNomeParente";
-            this.labelNomeParente.Size = new System.Drawing.Size(103, 17);
+            this.labelNomeParente.Size = new System.Drawing.Size(121, 20);
             this.labelNomeParente.TabIndex = 41;
             this.labelNomeParente.Text = "Nome Parente:";
             // 
@@ -507,7 +491,7 @@
             this.labelCPFParente.Location = new System.Drawing.Point(367, 144);
             this.labelCPFParente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCPFParente.Name = "labelCPFParente";
-            this.labelCPFParente.Size = new System.Drawing.Size(33, 17);
+            this.labelCPFParente.Size = new System.Drawing.Size(40, 20);
             this.labelCPFParente.TabIndex = 42;
             this.labelCPFParente.Text = "Cpf:";
             // 
@@ -518,7 +502,7 @@
             this.campoCPFPai.Margin = new System.Windows.Forms.Padding(2);
             this.campoCPFPai.Mask = "000.000.000-00";
             this.campoCPFPai.Name = "campoCPFPai";
-            this.campoCPFPai.Size = new System.Drawing.Size(122, 23);
+            this.campoCPFPai.Size = new System.Drawing.Size(122, 27);
             this.campoCPFPai.TabIndex = 40;
             // 
             // labelNomePai
@@ -528,7 +512,7 @@
             this.labelNomePai.Location = new System.Drawing.Point(3, 97);
             this.labelNomePai.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNomePai.Name = "labelNomePai";
-            this.labelNomePai.Size = new System.Drawing.Size(73, 17);
+            this.labelNomePai.Size = new System.Drawing.Size(87, 20);
             this.labelNomePai.TabIndex = 38;
             this.labelNomePai.Text = "Nome Pai:";
             // 
@@ -539,7 +523,7 @@
             this.labelCPFPai.Location = new System.Drawing.Point(367, 85);
             this.labelCPFPai.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCPFPai.Name = "labelCPFPai";
-            this.labelCPFPai.Size = new System.Drawing.Size(33, 17);
+            this.labelCPFPai.Size = new System.Drawing.Size(40, 20);
             this.labelCPFPai.TabIndex = 39;
             this.labelCPFPai.Text = "Cpf:";
             // 
@@ -550,7 +534,7 @@
             this.campoCPFMae.Margin = new System.Windows.Forms.Padding(2);
             this.campoCPFMae.Mask = "000.000.000-00";
             this.campoCPFMae.Name = "campoCPFMae";
-            this.campoCPFMae.Size = new System.Drawing.Size(122, 23);
+            this.campoCPFMae.Size = new System.Drawing.Size(122, 27);
             this.campoCPFMae.TabIndex = 37;
             // 
             // labelCPFMae
@@ -560,7 +544,7 @@
             this.labelCPFMae.Location = new System.Drawing.Point(368, 24);
             this.labelCPFMae.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCPFMae.Name = "labelCPFMae";
-            this.labelCPFMae.Size = new System.Drawing.Size(33, 17);
+            this.labelCPFMae.Size = new System.Drawing.Size(40, 20);
             this.labelCPFMae.TabIndex = 36;
             this.labelCPFMae.Text = "Cpf:";
             // 
@@ -571,7 +555,7 @@
             this.label16.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label16.Location = new System.Drawing.Point(468, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(60, 12);
+            this.label16.Size = new System.Drawing.Size(78, 15);
             this.label16.TabIndex = 35;
             this.label16.Text = "Responsável";
             // 
@@ -581,7 +565,7 @@
             this.campoNomePai.Location = new System.Drawing.Point(116, 402);
             this.campoNomePai.Margin = new System.Windows.Forms.Padding(2);
             this.campoNomePai.Name = "campoNomePai";
-            this.campoNomePai.Size = new System.Drawing.Size(242, 23);
+            this.campoNomePai.Size = new System.Drawing.Size(242, 27);
             this.campoNomePai.TabIndex = 36;
             // 
             // campoRG
@@ -591,7 +575,7 @@
             this.campoRG.Margin = new System.Windows.Forms.Padding(2);
             this.campoRG.Mask = "00.000.000-0";
             this.campoRG.Name = "campoRG";
-            this.campoRG.Size = new System.Drawing.Size(105, 23);
+            this.campoRG.Size = new System.Drawing.Size(105, 27);
             this.campoRG.TabIndex = 38;
             // 
             // label22
@@ -601,7 +585,7 @@
             this.label22.Location = new System.Drawing.Point(268, 64);
             this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(33, 17);
+            this.label22.Size = new System.Drawing.Size(39, 20);
             this.label22.TabIndex = 37;
             this.label22.Text = "RG:";
             // 
@@ -612,7 +596,7 @@
             this.campoRGMae.Margin = new System.Windows.Forms.Padding(2);
             this.campoRGMae.Mask = "00.000.000-0";
             this.campoRGMae.Name = "campoRGMae";
-            this.campoRGMae.Size = new System.Drawing.Size(122, 23);
+            this.campoRGMae.Size = new System.Drawing.Size(122, 27);
             this.campoRGMae.TabIndex = 40;
             // 
             // labelRGMae
@@ -622,7 +606,7 @@
             this.labelRGMae.Location = new System.Drawing.Point(381, 356);
             this.labelRGMae.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelRGMae.Name = "labelRGMae";
-            this.labelRGMae.Size = new System.Drawing.Size(33, 17);
+            this.labelRGMae.Size = new System.Drawing.Size(39, 20);
             this.labelRGMae.TabIndex = 39;
             this.labelRGMae.Text = "RG:";
             // 
@@ -633,7 +617,7 @@
             this.campoRGPai.Margin = new System.Windows.Forms.Padding(2);
             this.campoRGPai.Mask = "00.000.000-0";
             this.campoRGPai.Name = "campoRGPai";
-            this.campoRGPai.Size = new System.Drawing.Size(122, 23);
+            this.campoRGPai.Size = new System.Drawing.Size(122, 27);
             this.campoRGPai.TabIndex = 42;
             // 
             // labelRGPai
@@ -643,7 +627,7 @@
             this.labelRGPai.Location = new System.Drawing.Point(382, 416);
             this.labelRGPai.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelRGPai.Name = "labelRGPai";
-            this.labelRGPai.Size = new System.Drawing.Size(33, 17);
+            this.labelRGPai.Size = new System.Drawing.Size(39, 20);
             this.labelRGPai.TabIndex = 41;
             this.labelRGPai.Text = "RG:";
             // 
@@ -653,7 +637,7 @@
             this.campoEmail.Location = new System.Drawing.Point(85, 260);
             this.campoEmail.Margin = new System.Windows.Forms.Padding(2);
             this.campoEmail.Name = "campoEmail";
-            this.campoEmail.Size = new System.Drawing.Size(440, 23);
+            this.campoEmail.Size = new System.Drawing.Size(440, 27);
             this.campoEmail.TabIndex = 44;
             // 
             // label14
@@ -663,9 +647,29 @@
             this.label14.Location = new System.Drawing.Point(24, 262);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(46, 17);
+            this.label14.Size = new System.Drawing.Size(56, 20);
             this.label14.TabIndex = 43;
             this.label14.Text = "Email:";
+            // 
+            // campoTelefone2
+            // 
+            this.campoTelefone2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.campoTelefone2.Location = new System.Drawing.Point(357, 210);
+            this.campoTelefone2.Margin = new System.Windows.Forms.Padding(2);
+            this.campoTelefone2.Mask = "(00)00000-0000";
+            this.campoTelefone2.Name = "campoTelefone2";
+            this.campoTelefone2.Size = new System.Drawing.Size(122, 27);
+            this.campoTelefone2.TabIndex = 46;
+            // 
+            // campoTelefone1
+            // 
+            this.campoTelefone1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.campoTelefone1.Location = new System.Drawing.Point(99, 207);
+            this.campoTelefone1.Margin = new System.Windows.Forms.Padding(2);
+            this.campoTelefone1.Mask = "(00)00000-0000";
+            this.campoTelefone1.Name = "campoTelefone1";
+            this.campoTelefone1.Size = new System.Drawing.Size(122, 27);
+            this.campoTelefone1.TabIndex = 47;
             // 
             // CadastrarPaciente
             // 
@@ -685,8 +689,6 @@
             this.Controls.Add(this.botaoCancelar);
             this.Controls.Add(this.campoObservacao);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.campoTelefone2);
-            this.Controls.Add(this.campoTelefone1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.campoComplemento);
@@ -751,8 +753,6 @@
         private System.Windows.Forms.TextBox campoComplemento;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox campoTelefone1;
-        private System.Windows.Forms.TextBox campoTelefone2;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox campoObservacao;
         private System.Windows.Forms.Button botaoCancelar;
@@ -782,5 +782,7 @@
         private System.Windows.Forms.Label labelRGPai;
         private System.Windows.Forms.TextBox campoEmail;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.MaskedTextBox campoTelefone1;
+        private System.Windows.Forms.MaskedTextBox campoTelefone2;
     }
 }

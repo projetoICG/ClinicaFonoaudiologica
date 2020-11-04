@@ -159,9 +159,9 @@ namespace WindowsFormsApp1
                 maior.Cpf = campoCPF.Text;
                 maior.Nome = campoNome.Text;
                 if (radioBotaoFeminino.Checked)
-                    maior.Sexo = false;
+                    maior.Sexo = 'F';
                 else
-                    maior.Sexo = true;
+                    maior.Sexo = 'M';
                 maior.Rua = campoRua.Text;
                 maior.Bairro = campoBairro.Text;
                 maior.Numero = campoNumero.Text;
