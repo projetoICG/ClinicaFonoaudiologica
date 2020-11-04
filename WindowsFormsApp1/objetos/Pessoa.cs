@@ -9,6 +9,7 @@ namespace WindowsFormsApp1.objetos
     class Pessoa
     {
         private string cpf;
+        private string rg;
         private string nome;
         private bool sexo;
         //0 == mulher 1==homem
@@ -32,5 +33,6 @@ namespace WindowsFormsApp1.objetos
         public string Telefone2 { get => telefone2; set => telefone2 = value; }
         public string Email { get => email; set => email = value; }
         public string DataNascimento { get => dataNascimento; set => dataNascimento = value; }
+        public string Rg { get => rg; set => rg = value; }
     }
 }

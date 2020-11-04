@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Banco de Dados\BDPaciente.cs" />
     <Compile Include="CadastrarPaciente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +64,7 @@
     <Compile Include="CadastroUsuario.Designer.cs">
       <DependentUpon>CadastroUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Banco de Dados\ConexaoBanco.cs" />
     <Compile Include="JanelaMenu.cs">
       <SubType>Form</SubType>
     </Compile>
