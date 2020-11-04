@@ -56,7 +56,7 @@ CREATE TABLE `Paciente_Maior_Idade`
  `telefone2`      varchar(45) NULL ,
  `email`          varchar(70) NULL ,
  `dataNascimento` varchar(45) NULL ,
- `observacoes`    varchar(5000) NOT NULL ,
+ `observacoes`    varchar(5000) NULL ,
 
 PRIMARY KEY (`id_paciente`,`cpf`)
 );

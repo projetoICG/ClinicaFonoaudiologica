@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Banco_de_Dados;
 using WindowsFormsApp1.objetos;
 
 namespace WindowsFormsApp1
@@ -170,6 +171,9 @@ namespace WindowsFormsApp1
                 maior.Email = campoEmail.Text;
                 maior.DataNascimento = campoDataNascimento.Text;
                 maior.Observacoes = campoObservacao.Text;
+
+                BDPaciente bdPaciente = new BDPaciente();
+                bdPaciente.cadastrarPacienteMaiorDeIdade(maior);
             }
         }
 

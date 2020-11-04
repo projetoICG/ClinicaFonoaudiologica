@@ -10,6 +10,6 @@ namespace WindowsFormsApp1.objetos
     {
         private string observacoes;
 
-        public string Observacoes { get => Observacoes; set => Observacoes = value; }
+        public string Observacoes { get => observacoes; set => observacoes = value; }
     }
 }
