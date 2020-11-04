@@ -3,7 +3,7 @@ use clinicafono;
 
 CREATE TABLE `Consulta`
 (
- `idConsulta`      int NOT NULL ,
+ `idConsulta`      int NOT NULL auto_increment,
  `idMedico`        int NOT NULL ,
  `idPaciente`      int NOT NULL ,
  `nomePaciente`    varchar(100) NOT NULL ,
@@ -24,7 +24,7 @@ CREATE TABLE `Medico`
 (
  `cpf`            varchar(30) NOT NULL ,
  `rg`             varchar(30) NULL ,
- `id_medico`      int NOT NULL ,
+ `id_medico`      int NOT NULL auto_increment,
  `nome`           varchar(100) NOT NULL ,
  `sexo`           binary NOT NULL ,
  `rua`            varchar(100) NULL ,
@@ -45,7 +45,7 @@ CREATE TABLE `Paciente_Maior_Idade`
 (
  `cpf`            varchar(30) NOT NULL ,
  `rg`             varchar(30) NULL ,
- `id_paciente`    int NOT NULL ,
+ `id_paciente`    int NOT NULL auto_increment,
  `nome`           varchar(100) NOT NULL ,
  `sexo`           binary NOT NULL ,
  `rua`            varchar(100) NULL ,
@@ -65,7 +65,7 @@ CREATE TABLE `Paciente_Menor_Idade`
 (
  `cpf`            varchar(30) NOT NULL ,
  `rg`             varchar(30) NULL ,
- `id_paciente`    int NOT NULL ,
+ `id_paciente`    int NOT NULL auto_increment,
  `nome`           varchar(100) NOT NULL ,
  `sexo`           binary NULL ,
  `rua`            varchar(100) NULL ,
@@ -89,7 +89,7 @@ PRIMARY KEY (`cpf`, `id_paciente`)
 
 CREATE TABLE `Usuario`
 (
- `id`               int NOT NULL ,
+ `id`               int NOT NULL auto_increment,
  `funcao`           varchar(50) NOT NULL ,
  `login`            varchar(50) NOT NULL ,
  `senha`            varchar(50) NOT NULL ,

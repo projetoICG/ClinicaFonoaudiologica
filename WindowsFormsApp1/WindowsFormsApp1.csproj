@@ -77,7 +77,6 @@
     <Compile Include="JanelaInicial.Designer.cs">
       <DependentUpon>JanelaInicial.cs</DependentUpon>
     </Compile>
-    <Compile Include="objetos\BancoDeDados.cs" />
     <Compile Include="objetos\Medico.cs" />
     <Compile Include="objetos\OperacaoCadastro.cs" />
     <Compile Include="objetos\Paciente.cs" />
