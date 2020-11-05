@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Banco de Dados\BDMedico.cs" />
     <Compile Include="Banco de Dados\BDPaciente.cs" />
     <Compile Include="CadastrarPaciente.cs">
       <SubType>Form</SubType>

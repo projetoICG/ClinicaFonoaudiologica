@@ -12,7 +12,7 @@ namespace WindowsFormsApp1.Banco_de_Dados
     {
         private ConexaoBanco conexaobanco;
 
-        public void ConexaoBanco()
+        public BDPaciente()
         {
             conexaobanco = new ConexaoBanco();
         }
@@ -55,13 +55,6 @@ namespace WindowsFormsApp1.Banco_de_Dados
             objetoComando.Parameters.Add("@cpfPai", MySqlDbType.VarChar).Value = paciente.CpfPai;
             objetoComando.Parameters.Add("@cpfParente", MySqlDbType.VarChar).Value = paciente.CpfParente;
         }
-
-        private string nomeMae;
-        private string nomePai;
-        private string nomeParente;
-        private string cpfMae;
-        private string cpfPai;
-        private string cpfParente;
 
         public int cadastrarPacienteMenorDeIdade(PacienteMenor paciente)
         {
