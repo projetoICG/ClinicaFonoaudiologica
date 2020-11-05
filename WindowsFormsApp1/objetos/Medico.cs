@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.objetos
 {
-    class Medico
+    class Medico:Pessoa
     {
         private string crm;
         private string formacao;
