@@ -42,7 +42,7 @@ namespace WindowsFormsApp1.Banco_de_Dados
 
                 conexao.ObjetoConexao.Open();
                 MySqlCommand objetoComando = new MySqlCommand("insert into " +
-                    "paciente_maior_idade (cpf, rg, nome, sexo, " +
+                    "medico (cpf, rg, nome, sexo, " +
                     "rua, bairro, numero, complemento, telefone1, telefone2, " +
                     "email, dataNascimento, crm, formacao) values (? , ? , ?, " +
                     "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);", conexao.ObjetoConexao);

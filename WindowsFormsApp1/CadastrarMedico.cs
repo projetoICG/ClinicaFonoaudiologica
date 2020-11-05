@@ -136,9 +136,9 @@ namespace WindowsFormsApp1
             medico.DataNascimento = campoDataNascimento.Text;
             medico.Crm = campoCRM.Text;
             medico.Formacao = campoFormacao.Text;
-            
-            //BDMedico bdMedico = new BDMedico();
-            //bdMedico.cadastrarMedicoDeIdade(medico);
+
+            BDMedico bdMedico = new BDMedico();
+            bdMedico.cadastrarMedico(medico);
 
         }
 
