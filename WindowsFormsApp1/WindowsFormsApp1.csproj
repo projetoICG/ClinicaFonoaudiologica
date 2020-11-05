@@ -53,6 +53,12 @@
   <ItemGroup>
     <Compile Include="Banco de Dados\BDMedico.cs" />
     <Compile Include="Banco de Dados\BDPaciente.cs" />
+    <Compile Include="CadastrarMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastrarMedico.Designer.cs">
+      <DependentUpon>CadastrarMedico.cs</DependentUpon>
+    </Compile>
     <Compile Include="CadastrarPaciente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     <Compile Include="objetos\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CadastrarMedico.resx">
+      <DependentUpon>CadastrarMedico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CadastrarPaciente.resx">
       <DependentUpon>CadastrarPaciente.cs</DependentUpon>
     </EmbeddedResource>

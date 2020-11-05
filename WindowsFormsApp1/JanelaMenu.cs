@@ -84,5 +84,11 @@ namespace WindowsFormsApp1
             CadastrarPaciente cadastrarpaciente = new CadastrarPaciente();
             cadastrarpaciente.Show();
         }
+
+        private void médicoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadastrarMedico cadastrarmedico = new CadastrarMedico();
+            cadastrarmedico.Show();
+        }
     }
 }
