@@ -135,7 +135,7 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
-                    campoIdade.Text = "7";
+                    campoIdade.Text = "";
                 }
             }
                 else
@@ -143,37 +143,77 @@ namespace WindowsFormsApp1
                 campoIdade.Text = "";
             } 
 
-
         }
 
         private void botaoCadastrar_Click(object sender, EventArgs e)
         {
             if (int.Parse(campoIdade.Text) < 18)
             {
-                PacienteMenor menor = new PacienteMenor();
-            } else
+                //Cadastrando Paciente Menor idade
+                try
+                {
+                    PacienteMenor menor = new PacienteMenor();
+                    menor.Cpf = campoCPF.Text;
+                    menor.Nome = campoNome.Text;
+                    if (radioBotaoFeminino.Checked)
+                        menor.Sexo = 'F';
+                    else
+                        menor.Sexo = 'M';
+                    menor.Rua = campoRua.Text;
+                    menor.Bairro = campoBairro.Text;
+                    menor.Numero = campoNumero.Text;
+                    menor.Complemento = campoComplemento.Text;
+                    menor.Telefone1 = campoTelefone1.Text;
+                    menor.Telefone2 = campoTelefone2.Text;
+                    menor.Email = campoEmail.Text;
+                    menor.DataNascimento = campoDataNascimento.Text;
+                    menor.Observacoes = campoObservacao.Text;
+                    menor.NomeMae = campoNomeMae.Text;
+                    menor.NomePai = campoNomePai.Text;
+                    menor.NomeParente = campoNomeParente.Text;
+                    menor.CpfMae = campoCPFMae.Text;
+                    menor.CpfPai = campoCPFPai.Text;
+                    menor.CpfParente = campoCPFParente.Text;
+                    BDPaciente bdPaciente = new BDPaciente();
+                    bdPaciente.cadastrarPacienteMenorDeIdade(menor);
+                }
+                catch
+                {
+                    //DEU MERDA NA HORA DE CADASTRAR MENOR DE IDADE
+                }
+            } 
+            else
             {
+                //Cadastrando Paciente Maior Idade
+                try
+                {
+                    Paciente maior = new Paciente();
 
-                Paciente maior = new Paciente();
+                    maior.Cpf = campoCPF.Text;
+                    maior.Nome = campoNome.Text;
+                    if (radioBotaoFeminino.Checked)
+                        maior.Sexo = 'F';
+                    else
+                        maior.Sexo = 'M';
+                    maior.Rua = campoRua.Text;
+                    maior.Bairro = campoBairro.Text;
+                    maior.Numero = campoNumero.Text;
+                    maior.Complemento = campoComplemento.Text;
+                    maior.Telefone1 = campoTelefone1.Text;
+                    maior.Telefone2 = campoTelefone2.Text;
+                    maior.Email = campoEmail.Text;
+                    maior.DataNascimento = campoDataNascimento.Text;
+                    maior.Observacoes = campoObservacao.Text;
 
-                maior.Cpf = campoCPF.Text;
-                maior.Nome = campoNome.Text;
-                if (radioBotaoFeminino.Checked)
-                    maior.Sexo = 'F';
-                else
-                    maior.Sexo = 'M';
-                maior.Rua = campoRua.Text;
-                maior.Bairro = campoBairro.Text;
-                maior.Numero = campoNumero.Text;
-                maior.Complemento = campoComplemento.Text;
-                maior.Telefone1 = campoTelefone1.Text;
-                maior.Telefone2 = campoTelefone2.Text;
-                maior.Email = campoEmail.Text;
-                maior.DataNascimento = campoDataNascimento.Text;
-                maior.Observacoes = campoObservacao.Text;
+                    BDPaciente bdPaciente = new BDPaciente();
+                    bdPaciente.cadastrarPacienteMaiorDeIdade(maior);
+                }
+                catch
+                {
+                    //DEU MERDA NA HORA DE INSERIR MAIOR DE IDADE
+                }
 
-                BDPaciente bdPaciente = new BDPaciente();
-                bdPaciente.cadastrarPacienteMaiorDeIdade(maior);
+                
             }
         }
 
