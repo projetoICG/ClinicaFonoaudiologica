@@ -76,6 +76,11 @@ namespace WindowsFormsApp1
 
         private void maiorDeIdadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void pacienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             CadastrarPaciente cadastrarpaciente = new CadastrarPaciente();
             cadastrarpaciente.Show();
         }

@@ -95,6 +95,6 @@ CREATE TABLE `Usuario`
  `senha`            varchar(50) NOT NULL ,
  `dicaSenha`        varchar(50) NOT NULL ,
  `emailRecuperacao` varchar(70) NULL ,
-
+ `nome` varchar(100) NULL ,
 PRIMARY KEY (`id`)
 );

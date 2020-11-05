@@ -16,7 +16,6 @@ namespace WindowsFormsApp1.Banco_de_Dados
         {
             conexaobanco = new ConexaoBanco();
         }
-
         public void prepararCadastrarPacienteMaiorDeIdade(Paciente paciente, MySqlCommand objetoComando)
         {
             objetoComando.Parameters.Add("@cpf", MySqlDbType.VarChar).Value = paciente.Cpf;
@@ -73,7 +72,8 @@ namespace WindowsFormsApp1.Banco_de_Dados
 
                 MySqlCommand objetoComando = new MySqlCommand("insert into " +
                     "paciente_menor_idade (cpf, rg, nome, sexo, " +
-                    "rua, bairro, numero, complemento, telefone1, telefone2, " +
+                    "rua, bairro, numero, " +
+                    "complemento, telefone1, telefone2, " +
                     "email, dataNascimento, observacoes, nomeMae, nomePai, nomeParente," +
                     "cpfMae, cpfPai, cpfParente) values (? , ? , ?, " +
                     "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?," +

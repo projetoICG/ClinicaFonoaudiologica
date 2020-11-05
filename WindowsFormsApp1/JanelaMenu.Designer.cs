@@ -31,8 +31,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pacienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.maiorDeIdadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menorDeIdadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.funcionárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.médicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,7 +65,8 @@
             this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1227, 40);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(920, 40);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -85,25 +84,10 @@
             // 
             // pacienteToolStripMenuItem
             // 
-            this.pacienteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.maiorDeIdadeToolStripMenuItem,
-            this.menorDeIdadeToolStripMenuItem});
             this.pacienteToolStripMenuItem.Name = "pacienteToolStripMenuItem";
             this.pacienteToolStripMenuItem.Size = new System.Drawing.Size(229, 36);
             this.pacienteToolStripMenuItem.Text = "Paciente";
-            // 
-            // maiorDeIdadeToolStripMenuItem
-            // 
-            this.maiorDeIdadeToolStripMenuItem.Name = "maiorDeIdadeToolStripMenuItem";
-            this.maiorDeIdadeToolStripMenuItem.Size = new System.Drawing.Size(275, 36);
-            this.maiorDeIdadeToolStripMenuItem.Text = "Maior de Idade";
-            this.maiorDeIdadeToolStripMenuItem.Click += new System.EventHandler(this.maiorDeIdadeToolStripMenuItem_Click);
-            // 
-            // menorDeIdadeToolStripMenuItem
-            // 
-            this.menorDeIdadeToolStripMenuItem.Name = "menorDeIdadeToolStripMenuItem";
-            this.menorDeIdadeToolStripMenuItem.Size = new System.Drawing.Size(275, 36);
-            this.menorDeIdadeToolStripMenuItem.Text = "Menor de Idade";
+            this.pacienteToolStripMenuItem.Click += new System.EventHandler(this.pacienteToolStripMenuItem_Click);
             // 
             // funcionárioToolStripMenuItem
             // 
@@ -221,21 +205,21 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(0, 43);
+            this.panel1.Location = new System.Drawing.Point(0, 35);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1227, 664);
+            this.panel1.Size = new System.Drawing.Size(920, 540);
             this.panel1.TabIndex = 1;
             // 
-            // Janela2
+            // JanelaMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1227, 708);
+            this.ClientSize = new System.Drawing.Size(920, 575);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "Janela2";
+            this.Name = "JanelaMenu";
             this.Text = "Janela2";
             this.Load += new System.EventHandler(this.Janela2_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -250,8 +234,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem aaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pacienteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem maiorDeIdadeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem menorDeIdadeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem testeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem funcionárioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem médicoToolStripMenuItem;
