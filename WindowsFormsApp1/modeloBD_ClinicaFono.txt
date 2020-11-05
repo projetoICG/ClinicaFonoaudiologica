@@ -35,9 +35,10 @@ CREATE TABLE `Medico`
  `telefone2`      varchar(45) NULL ,
  `email`          varchar(70) NULL ,
  `dataNascimento` varchar(45) NULL ,
- `crm`            varchar(50) NULL ,
+ `conselho`       varchar(50) NULL ,
+ `numeroConselho` varchar(50) NULL ,
+ `funcao`         varchar(50) NULL ,
  `formacao`       varchar(1000) NOT NULL ,
-
 PRIMARY KEY (`id_medico`,`cpf`)
 );
 

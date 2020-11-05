@@ -134,11 +134,14 @@ namespace WindowsFormsApp1
             medico.Telefone2 = campoTelefone2.Text;
             medico.Email = campoEmail.Text;
             medico.DataNascimento = campoDataNascimento.Text;
-            medico.Crm = campoCRM.Text;
+            medico.Conselho = comboConselho.Text;
             medico.Formacao = campoFormacao.Text;
+            medico.NConselho = campoNConselho.Text;
+            medico.Funcao = comboFuncao.Text;
+
             
-            //BDMedico bdMedico = new BDMedico();
-            //bdMedico.cadastrarMedicoDeIdade(medico);
+            BDMedico bdMedico = new BDMedico();
+            bdMedico.cadastrarMedico(medico);
 
         }
 

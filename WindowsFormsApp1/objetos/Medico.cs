@@ -8,10 +8,13 @@ namespace WindowsFormsApp1.objetos
 {
     class Medico:Pessoa
     {
-        private string crm;
+        private string funcao;
+        private string conselho;
+        private string nConselho;
         private string formacao;
-
-        public string Crm { get => crm; set => crm = value; }
+        public string NConselho { get => nConselho; set => nConselho = value; }
         public string Formacao { get => formacao; set => formacao = value; }
+        public string Conselho { get => conselho; set => conselho = value; }
+        public string Funcao { get => funcao; set => funcao = value; }
     }
 }

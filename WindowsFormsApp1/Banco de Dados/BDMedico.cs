@@ -30,7 +30,9 @@ namespace WindowsFormsApp1.Banco_de_Dados
             objetoComando.Parameters.Add("@telefone2", MySqlDbType.VarChar).Value = medico.Telefone2;
             objetoComando.Parameters.Add("@email", MySqlDbType.VarChar).Value = medico.Email;
             objetoComando.Parameters.Add("@dataNascimento", MySqlDbType.VarChar).Value = medico.DataNascimento;
-            objetoComando.Parameters.Add("@crm", MySqlDbType.VarChar).Value = medico.Crm;
+            objetoComando.Parameters.Add("@conselho", MySqlDbType.VarChar).Value = medico.Conselho;
+            objetoComando.Parameters.Add("@numeroConselho", MySqlDbType.VarChar).Value = medico.NConselho;
+            objetoComando.Parameters.Add("@funcao", MySqlDbType.VarChar).Value = medico.Funcao;
             objetoComando.Parameters.Add("@formacao", MySqlDbType.VarChar).Value = medico.Formacao;
         }
 
@@ -42,10 +44,10 @@ namespace WindowsFormsApp1.Banco_de_Dados
 
                 conexao.ObjetoConexao.Open();
                 MySqlCommand objetoComando = new MySqlCommand("insert into " +
-                    "paciente_maior_idade (cpf, rg, nome, sexo, " +
+                    "medico (cpf, rg, nome, sexo, " +
                     "rua, bairro, numero, complemento, telefone1, telefone2, " +
-                    "email, dataNascimento, crm, formacao) values (? , ? , ?, " +
-                    "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);", conexao.ObjetoConexao);
+                    "email, dataNascimento, conselho, numeroConselho, funcao, formacao) values (? , ? , ?, " +
+                    "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);", conexao.ObjetoConexao);
 
                 prepararCadastrarMedico(medico, objetoComando);
 
