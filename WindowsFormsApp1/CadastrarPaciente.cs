@@ -69,6 +69,7 @@ namespace WindowsFormsApp1
         public CadastrarPaciente()
         {
             InitializeComponent();
+            this.CenterToScreen();
             //this.ControlBox = false;
             //this.Text = String.Empty;
         }
@@ -159,6 +160,7 @@ namespace WindowsFormsApp1
                         menor.Sexo = 'F';
                     else
                         menor.Sexo = 'M';
+                    medico.Rg = campoRG.Text;
                     menor.Rua = campoRua.Text;
                     menor.Bairro = campoBairro.Text;
                     menor.Numero = campoNumero.Text;
@@ -196,6 +198,7 @@ namespace WindowsFormsApp1
                     else
                         maior.Sexo = 'M';
                     maior.Rua = campoRua.Text;
+                    medico.Rg = campoRG.Text;
                     maior.Bairro = campoBairro.Text;
                     maior.Numero = campoNumero.Text;
                     maior.Complemento = campoComplemento.Text;

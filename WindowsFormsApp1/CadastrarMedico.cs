@@ -47,6 +47,7 @@ namespace WindowsFormsApp1
         public CadastrarMedico()
         {
             InitializeComponent();
+            this.CenterToScreen();
             //this.ControlBox = false;
             //this.Text = String.Empty;
         }
@@ -126,6 +127,7 @@ namespace WindowsFormsApp1
                 medico.Sexo = 'F';
             else
                 medico.Sexo = 'M';
+            medico.Rg = campoRG.Text;
             medico.Rua = campoRua.Text;
             medico.Bairro = campoBairro.Text;
             medico.Numero = campoNumero.Text;

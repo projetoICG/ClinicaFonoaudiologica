@@ -37,7 +37,6 @@
             this.campoSenha = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // botaoLogin
@@ -123,23 +122,12 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Senha";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(248, 31);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 40);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "testar banco";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // JanelaInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(422, 364);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.campoSenha);
@@ -167,7 +155,6 @@
         private System.Windows.Forms.TextBox campoSenha;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
     }
 }
 
