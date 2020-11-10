@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Banco_de_Dados;
+using WindowsFormsApp1.objetos;
 
 namespace WindowsFormsApp1
 {
@@ -84,8 +85,30 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            BDMedico conexaoMedico = new BDMedico();
-            dataGridView1.DataSource = conexaoMedico.retornarListaMedicos();
+            //BDMedico conexaoMedico = new BDMedico();
+            //dataGridView1.DataSource = conexaoMedico.retornarListaMedicos();
+        
+        }
+
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                BDMedico bd = new BDMedico();
+                List<Medico> listaMedicos = new List<Medico>();
+                listaMedicos = bd.retornarListaMedicos();
+            Console.WriteLine(listaMedicos[0].Id);
+            }
+            catch (Exception j)
+            {
+                Console.WriteLine(j);
+            }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

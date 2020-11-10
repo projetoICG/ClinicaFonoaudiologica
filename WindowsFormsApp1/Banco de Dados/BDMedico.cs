@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using WindowsFormsApp1.objetos;
 
 namespace WindowsFormsApp1.Banco_de_Dados
@@ -37,7 +38,7 @@ namespace WindowsFormsApp1.Banco_de_Dados
             objetoComando.Parameters.Add("@formacao", MySqlDbType.VarChar).Value = medico.Formacao;
         }
 
-        public DataTable retornarListaMedicos()
+        public List<Medico> retornarListaMedicos()
         {
             try
             {
@@ -46,16 +47,25 @@ namespace WindowsFormsApp1.Banco_de_Dados
                 MySqlCommand objetoComando = new MySqlCommand("SELECT * FROM medico;",conexao.ObjetoConexao);
                 MySqlDataReader dados = objetoComando.ExecuteReader();
 
-                if (dados.HasRows)
+                List<Medico> lista = new List<Medico>();
+
+                while (dados.Read())
                 {
-                    DataTable dt = new DataTable();
-                    dt.Load(dados);
-                    return dt;
+
+                    Medico medico = new Medico();
+                    medico.Cpf = dados.GetString("cpf");
+                    medico.Rg = dados.GetString("rg");
+                    medico.Id = Convert.ToInt32(dados.GetString("id_medico"));
+                    lista.Add(medico);
                 }
+                
                 conexao.ObjetoConexao.Close();
+                
+                return lista;
             }
-            catch
+            catch(Exception e)
             {
+                Console.WriteLine(e);
             }
                 return null;
         }
