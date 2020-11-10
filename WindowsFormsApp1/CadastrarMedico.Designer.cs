@@ -53,6 +53,10 @@
             this.label12 = new System.Windows.Forms.Label();
             this.botaoCancelar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboFuncao = new System.Windows.Forms.ComboBox();
+            this.campoNConselho = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.comboConselho = new System.Windows.Forms.ComboBox();
             this.campoFormacao = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -64,10 +68,6 @@
             this.label22 = new System.Windows.Forms.Label();
             this.campoEmail = new System.Windows.Forms.TextBox();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.comboConselho = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.campoNConselho = new System.Windows.Forms.TextBox();
-            this.comboFuncao = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -329,6 +329,7 @@
             this.botaoCancelar.TabIndex = 31;
             this.botaoCancelar.Text = "Cancelar";
             this.botaoCancelar.UseVisualStyleBackColor = true;
+            this.botaoCancelar.Click += new System.EventHandler(this.botaoCancelar_Click);
             // 
             // panel1
             // 
@@ -350,6 +351,54 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(533, 385);
             this.panel1.TabIndex = 34;
+            // 
+            // comboFuncao
+            // 
+            this.comboFuncao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboFuncao.FormattingEnabled = true;
+            this.comboFuncao.Items.AddRange(new object[] {
+            "Fonoaudiologa",
+            "Fisioterapeuta",
+            "Psicóloga"});
+            this.comboFuncao.Location = new System.Drawing.Point(365, 291);
+            this.comboFuncao.Name = "comboFuncao";
+            this.comboFuncao.Size = new System.Drawing.Size(153, 24);
+            this.comboFuncao.TabIndex = 55;
+            this.comboFuncao.Text = "Fonoaudiologa";
+            // 
+            // campoNConselho
+            // 
+            this.campoNConselho.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoNConselho.Location = new System.Drawing.Point(387, 349);
+            this.campoNConselho.Margin = new System.Windows.Forms.Padding(2);
+            this.campoNConselho.Name = "campoNConselho";
+            this.campoNConselho.Size = new System.Drawing.Size(130, 23);
+            this.campoNConselho.TabIndex = 45;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(357, 350);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(28, 17);
+            this.label16.TabIndex = 54;
+            this.label16.Text = "N°:";
+            // 
+            // comboConselho
+            // 
+            this.comboConselho.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboConselho.FormattingEnabled = true;
+            this.comboConselho.Items.AddRange(new object[] {
+            "CFFa",
+            "CRM",
+            "CRP"});
+            this.comboConselho.Location = new System.Drawing.Point(365, 319);
+            this.comboConselho.Name = "comboConselho";
+            this.comboConselho.Size = new System.Drawing.Size(153, 24);
+            this.comboConselho.TabIndex = 53;
+            this.comboConselho.Text = "CFFa";
             // 
             // campoFormacao
             // 
@@ -456,54 +505,6 @@
             this.campoEmail.Size = new System.Drawing.Size(446, 23);
             this.campoEmail.TabIndex = 44;
             // 
-            // comboConselho
-            // 
-            this.comboConselho.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboConselho.FormattingEnabled = true;
-            this.comboConselho.Items.AddRange(new object[] {
-            "CFFa",
-            "CRM",
-            "CRP"});
-            this.comboConselho.Location = new System.Drawing.Point(365, 319);
-            this.comboConselho.Name = "comboConselho";
-            this.comboConselho.Size = new System.Drawing.Size(153, 24);
-            this.comboConselho.TabIndex = 53;
-            this.comboConselho.Text = "CFFa";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(357, 350);
-            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(28, 17);
-            this.label16.TabIndex = 54;
-            this.label16.Text = "N°:";
-            // 
-            // campoNConselho
-            // 
-            this.campoNConselho.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.campoNConselho.Location = new System.Drawing.Point(387, 349);
-            this.campoNConselho.Margin = new System.Windows.Forms.Padding(2);
-            this.campoNConselho.Name = "campoNConselho";
-            this.campoNConselho.Size = new System.Drawing.Size(130, 23);
-            this.campoNConselho.TabIndex = 45;
-            // 
-            // comboFuncao
-            // 
-            this.comboFuncao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboFuncao.FormattingEnabled = true;
-            this.comboFuncao.Items.AddRange(new object[] {
-            "Fonoaudiologa",
-            "Fisioterapeuta",
-            "Psicóloga"});
-            this.comboFuncao.Location = new System.Drawing.Point(365, 291);
-            this.comboFuncao.Name = "comboFuncao";
-            this.comboFuncao.Size = new System.Drawing.Size(153, 24);
-            this.comboFuncao.TabIndex = 55;
-            this.comboFuncao.Text = "Fonoaudiologa";
-            // 
             // CadastrarMedico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -540,6 +541,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CadastrarMedico";
             this.Text = "CadastrarMedico";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CadastrarMedico_FormClosing);
             this.Load += new System.EventHandler(this.CadastrarMedico_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

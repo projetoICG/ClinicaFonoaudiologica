@@ -137,7 +137,7 @@
             this.Controls.Add(this.botaoLogin);
             this.MaximizeBox = false;
             this.Name = "JanelaInicial";
-            this.Text = "Nome Aplcativo";
+            this.Text = "Nome Aplcativo";          
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.interfaceInicio_KeyUp);
             this.ResumeLayout(false);

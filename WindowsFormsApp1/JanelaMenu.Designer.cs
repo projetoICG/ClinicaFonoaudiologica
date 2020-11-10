@@ -183,7 +183,6 @@
             this.funcionárioToolStripMenuItem1.Name = "funcionárioToolStripMenuItem1";
             this.funcionárioToolStripMenuItem1.Size = new System.Drawing.Size(124, 29);
             this.funcionárioToolStripMenuItem1.Text = "Funcionário";
-            this.funcionárioToolStripMenuItem1.Click += new System.EventHandler(this.funcionárioToolStripMenuItem1_Click);
             // 
             // alterarDadosToolStripMenuItem2
             // 
@@ -222,6 +221,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "JanelaMenu";
             this.Text = "Janela2";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.JanelaMenu_FormClosing_1);
             this.Load += new System.EventHandler(this.Janela2_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

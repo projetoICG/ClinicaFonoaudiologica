@@ -14,7 +14,6 @@ using WindowsFormsApp1.objetos;
 namespace WindowsFormsApp1
 {
     
-
     public partial class CadastrarPaciente : Form
     {
         public void habilitarMenor(bool decisao)
@@ -160,7 +159,7 @@ namespace WindowsFormsApp1
                         menor.Sexo = 'F';
                     else
                         menor.Sexo = 'M';
-                    medico.Rg = campoRG.Text;
+                    menor.Rg = campoRG.Text;
                     menor.Rua = campoRua.Text;
                     menor.Bairro = campoBairro.Text;
                     menor.Numero = campoNumero.Text;
@@ -178,6 +177,8 @@ namespace WindowsFormsApp1
                     menor.CpfParente = campoCPFParente.Text;
                     BDPaciente bdPaciente = new BDPaciente();
                     bdPaciente.cadastrarPacienteMenorDeIdade(menor);
+
+                    MessageBox.Show("Cadastrado com Sucesso !");
                 }
                 catch
                 {
@@ -198,7 +199,7 @@ namespace WindowsFormsApp1
                     else
                         maior.Sexo = 'M';
                     maior.Rua = campoRua.Text;
-                    medico.Rg = campoRG.Text;
+                    maior.Rg = campoRG.Text;
                     maior.Bairro = campoBairro.Text;
                     maior.Numero = campoNumero.Text;
                     maior.Complemento = campoComplemento.Text;
@@ -210,6 +211,8 @@ namespace WindowsFormsApp1
 
                     BDPaciente bdPaciente = new BDPaciente();
                     bdPaciente.cadastrarPacienteMaiorDeIdade(maior);
+
+                    MessageBox.Show("Cadastrado com Sucesso !");
                 }
                 catch
                 {
@@ -219,6 +222,20 @@ namespace WindowsFormsApp1
                 
             }
         }
+               
+        private void CadastrarPaciente_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult confirm = MessageBox.Show("Tem certeza que deseja Cancelar ?","Aviso",MessageBoxButtons.YesNo);
 
+            if (confirm == DialogResult.Yes)
+                e.Cancel = false;
+            else if (confirm == DialogResult.No)
+                e.Cancel = true;
+        }
+
+        private void botaoCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

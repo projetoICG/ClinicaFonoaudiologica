@@ -32,24 +32,13 @@ namespace WindowsFormsApp1
             return janela2.operacaoConfirmada();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            JanelaInicial janela = new JanelaInicial();
-            janela.Show();
-            this.Close();
-        }
-
+       
         private void Janela2_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void btnExitProgram_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+     
         private void aaToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -58,25 +47,6 @@ namespace WindowsFormsApp1
         private void cancelarConsultaToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            JanelaInicial janela = new JanelaInicial();
-            janela.ShowDialog();
-            //caralho
-            this.Close();
-        }
-
-        private void funcionárioToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void maiorDeIdadeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void pacienteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -89,6 +59,26 @@ namespace WindowsFormsApp1
         {
             CadastrarMedico cadastrarmedico = new CadastrarMedico();
             cadastrarmedico.Show();
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void JanelaMenu_FormClosing_1(object sender, FormClosingEventArgs e)
+        {
+            DialogResult confirm = MessageBox.Show("Tem certeza que deseja voltar a tela de Login ?", "Aviso", MessageBoxButtons.YesNo);
+
+            if (confirm == DialogResult.Yes)
+            {
+                this.Hide();
+                JanelaInicial janela = new JanelaInicial();
+                janela.ShowDialog();
+                e.Cancel = false;
+            }
+            else if (confirm == DialogResult.No)
+                e.Cancel = true;
         }
     }
 }

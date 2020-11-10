@@ -58,6 +58,7 @@
             this.campoNomeMae = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.campoTelefone1 = new System.Windows.Forms.MaskedTextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.campoTelefone2 = new System.Windows.Forms.MaskedTextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -81,7 +82,6 @@
             this.campoRGPai = new System.Windows.Forms.MaskedTextBox();
             this.labelRGPai = new System.Windows.Forms.Label();
             this.campoEmail = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -365,6 +365,7 @@
             this.botaoCancelar.TabIndex = 31;
             this.botaoCancelar.Text = "Cancelar";
             this.botaoCancelar.UseVisualStyleBackColor = true;
+            this.botaoCancelar.Click += new System.EventHandler(this.botaoCancelar_Click);
             // 
             // labelNomeMae
             // 
@@ -409,6 +410,17 @@
             this.campoTelefone1.Name = "campoTelefone1";
             this.campoTelefone1.Size = new System.Drawing.Size(122, 23);
             this.campoTelefone1.TabIndex = 47;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(6, 247);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(46, 17);
+            this.label14.TabIndex = 43;
+            this.label14.Text = "Email:";
             // 
             // campoTelefone2
             // 
@@ -661,17 +673,6 @@
             this.campoEmail.Size = new System.Drawing.Size(440, 23);
             this.campoEmail.TabIndex = 44;
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(6, 247);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(46, 17);
-            this.label14.TabIndex = 43;
-            this.label14.Text = "Email:";
-            // 
             // CadastrarPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -717,6 +718,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CadastrarPaciente";
             this.Text = "CadastrarPaciente";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CadastrarPaciente_FormClosing);
             this.Load += new System.EventHandler(this.CadastrarPaciente_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

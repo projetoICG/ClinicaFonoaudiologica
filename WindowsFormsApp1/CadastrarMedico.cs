@@ -120,32 +120,54 @@ namespace WindowsFormsApp1
 
         private void botaoCadastrar_Click(object sender, EventArgs e)
         {
-            Medico medico = new Medico();
-            medico.Cpf = campoCPF.Text;
-            medico.Nome = campoNome.Text;
-            if (radioBotaoFeminino.Checked)
-                medico.Sexo = 'F';
-            else
-                medico.Sexo = 'M';
-            medico.Rg = campoRG.Text;
-            medico.Rua = campoRua.Text;
-            medico.Bairro = campoBairro.Text;
-            medico.Numero = campoNumero.Text;
-            medico.Complemento = campoComplemento.Text;
-            medico.Telefone1 = campoTelefone1.Text;
-            medico.Telefone2 = campoTelefone2.Text;
-            medico.Email = campoEmail.Text;
-            medico.DataNascimento = campoDataNascimento.Text;
-            medico.Conselho = comboConselho.Text;
-            medico.Formacao = campoFormacao.Text;
-            medico.NConselho = campoNConselho.Text;
-            medico.Funcao = comboFuncao.Text;
+            try
+            {
+                Medico medico = new Medico();
+                medico.Cpf = campoCPF.Text;
+                medico.Nome = campoNome.Text;
+                if (radioBotaoFeminino.Checked)
+                    medico.Sexo = 'F';
+                else
+                    medico.Sexo = 'M';
+                medico.Rg = campoRG.Text;
+                medico.Rua = campoRua.Text;
+                medico.Bairro = campoBairro.Text;
+                medico.Numero = campoNumero.Text;
+                medico.Complemento = campoComplemento.Text;
+                medico.Telefone1 = campoTelefone1.Text;
+                medico.Telefone2 = campoTelefone2.Text;
+                medico.Email = campoEmail.Text;
+                medico.DataNascimento = campoDataNascimento.Text;
+                medico.Conselho = comboConselho.Text;
+                medico.Formacao = campoFormacao.Text;
+                medico.NConselho = campoNConselho.Text;
+                medico.Funcao = comboFuncao.Text;
 
-            
-            BDMedico bdMedico = new BDMedico();
-            bdMedico.cadastrarMedico(medico);
 
+                BDMedico bdMedico = new BDMedico();
+                bdMedico.cadastrarMedico(medico);
+
+                MessageBox.Show("Cadastrado com Sucesso !");
+            }
+            catch
+            {
+                ///DEU MERDA NA HORA DE CADASTRAR O MEDICO!!!
+            }
+            }
+
+        private void CadastrarMedico_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult confirm = MessageBox.Show("Tem certeza que deseja Cancelar ?", "Aviso", MessageBoxButtons.YesNo);
+
+            if (confirm == DialogResult.Yes)
+                e.Cancel = false;
+            else if (confirm == DialogResult.No)
+                e.Cancel = true;
         }
 
+        private void botaoCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

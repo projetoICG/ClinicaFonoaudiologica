@@ -37,7 +37,7 @@ namespace WindowsFormsApp1
         {
             string login = campoLogin.Text;
             string senha = campoSenha.Text;
-            //Vitor Carlos
+            
             this.Hide();
             JanelaMenu janela2 = new JanelaMenu();
             janela2.ShowDialog();
@@ -70,5 +70,7 @@ namespace WindowsFormsApp1
                 MessageBox.Show("deu merda no banco");
             }
         }
+
+       
     }
 }
