@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Banco_de_Dados;
 
 namespace WindowsFormsApp1
 {
@@ -79,6 +80,12 @@ namespace WindowsFormsApp1
             }
             else if (confirm == DialogResult.No)
                 e.Cancel = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            BDMedico conexaoMedico = new BDMedico();
+            dataGridView1.DataSource = conexaoMedico.retornarListaMedicos();
         }
     }
 }

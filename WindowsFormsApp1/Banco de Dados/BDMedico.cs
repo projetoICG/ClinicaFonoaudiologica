@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,6 +36,30 @@ namespace WindowsFormsApp1.Banco_de_Dados
             objetoComando.Parameters.Add("@funcao", MySqlDbType.VarChar).Value = medico.Funcao;
             objetoComando.Parameters.Add("@formacao", MySqlDbType.VarChar).Value = medico.Formacao;
         }
+
+        public DataTable retornarListaMedicos()
+        {
+            try
+            {
+                ConexaoBanco conexao = new ConexaoBanco();
+                conexao.ObjetoConexao.Open();
+                MySqlCommand objetoComando = new MySqlCommand("SELECT * FROM medico;",conexao.ObjetoConexao);
+                MySqlDataReader dados = objetoComando.ExecuteReader();
+
+                if (dados.HasRows)
+                {
+                    DataTable dt = new DataTable();
+                    dt.Load(dados);
+                    return dt;
+                }
+                conexao.ObjetoConexao.Close();
+            }
+            catch
+            {
+            }
+                return null;
+        }
+
 
         public int cadastrarMedico(Medico medico)
         {
