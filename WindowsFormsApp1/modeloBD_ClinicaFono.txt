@@ -99,3 +99,5 @@ CREATE TABLE `Usuario`
  `nome` varchar(100) NULL ,
 PRIMARY KEY (`id`)
 );
+
+insert into usuario (funcao, login, senha, dicaSenha, emailRecuperacao, nome) values ("ADMINISTRADOR", "ADMIN", "ADMIN", "ADMIN", "ADMIN@gmail.com", "ADMIN");
