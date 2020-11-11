@@ -12,7 +12,6 @@ namespace WindowsFormsApp1.objetos
         private string rg;
         private string nome;
         private char sexo;
-        //false == mulher true==homem
         private string rua;
         private string bairro;
         private string numero;

@@ -8,23 +8,44 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Banco_de_Dados;
+using WindowsFormsApp1.objetos;
 
 namespace WindowsFormsApp1
 {
     public partial class JanelaMenu : Form
     {
-        public JanelaMenu()
+        Usuario usuario;
+
+        public JanelaMenu(string login, string senha)
         {
             InitializeComponent();
             this.CenterToScreen();
-            
+
+            usuario.Login = login;
+            usuario.Senha = senha;
+            autenticar();
         }
+
         public bool operacaoConfirmada()
         {
             return true;
         }
 
+        private void autenticar()
+        {
+            BDUsuario bdusuario= new BDUsuario();
+            bdusuario.procurarUsuario(usuario.Login, usuario.Senha);
+            if (usuario.Id == null)
+            {
+                this.Close();
+            } else
+            {
+                Console.WriteLine("Logado");
+            }
 
+        }
+
+        /*
         public static bool executar()
         {
             JanelaMenu janela2 = new JanelaMenu();
@@ -32,7 +53,7 @@ namespace WindowsFormsApp1
 
             return janela2.operacaoConfirmada();
         }
-
+        */
        
         private void Janela2_Load(object sender, EventArgs e)
         {
