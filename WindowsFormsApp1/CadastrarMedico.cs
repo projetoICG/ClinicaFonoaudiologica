@@ -163,6 +163,9 @@ namespace WindowsFormsApp1
 
             if (MessageBox.Show("Deseja Cadastrar outro médico?", "Aviso", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
+                radioBotaoFeminino.Text = string.Empty;
+                campoNome.Text = string.Empty;
+                campoCPF.Text = string.Empty;
                 campoRG.Text = string.Empty;
                 campoRua.Text = string.Empty;
                 campoBairro.Text = string.Empty;
