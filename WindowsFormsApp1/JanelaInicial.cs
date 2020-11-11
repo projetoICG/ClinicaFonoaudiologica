@@ -37,9 +37,9 @@ namespace WindowsFormsApp1
         {
             string login = campoLogin.Text;
             string senha = campoSenha.Text;
-            
-            this.Hide();
             JanelaMenu janela2 = new JanelaMenu(login, senha);
+            this.Hide();
+            
             janela2.ShowDialog();
             this.Close();
 
