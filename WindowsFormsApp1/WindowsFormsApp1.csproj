@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Banco de Dados\BDMedico.cs" />
     <Compile Include="Banco de Dados\BDPaciente.cs" />
+    <Compile Include="Banco de Dados\BDUsuario.cs" />
     <Compile Include="CadastrarMedico.cs">
       <SubType>Form</SubType>
     </Compile>
