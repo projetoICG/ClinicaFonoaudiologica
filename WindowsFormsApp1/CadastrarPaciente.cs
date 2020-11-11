@@ -13,7 +13,7 @@ using WindowsFormsApp1.objetos;
 
 namespace WindowsFormsApp1
 {
-    
+
     public partial class CadastrarPaciente : Form
     {
         public void habilitarMenor(bool decisao)
@@ -102,9 +102,9 @@ namespace WindowsFormsApp1
             //}
             //if (campoCPF.Text.Length == 11)
             //{
-                //long CPF = Convert.ToInt64(textBox2.Text);
-                //string CPFFormatado = String.Format(@"{0:\000\.000\.000\-00}", CPF);
-                //textBox2.Text = CPFFormatado;
+            //long CPF = Convert.ToInt64(textBox2.Text);
+            //string CPFFormatado = String.Format(@"{0:\000\.000\.000\-00}", CPF);
+            //textBox2.Text = CPFFormatado;
             //}
         }
 
@@ -138,13 +138,19 @@ namespace WindowsFormsApp1
                     campoIdade.Text = "";
                 }
             }
-                else
+            else
             {
                 campoIdade.Text = "";
-            } 
+            }
 
         }
 
+        private void cadastrarMedico()
+        {
+
+
+
+        }
         private void botaoCadastrar_Click(object sender, EventArgs e)
         {
             if (int.Parse(campoIdade.Text) < 18)

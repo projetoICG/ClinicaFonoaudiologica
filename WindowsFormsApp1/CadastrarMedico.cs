@@ -17,6 +17,15 @@ namespace WindowsFormsApp1
 
     public partial class CadastrarMedico : Form
     {
+        public CadastrarMedico()
+        {
+            InitializeComponent();
+            this.CenterToScreen();
+            this.BringToFront();
+            this.Focus();
+            //this.ControlBox = false;
+            //this.Text = String.Empty;
+        }
         public int retornarIdade(string idadeSemFormatar)
         {
             int ano, mes, dia;
@@ -44,13 +53,6 @@ namespace WindowsFormsApp1
         }
 
 
-        public CadastrarMedico()
-        {
-            InitializeComponent();
-            this.CenterToScreen();
-            //this.ControlBox = false;
-            //this.Text = String.Empty;
-        }
 
         private void CadastrarMedico_Load(object sender, EventArgs e)
         {
@@ -118,7 +120,7 @@ namespace WindowsFormsApp1
 
         }
 
-        private void botaoCadastrar_Click(object sender, EventArgs e)
+        private void cadastrarMedico()
         {
             try
             {
@@ -143,31 +145,53 @@ namespace WindowsFormsApp1
                 medico.NConselho = campoNConselho.Text;
                 medico.Funcao = comboFuncao.Text;
 
-
                 BDMedico bdMedico = new BDMedico();
                 bdMedico.cadastrarMedico(medico);
 
                 MessageBox.Show("Cadastrado com Sucesso !");
+               
             }
             catch
             {
                 ///DEU MERDA NA HORA DE CADASTRAR O MEDICO!!!
             }
+        }
+
+        private void botaoCadastrar_Click(object sender, EventArgs e)
+        {
+            cadastrarMedico();
+
+            if (MessageBox.Show("Deseja Cadastrar outro médico?", "Aviso", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                campoRG.Text = string.Empty;
+                campoRua.Text = string.Empty;
+                campoBairro.Text = string.Empty;
+                campoNumero.Text = string.Empty;
+                campoComplemento.Text = string.Empty;
+                campoTelefone1.Text = string.Empty;
+                campoTelefone2.Text = string.Empty;
+                campoEmail.Text = string.Empty;
+                campoDataNascimento.Text = string.Empty;
+                comboConselho.Text = string.Empty;
+                campoFormacao.Text = string.Empty;
+                campoNConselho.Text = string.Empty;
+                comboFuncao.Text = string.Empty;
+            }
+            else
+            {
+                this.Close();
             }
 
-        private void CadastrarMedico_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult confirm = MessageBox.Show("Tem certeza que deseja Cancelar ?", "Aviso", MessageBoxButtons.YesNo);
-
-            if (confirm == DialogResult.Yes)
-                e.Cancel = false;
-            else if (confirm == DialogResult.No)
-                e.Cancel = true;
         }
 
         private void botaoCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult confirm = MessageBox.Show("Tem certeza que deseja Cancelar ?", "Aviso", MessageBoxButtons.YesNo);
+
+            if (confirm == DialogResult.Yes)
+                this.Close();
+            //else if (confirm == DialogResult.No)
+            //    e.Cancel = true;
         }
     }
 }

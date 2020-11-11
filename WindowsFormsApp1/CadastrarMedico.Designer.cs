@@ -541,7 +541,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CadastrarMedico";
             this.Text = "CadastrarMedico";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CadastrarMedico_FormClosing);
             this.Load += new System.EventHandler(this.CadastrarMedico_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

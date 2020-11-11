@@ -46,7 +46,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.label1.Location = new System.Drawing.Point(90, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 20);
+            this.label1.Size = new System.Drawing.Size(47, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Login:";
             // 
@@ -55,7 +55,7 @@
             this.campoLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.campoLogin.Location = new System.Drawing.Point(234, 29);
             this.campoLogin.Name = "campoLogin";
-            this.campoLogin.Size = new System.Drawing.Size(168, 27);
+            this.campoLogin.Size = new System.Drawing.Size(168, 23);
             this.campoLogin.TabIndex = 2;
             // 
             // campoSenha
@@ -64,7 +64,7 @@
             this.campoSenha.Location = new System.Drawing.Point(234, 79);
             this.campoSenha.Name = "campoSenha";
             this.campoSenha.PasswordChar = '*';
-            this.campoSenha.Size = new System.Drawing.Size(168, 27);
+            this.campoSenha.Size = new System.Drawing.Size(168, 23);
             this.campoSenha.TabIndex = 4;
             this.campoSenha.TextChanged += new System.EventHandler(this.campoSenha_TextChanged);
             // 
@@ -74,7 +74,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.label2.Location = new System.Drawing.Point(90, 79);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 20);
+            this.label2.Size = new System.Drawing.Size(53, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Senha:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -84,7 +84,7 @@
             this.campoDicaDaSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.campoDicaDaSenha.Location = new System.Drawing.Point(234, 128);
             this.campoDicaDaSenha.Name = "campoDicaDaSenha";
-            this.campoDicaDaSenha.Size = new System.Drawing.Size(217, 27);
+            this.campoDicaDaSenha.Size = new System.Drawing.Size(217, 23);
             this.campoDicaDaSenha.TabIndex = 6;
             this.campoDicaDaSenha.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
@@ -94,7 +94,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.label3.Location = new System.Drawing.Point(90, 131);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 20);
+            this.label3.Size = new System.Drawing.Size(105, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "Dica da Senha:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -104,7 +104,7 @@
             this.campoEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.campoEmail.Location = new System.Drawing.Point(234, 177);
             this.campoEmail.Name = "campoEmail";
-            this.campoEmail.Size = new System.Drawing.Size(217, 27);
+            this.campoEmail.Size = new System.Drawing.Size(217, 23);
             this.campoEmail.TabIndex = 8;
             // 
             // label4
@@ -113,7 +113,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.label4.Location = new System.Drawing.Point(90, 180);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 20);
+            this.label4.Size = new System.Drawing.Size(46, 17);
             this.label4.TabIndex = 7;
             this.label4.Text = "Email:";
             // 
@@ -136,6 +136,7 @@
             this.botaoCadastrar.TabIndex = 11;
             this.botaoCadastrar.Text = "Cadastrar";
             this.botaoCadastrar.UseVisualStyleBackColor = true;
+            this.botaoCadastrar.Click += new System.EventHandler(this.botaoCadastrar_Click);
             // 
             // CadastroUsuario
             // 
