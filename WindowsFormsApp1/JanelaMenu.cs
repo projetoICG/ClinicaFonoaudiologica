@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,10 +12,15 @@ using System.Windows.Forms;
 using WindowsFormsApp1.Banco_de_Dados;
 using WindowsFormsApp1.objetos;
 
+
 namespace WindowsFormsApp1
 {
     public partial class JanelaMenu : Form
     {
+     
+
+        private Medico medicoSelecionado;
+
         public JanelaMenu()
         {
             InitializeComponent();
@@ -60,7 +67,9 @@ namespace WindowsFormsApp1
         private void médicoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CadastrarMedico cadastrarmedico = new CadastrarMedico();
-            cadastrarmedico.Show();
+
+            cadastrarmedico.ShowDialog();
+           
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
@@ -98,7 +107,27 @@ namespace WindowsFormsApp1
                 BDMedico bd = new BDMedico();
                 List<Medico> listaMedicos = new List<Medico>();
                 listaMedicos = bd.retornarListaMedicos();
-            Console.WriteLine(listaMedicos[0].Id);
+
+                listView1.Items.Clear();
+                 listView1.Refresh();
+
+                foreach (Medico m in listaMedicos){
+
+                    ListViewItem varItem = new ListViewItem(new string[]
+                    {
+                        Convert.ToString(m.Id),
+                        m.Nome,
+                        m.Cpf,
+                        m.Email,
+                        m.Telefone1,
+                        m.Telefone2,
+                        m.Funcao
+                    });
+                    listView1.Items.Add(varItem);
+                }
+
+                Console.WriteLine(monthCalendar1.SelectionRange.Start.ToShortDateString());
+               
             }
             catch (Exception j)
             {
@@ -110,5 +139,15 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count == 0)
+                return;
+            
+            Console.WriteLine(listView1.SelectedItems[0].Text);
+        }
+
+        
     }
 }

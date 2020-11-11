@@ -38,8 +38,26 @@ namespace WindowsFormsApp1.Banco_de_Dados
             objetoComando.Parameters.Add("@formacao", MySqlDbType.VarChar).Value = medico.Formacao;
         }
 
+        public static string GetString(MySqlDataReader reader, string colName)
+        {
+            if (reader[colName] == DBNull.Value)
+                return string.Empty;
+            else
+                return (string)reader[colName];
+        }
+
+        public static string GetColumnValueAsString(MySqlDataReader reader, string colName)
+        {
+            if (reader[colName] == DBNull.Value)
+                return string.Empty;
+            else
+                return reader[colName].ToString();
+        }
+
+
         public List<Medico> retornarListaMedicos()
         {
+
             try
             {
                 ConexaoBanco conexao = new ConexaoBanco();
@@ -48,14 +66,29 @@ namespace WindowsFormsApp1.Banco_de_Dados
                 MySqlDataReader dados = objetoComando.ExecuteReader();
 
                 List<Medico> lista = new List<Medico>();
-
+                
                 while (dados.Read())
                 {
 
                     Medico medico = new Medico();
-                    medico.Cpf = dados.GetString("cpf");
-                    medico.Rg = dados.GetString("rg");
-                    medico.Id = Convert.ToInt32(dados.GetString("id_medico"));
+                    medico.Cpf = GetString(dados,"cpf");
+                    medico.Rg = GetString(dados,"rg");
+                    medico.Id = Convert.ToInt32(GetColumnValueAsString(dados,"id_medico"));
+                    medico.Nome = GetString(dados,"nome");
+                    medico.Sexo = Convert.ToChar(GetString(dados,"sexo"));
+                    medico.Rua = GetString(dados,"rua");
+                    medico.Bairro = GetString(dados,"bairro");
+                    medico.Numero = GetString(dados,"numero");
+                    medico.Complemento = GetString(dados,"complemento");
+                    medico.Telefone1 = GetString(dados,"telefone1");
+                    medico.Telefone2 = GetString(dados,"telefone2");
+                    medico.Email = GetString(dados,"email");
+                    medico.DataNascimento = GetString(dados,"dataNascimento");
+                    medico.Conselho = GetString(dados,"conselho");
+                    medico.NumeroConselho = GetString(dados,"numeroConselho");
+                    medico.Funcao = GetString(dados,"funcao");
+                    medico.Formacao = GetString(dados,"formacao");
+                    
                     lista.Add(medico);
                 }
                 
