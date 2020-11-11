@@ -17,23 +17,29 @@ namespace WindowsFormsApp1
 {
     public partial class JanelaMenu : Form
     {
-        private Usuario usuario;
+     
 
         private Medico medicoSelecionado;
 
-        public JanelaMenu(string login, string senha)
+        public JanelaMenu()
         {
-            usuario = new Usuario();
-            usuario.Login = login;
-            usuario.Senha = senha;
             InitializeComponent();
             this.CenterToScreen();
-
-           
-            
             
         }
-        
+        public bool operacaoConfirmada()
+        {
+            return true;
+        }
+
+
+        public static bool executar()
+        {
+            JanelaMenu janela2 = new JanelaMenu();
+            janela2.Visible = true;
+
+            return janela2.operacaoConfirmada();
+        }
 
        
         private void Janela2_Load(object sender, EventArgs e)
