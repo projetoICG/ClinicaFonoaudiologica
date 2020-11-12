@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Banco_de_Dados;
 using WindowsFormsApp1.objetos;
+using WindowsFormsApp1.view.Medico;
 
 namespace WindowsFormsApp1
 {
@@ -17,8 +18,11 @@ namespace WindowsFormsApp1
 
     public partial class CadastrarMedico : Form
     {
-        public CadastrarMedico()
+        private MenuMedico menu;
+        public CadastrarMedico(MenuMedico menu)
         {
+            this.menu = menu;
+
             InitializeComponent();
             this.CenterToScreen();
             this.BringToFront();
@@ -161,6 +165,7 @@ namespace WindowsFormsApp1
         {
             cadastrarMedico();
 
+
             if (MessageBox.Show("Deseja Cadastrar outro médico?", "Aviso", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 radioBotaoFeminino.Text = string.Empty;
@@ -183,6 +188,8 @@ namespace WindowsFormsApp1
             else
             {
                 this.Close();
+                
+
             }
 
         }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Text;
 
 namespace WindowsFormsApp1.view.Medico
 {
@@ -70,6 +71,38 @@ namespace WindowsFormsApp1.view.Medico
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void campoIdade_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void campoDataNascimento_Click(object sender, EventArgs e)
+        {
+            int startPos = this.campoDataNascimento.MaskedTextProvider.FindUnassignedEditPositionFrom(this.campoDataNascimento.MaskedTextProvider.LastAssignedPosition + 1, true);
+            this.campoDataNascimento.Select(startPos, 0);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CadastrarMedico cadastrarmedico = new CadastrarMedico(this);
+            
+            cadastrarmedico.ShowDialog();
+            atualizarLista();
+        }
+        private void atualizarLista()
+        {
+            
+        }
+
+        private void limparLista()
+        {
+
+        }
+        private void MenuMedico_Enter(object sender, EventArgs e)
+        {
+            MessageBox.Show("kk");
         }
     }
 }
