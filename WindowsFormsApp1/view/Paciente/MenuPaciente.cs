@@ -11,12 +11,12 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 
-namespace WindowsFormsApp1.view.Medico
+namespace WindowsFormsApp1.view.Paciente
 {
-    public partial class MenuMedico : Form
+    public partial class MenuPaciente : Form
     {
        
-        public MenuMedico()
+        public MenuPaciente()
         {
             InitializeComponent();
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -83,9 +83,9 @@ namespace WindowsFormsApp1.view.Medico
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CadastrarMedico cadastrarmedico = new CadastrarMedico();
+            CadastrarPaciente cadastrarpaciente = new CadastrarPaciente();
             
-            cadastrarmedico.ShowDialog();
+            cadastrarpaciente.ShowDialog();
             atualizarLista();
         }
         private void atualizarLista()
@@ -97,9 +97,19 @@ namespace WindowsFormsApp1.view.Medico
         {
 
         }
-        private void MenuMedico_Enter(object sender, EventArgs e)
+        private void MenuPaciente_Enter(object sender, EventArgs e)
         {
             MessageBox.Show("kk");
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using WindowsFormsApp1.Banco_de_Dados;
 using WindowsFormsApp1.objetos;
 using WindowsFormsApp1.view.Medico;
+using WindowsFormsApp1.view.Paciente;
 
 namespace WindowsFormsApp1
 {
@@ -52,8 +53,8 @@ namespace WindowsFormsApp1
 
         private void pacienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CadastrarPaciente cadastrarpaciente = new CadastrarPaciente();
-            cadastrarpaciente.Show();
+            MenuPaciente menupaciente = new MenuPaciente();
+            menupaciente.Show();
         }
 
         private void médicoToolStripMenuItem_Click(object sender, EventArgs e)

@@ -72,6 +72,12 @@
     <Compile Include="view\Paciente\CadastrarPaciente.Designer.cs">
       <DependentUpon>CadastrarPaciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\Paciente\MenuPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\Paciente\MenuPaciente.Designer.cs">
+      <DependentUpon>MenuPaciente.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\Usuario\CadastroUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view\Paciente\CadastrarPaciente.resx">
       <DependentUpon>CadastrarPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\Paciente\MenuPaciente.resx">
+      <DependentUpon>MenuPaciente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\Usuario\CadastroUsuario.resx">
       <DependentUpon>CadastroUsuario.cs</DependentUpon>

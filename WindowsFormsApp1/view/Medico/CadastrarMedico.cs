@@ -18,10 +18,8 @@ namespace WindowsFormsApp1
 
     public partial class CadastrarMedico : Form
     {
-        private MenuMedico menu;
-        public CadastrarMedico(MenuMedico menu)
+        public CadastrarMedico()
         {
-            this.menu = menu;
 
             InitializeComponent();
             this.CenterToScreen();
