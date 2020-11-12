@@ -56,6 +56,97 @@ namespace WindowsFormsApp1.Banco_de_Dados
             objetoComando.Parameters.Add("@cpfParente", MySqlDbType.VarChar).Value = paciente.CpfParente;
         }
 
+        public List<PacienteMenor> buscarEspecificacaoPacienteMenor(string coluna, string busca)
+        {
+            try
+            {
+                ConexaoBanco conexao = new ConexaoBanco();
+                conexao.ObjetoConexao.Open();
+                MySqlCommand objetoComando = new MySqlCommand("SELECT * FROM Paciente_Menor_Idade " +
+                    "where " + coluna + " like \"" + busca + "\";", conexao.ObjetoConexao);
+                MySqlDataReader dados = objetoComando.ExecuteReader();
+
+                List<PacienteMenor> pacientes = new List<PacienteMenor>();
+
+                while (dados.Read())
+                {
+                    PacienteMenor paciente = new PacienteMenor();
+                    paciente.Cpf = dados.GetString("cpf");
+                    paciente.Rg = dados.GetString("rg");
+                    paciente.Id = dados.GetInt32("id_paciente");
+                    paciente.Nome = dados.GetString("nome");
+                    paciente.Sexo = dados.GetChar("sexo");
+                    paciente.Rua = dados.GetString("rua");
+                    paciente.Bairro = dados.GetString("bairro");
+                    paciente.Numero = dados.GetString("numero");
+                    paciente.Complemento = dados.GetString("complemento");
+                    paciente.Telefone1 = dados.GetString("telefone1");
+                    paciente.Telefone2 = dados.GetString("telefone2");
+                    paciente.Email = dados.GetString("email");
+                    paciente.DataNascimento = dados.GetString("dataNascimento");
+                    paciente.Observacoes = dados.GetString("observacoes");
+                    paciente.NomeMae = dados.GetString("nomeMae");
+                    paciente.NomePai = dados.GetString("nomePai");
+                    paciente.NomeParente = dados.GetString("nomeParente");
+                    paciente.CpfMae = dados.GetString("cpfMae");
+                    paciente.CpfPai = dados.GetString("cpfPai");
+                    paciente.CpfParente = dados.GetString("cpfParente");
+                    pacientes.Add(paciente);
+                }
+
+                conexao.ObjetoConexao.Close();
+                return pacientes;
+            }
+            catch (MySqlException x)
+            {
+                return null;
+            }
+            return null;
+        }
+
+        public List<Paciente> buscarEspecificacaoPacienteMaior(string coluna, string busca)
+        {
+            try
+            {
+                ConexaoBanco conexao = new ConexaoBanco();
+                conexao.ObjetoConexao.Open();
+                MySqlCommand objetoComando = new MySqlCommand("SELECT * FROM Paciente_Maior_Idade " +
+                    "where " + coluna + " like \"" + busca + "\";", conexao.ObjetoConexao);
+                MySqlDataReader dados = objetoComando.ExecuteReader();
+
+                List<Paciente> pacientes = new List<Paciente>();
+
+                while (dados.Read())
+                {
+                    Paciente paciente = new Paciente();
+                    paciente.Cpf = dados.GetString("cpf");
+                    paciente.Rg = dados.GetString("rg");
+                    paciente.Id = dados.GetInt32("id_paciente");
+                    paciente.Nome = dados.GetString("nome");
+                    paciente.Sexo = dados.GetChar("sexo");
+                    paciente.Rua = dados.GetString("rua");
+                    paciente.Bairro = dados.GetString("bairro");
+                    paciente.Numero = dados.GetString("numero");
+                    paciente.Complemento = dados.GetString("complemento");
+                    paciente.Telefone1 = dados.GetString("telefone1");
+                    paciente.Telefone2 = dados.GetString("telefone2");
+                    paciente.Email = dados.GetString("email");
+                    paciente.DataNascimento = dados.GetString("dataNascimento");
+                    paciente.Observacoes = dados.GetString("observacoes");
+
+                    pacientes.Add(paciente);
+                }
+
+                conexao.ObjetoConexao.Close();
+                return pacientes;
+            }
+            catch (MySqlException x)
+            {
+                return null;
+            }
+            return null;
+        }
+
         public int cadastrarPacienteMenorDeIdade(PacienteMenor paciente)
         {
             try

@@ -8,6 +8,7 @@ namespace WindowsFormsApp1.objetos
 {
     public class Pessoa
     {
+        private int id;
         private string cpf;
         private string rg;
         private string nome;
@@ -33,5 +34,6 @@ namespace WindowsFormsApp1.objetos
         public string Email { get => email; set => email = value; }
         public string DataNascimento { get => dataNascimento; set => dataNascimento = value; }
         public string Rg { get => rg; set => rg = value; }
+        public int Id { get => id; set => id = value; }
     }
 }

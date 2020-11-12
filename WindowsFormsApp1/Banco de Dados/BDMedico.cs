@@ -38,6 +38,55 @@ namespace WindowsFormsApp1.Banco_de_Dados
             objetoComando.Parameters.Add("@formacao", MySqlDbType.VarChar).Value = medico.Formacao;
         }
 
+        public List<Medico> buscarEspecificacaoMedico(string coluna, string busca)
+        {
+            try
+            {
+                ConexaoBanco conexao = new ConexaoBanco();
+                conexao.ObjetoConexao.Open();
+                MySqlCommand objetoComando = new MySqlCommand("SELECT * FROM medico " +
+                    "where " + coluna + " like \"" + busca + "\";", conexao.ObjetoConexao);
+                MySqlDataReader dados = objetoComando.ExecuteReader();
+                
+                List<Medico> medicos = new List<Medico>();
+
+                while (dados.Read())
+                {
+                    Medico medico = new Medico();
+                    medico.Cpf = dados.GetString("cpf");
+                    medico.Rg = dados.GetString("rg");
+                    medico.Id = dados.GetInt32("id_medico");
+                    medico.Nome = dados.GetString("nome");
+                    medico.Sexo = dados.GetChar("sexo");
+                    medico.Rua = dados.GetString("rua");
+                    medico.Bairro = dados.GetString("bairro");
+                    medico.Numero = dados.GetString("numero");
+                    medico.Complemento = dados.GetString("complemento");
+                    medico.Telefone1 = dados.GetString("telefone1");
+                    medico.Telefone2 = dados.GetString("telefone2");
+                    medico.Email = dados.GetString("email");
+                    medico.DataNascimento = dados.GetString("dataNascimento");
+                    medico.Conselho = dados.GetString("conselho");
+                    medico.NumeroConselho = dados.GetString("numeroConselho");
+                    medico.Funcao = dados.GetString("funcao");
+                    medico.Formacao = dados.GetString("formacao");
+                    medico.Complemento = dados.GetString("complemento");
+                    medico.Telefone1 = dados.GetString("telefone1");
+                    medico.Telefone2 = dados.GetString("telefone2");
+                    medico.Email = dados.GetString("email");
+                    medicos.Add(medico);
+                }
+
+                conexao.ObjetoConexao.Close();
+                return medicos;
+            }
+            catch (MySqlException x)
+            {
+                return null;
+            }
+            return null;
+        }
+
         public static string GetString(MySqlDataReader reader, string colName)
         {
             if (reader[colName] == DBNull.Value)
