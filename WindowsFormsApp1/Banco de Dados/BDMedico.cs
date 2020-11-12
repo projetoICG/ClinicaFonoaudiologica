@@ -160,6 +160,7 @@ namespace WindowsFormsApp1.Banco_de_Dados
                 conexao.ObjetoConexao.Open();
                 MySqlCommand objetoComando = new MySqlCommand("delete FROM medico where id_medico = "+Convert.ToString(id)+";", conexao.ObjetoConexao);
                 objetoComando.ExecuteReader();
+                conexao.ObjetoConexao.Close();
             }
             catch
             {
