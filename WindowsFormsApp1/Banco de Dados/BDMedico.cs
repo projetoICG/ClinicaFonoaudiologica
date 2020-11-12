@@ -152,6 +152,20 @@ namespace WindowsFormsApp1.Banco_de_Dados
                 return null;
         }
 
+        public void excluirMedico(int id)
+        {
+            try
+            {
+                ConexaoBanco conexao = new ConexaoBanco();
+                conexao.ObjetoConexao.Open();
+                MySqlCommand objetoComando = new MySqlCommand("delete FROM medico where id_medico = "+Convert.ToString(id)+";", conexao.ObjetoConexao);
+                objetoComando.ExecuteReader();
+            }
+            catch
+            {
+
+            }
+        }
 
         public int cadastrarMedico(Medico medico)
         {

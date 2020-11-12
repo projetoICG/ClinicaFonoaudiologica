@@ -22,6 +22,9 @@ namespace WindowsFormsApp1.view.Medico
         public MenuMedico()
         {
             InitializeComponent();
+            botaoConfirmarAlteracoes.Enabled = false;
+            botaoExcluir.Enabled = false;
+            botaoAlterar.Enabled = false;
             listaMedicosNoBanco = new List<WindowsFormsApp1.objetos.Medico>();
             alterarEstadoCampos(false);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -192,12 +195,62 @@ namespace WindowsFormsApp1.view.Medico
 
         private void listView1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+            botaoConfirmarAlteracoes.Enabled = false;
+            botaoExcluir.Enabled = false;
+
             alterarEstadoCampos(false);
             if (listView1.SelectedItems.Count == 0)
                 return;
 
             mostrarDadosNoPainel(Convert.ToInt32(listView1.SelectedItems[0].Text));
+            botaoAlterar.Enabled = true;
+        }
 
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var teste = listView1.SelectedItems[0].Text;
+                alterarEstadoCampos(true);
+                botaoConfirmarAlteracoes.Enabled = true;
+                botaoExcluir.Enabled = true;
+            }
+            catch
+            {
+                MessageBox.Show("Por favor Selecione na tabela !");
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DialogResult confirm = MessageBox.Show("Tem certeza que deseja Excluir ?", "Aviso !", MessageBoxButtons.YesNo);
+
+            if (confirm == DialogResult.Yes)
+            {
+
+                try
+                {
+                    BDMedico bdmedico = new BDMedico();
+                    bdmedico.excluirMedico(Convert.ToInt32(listView1.SelectedItems[0].Text));
+                    MessageBox.Show("Excluido com sucesso!");
+                }
+                catch
+                {
+
+                }
+            }
+            atualizarLista();
+            
         }
     }
 }
