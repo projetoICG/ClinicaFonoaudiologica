@@ -196,5 +196,145 @@ namespace WindowsFormsApp1
             //else if (confirm == DialogResult.No)
             //    e.Cancel = true;
         }
+
+        private void comboFuncao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void campoNConselho_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboConselho_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void campoFormacao_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void campoTelefone1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void campoTelefone2_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void campoNumero_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void campoRua_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void campoNome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void campoCPF_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void campoRG_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void label22_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void campoIdade_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void campoBairro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void campoComplemento_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioBotaoFeminino_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

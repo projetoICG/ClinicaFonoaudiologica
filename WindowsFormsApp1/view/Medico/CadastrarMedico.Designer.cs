@@ -78,7 +78,7 @@
             this.radioBotaoMasculino.Location = new System.Drawing.Point(384, 36);
             this.radioBotaoMasculino.Margin = new System.Windows.Forms.Padding(2);
             this.radioBotaoMasculino.Name = "radioBotaoMasculino";
-            this.radioBotaoMasculino.Size = new System.Drawing.Size(94, 22);
+            this.radioBotaoMasculino.Size = new System.Drawing.Size(117, 28);
             this.radioBotaoMasculino.TabIndex = 1;
             this.radioBotaoMasculino.Text = "Masculino";
             this.radioBotaoMasculino.UseVisualStyleBackColor = true;
@@ -91,10 +91,11 @@
             this.radioBotaoFeminino.Location = new System.Drawing.Point(384, 18);
             this.radioBotaoFeminino.Margin = new System.Windows.Forms.Padding(2);
             this.radioBotaoFeminino.Name = "radioBotaoFeminino";
-            this.radioBotaoFeminino.Size = new System.Drawing.Size(87, 22);
+            this.radioBotaoFeminino.Size = new System.Drawing.Size(111, 28);
             this.radioBotaoFeminino.TabIndex = 2;
             this.radioBotaoFeminino.Text = "Feminino";
             this.radioBotaoFeminino.UseVisualStyleBackColor = true;
+            this.radioBotaoFeminino.CheckedChanged += new System.EventHandler(this.radioBotaoFeminino_CheckedChanged);
             // 
             // label1
             // 
@@ -103,7 +104,7 @@
             this.label1.Location = new System.Drawing.Point(16, 23);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 17);
+            this.label1.Size = new System.Drawing.Size(58, 20);
             this.label1.TabIndex = 3;
             this.label1.Text = "Nome:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -114,8 +115,9 @@
             this.campoNome.Location = new System.Drawing.Point(69, 23);
             this.campoNome.Margin = new System.Windows.Forms.Padding(2);
             this.campoNome.Name = "campoNome";
-            this.campoNome.Size = new System.Drawing.Size(242, 23);
+            this.campoNome.Size = new System.Drawing.Size(242, 27);
             this.campoNome.TabIndex = 5;
+            this.campoNome.TextChanged += new System.EventHandler(this.campoNome_TextChanged);
             // 
             // label2
             // 
@@ -124,7 +126,7 @@
             this.label2.Location = new System.Drawing.Point(339, 26);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 17);
+            this.label2.Size = new System.Drawing.Size(51, 20);
             this.label2.TabIndex = 6;
             this.label2.Text = "Sexo:";
             // 
@@ -135,7 +137,7 @@
             this.label3.Location = new System.Drawing.Point(397, 177);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 17);
+            this.label3.Size = new System.Drawing.Size(0, 20);
             this.label3.TabIndex = 7;
             // 
             // label4
@@ -145,9 +147,10 @@
             this.label4.Location = new System.Drawing.Point(16, 99);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 17);
+            this.label4.Size = new System.Drawing.Size(144, 20);
             this.label4.TabIndex = 9;
             this.label4.Text = "Data Nascimento:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -156,9 +159,10 @@
             this.label5.Location = new System.Drawing.Point(274, 99);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 17);
+            this.label5.Size = new System.Drawing.Size(54, 20);
             this.label5.TabIndex = 11;
             this.label5.Text = "Idade:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label7
             // 
@@ -167,9 +171,10 @@
             this.label7.Location = new System.Drawing.Point(16, 65);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(33, 17);
+            this.label7.Size = new System.Drawing.Size(40, 20);
             this.label7.TabIndex = 13;
             this.label7.Text = "Cpf:";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // botaoCadastrar
             // 
@@ -190,7 +195,7 @@
             this.campoDataNascimento.Margin = new System.Windows.Forms.Padding(2);
             this.campoDataNascimento.Mask = "00/00/0000";
             this.campoDataNascimento.Name = "campoDataNascimento";
-            this.campoDataNascimento.Size = new System.Drawing.Size(97, 23);
+            this.campoDataNascimento.Size = new System.Drawing.Size(97, 27);
             this.campoDataNascimento.TabIndex = 15;
             this.campoDataNascimento.ValidatingType = typeof(System.DateTime);
             this.campoDataNascimento.TypeValidationCompleted += new System.Windows.Forms.TypeValidationEventHandler(this.campoDataNascimento_TypeValidationCompleted);
@@ -202,8 +207,9 @@
             this.campoCPF.Margin = new System.Windows.Forms.Padding(2);
             this.campoCPF.Mask = "000.000.000-00";
             this.campoCPF.Name = "campoCPF";
-            this.campoCPF.Size = new System.Drawing.Size(122, 23);
+            this.campoCPF.Size = new System.Drawing.Size(122, 27);
             this.campoCPF.TabIndex = 16;
+            this.campoCPF.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.campoCPF_MaskInputRejected);
             // 
             // label6
             // 
@@ -212,9 +218,10 @@
             this.label6.Location = new System.Drawing.Point(16, 138);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 17);
+            this.label6.Size = new System.Drawing.Size(44, 20);
             this.label6.TabIndex = 17;
             this.label6.Text = "Rua:";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // campoRua
             // 
@@ -222,8 +229,9 @@
             this.campoRua.Location = new System.Drawing.Point(69, 132);
             this.campoRua.Margin = new System.Windows.Forms.Padding(2);
             this.campoRua.Name = "campoRua";
-            this.campoRua.Size = new System.Drawing.Size(213, 23);
+            this.campoRua.Size = new System.Drawing.Size(213, 27);
             this.campoRua.TabIndex = 18;
+            this.campoRua.TextChanged += new System.EventHandler(this.campoRua_TextChanged);
             // 
             // campoIdade
             // 
@@ -232,9 +240,10 @@
             this.campoIdade.Location = new System.Drawing.Point(325, 99);
             this.campoIdade.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.campoIdade.Name = "campoIdade";
-            this.campoIdade.Size = new System.Drawing.Size(48, 17);
+            this.campoIdade.Size = new System.Drawing.Size(59, 20);
             this.campoIdade.TabIndex = 12;
             this.campoIdade.Text = "          ";
+            this.campoIdade.Click += new System.EventHandler(this.campoIdade_Click);
             // 
             // campoBairro
             // 
@@ -242,8 +251,9 @@
             this.campoBairro.Location = new System.Drawing.Point(350, 135);
             this.campoBairro.Margin = new System.Windows.Forms.Padding(2);
             this.campoBairro.Name = "campoBairro";
-            this.campoBairro.Size = new System.Drawing.Size(181, 23);
+            this.campoBairro.Size = new System.Drawing.Size(181, 27);
             this.campoBairro.TabIndex = 20;
+            this.campoBairro.TextChanged += new System.EventHandler(this.campoBairro_TextChanged);
             // 
             // label8
             // 
@@ -252,7 +262,7 @@
             this.label8.Location = new System.Drawing.Point(296, 135);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(50, 17);
+            this.label8.Size = new System.Drawing.Size(60, 20);
             this.label8.TabIndex = 19;
             this.label8.Text = "Bairro:";
             // 
@@ -262,8 +272,9 @@
             this.campoNumero.Location = new System.Drawing.Point(83, 177);
             this.campoNumero.Margin = new System.Windows.Forms.Padding(2);
             this.campoNumero.Name = "campoNumero";
-            this.campoNumero.Size = new System.Drawing.Size(53, 23);
+            this.campoNumero.Size = new System.Drawing.Size(53, 27);
             this.campoNumero.TabIndex = 22;
+            this.campoNumero.TextChanged += new System.EventHandler(this.campoNumero_TextChanged);
             this.campoNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.somenteNumero);
             // 
             // label9
@@ -273,9 +284,10 @@
             this.label9.Location = new System.Drawing.Point(16, 177);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(62, 17);
+            this.label9.Size = new System.Drawing.Size(73, 20);
             this.label9.TabIndex = 21;
             this.label9.Text = "Número:";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label10
             // 
@@ -284,7 +296,7 @@
             this.label10.Location = new System.Drawing.Point(150, 177);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(98, 17);
+            this.label10.Size = new System.Drawing.Size(117, 20);
             this.label10.TabIndex = 23;
             this.label10.Text = "Complemento:";
             // 
@@ -294,8 +306,9 @@
             this.campoComplemento.Location = new System.Drawing.Point(252, 177);
             this.campoComplemento.Margin = new System.Windows.Forms.Padding(2);
             this.campoComplemento.Name = "campoComplemento";
-            this.campoComplemento.Size = new System.Drawing.Size(279, 23);
+            this.campoComplemento.Size = new System.Drawing.Size(279, 27);
             this.campoComplemento.TabIndex = 24;
+            this.campoComplemento.TextChanged += new System.EventHandler(this.campoComplemento_TextChanged);
             // 
             // label11
             // 
@@ -304,9 +317,10 @@
             this.label11.Location = new System.Drawing.Point(16, 223);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(80, 17);
+            this.label11.Size = new System.Drawing.Size(92, 20);
             this.label11.TabIndex = 25;
             this.label11.Text = "Telefone 1:";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label12
             // 
@@ -315,7 +329,7 @@
             this.label12.Location = new System.Drawing.Point(274, 226);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(80, 17);
+            this.label12.Size = new System.Drawing.Size(92, 20);
             this.label12.TabIndex = 26;
             this.label12.Text = "Telefone 2:";
             // 
@@ -351,6 +365,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(533, 385);
             this.panel1.TabIndex = 34;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // comboFuncao
             // 
@@ -362,9 +377,10 @@
             "Psicóloga"});
             this.comboFuncao.Location = new System.Drawing.Point(365, 291);
             this.comboFuncao.Name = "comboFuncao";
-            this.comboFuncao.Size = new System.Drawing.Size(153, 24);
+            this.comboFuncao.Size = new System.Drawing.Size(153, 28);
             this.comboFuncao.TabIndex = 55;
             this.comboFuncao.Text = "Fonoaudiologa";
+            this.comboFuncao.SelectedIndexChanged += new System.EventHandler(this.comboFuncao_SelectedIndexChanged);
             // 
             // campoNConselho
             // 
@@ -372,8 +388,9 @@
             this.campoNConselho.Location = new System.Drawing.Point(387, 349);
             this.campoNConselho.Margin = new System.Windows.Forms.Padding(2);
             this.campoNConselho.Name = "campoNConselho";
-            this.campoNConselho.Size = new System.Drawing.Size(130, 23);
+            this.campoNConselho.Size = new System.Drawing.Size(130, 27);
             this.campoNConselho.TabIndex = 45;
+            this.campoNConselho.TextChanged += new System.EventHandler(this.campoNConselho_TextChanged);
             // 
             // label16
             // 
@@ -382,9 +399,10 @@
             this.label16.Location = new System.Drawing.Point(357, 350);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(28, 17);
+            this.label16.Size = new System.Drawing.Size(33, 20);
             this.label16.TabIndex = 54;
             this.label16.Text = "N°:";
+            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // comboConselho
             // 
@@ -396,9 +414,10 @@
             "CRP"});
             this.comboConselho.Location = new System.Drawing.Point(365, 319);
             this.comboConselho.Name = "comboConselho";
-            this.comboConselho.Size = new System.Drawing.Size(153, 24);
+            this.comboConselho.Size = new System.Drawing.Size(153, 28);
             this.comboConselho.TabIndex = 53;
             this.comboConselho.Text = "CFFa";
+            this.comboConselho.SelectedIndexChanged += new System.EventHandler(this.comboConselho_SelectedIndexChanged);
             // 
             // campoFormacao
             // 
@@ -409,6 +428,7 @@
             this.campoFormacao.Name = "campoFormacao";
             this.campoFormacao.Size = new System.Drawing.Size(255, 82);
             this.campoFormacao.TabIndex = 52;
+            this.campoFormacao.TextChanged += new System.EventHandler(this.campoFormacao_TextChanged);
             // 
             // label17
             // 
@@ -418,9 +438,10 @@
             this.label17.Location = new System.Drawing.Point(10, 318);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(75, 17);
+            this.label17.Size = new System.Drawing.Size(89, 20);
             this.label17.TabIndex = 51;
             this.label17.Text = "Formação:";
+            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // label13
             // 
@@ -429,9 +450,10 @@
             this.label13.Location = new System.Drawing.Point(242, 165);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(46, 17);
+            this.label13.Size = new System.Drawing.Size(56, 20);
             this.label13.TabIndex = 48;
             this.label13.Text = "Email:";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // label14
             // 
@@ -440,9 +462,10 @@
             this.label14.Location = new System.Drawing.Point(6, 250);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(46, 17);
+            this.label14.Size = new System.Drawing.Size(56, 20);
             this.label14.TabIndex = 43;
             this.label14.Text = "Email:";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // campoTelefone1
             // 
@@ -451,8 +474,9 @@
             this.campoTelefone1.Margin = new System.Windows.Forms.Padding(2);
             this.campoTelefone1.Mask = "(00)00000-0000";
             this.campoTelefone1.Name = "campoTelefone1";
-            this.campoTelefone1.Size = new System.Drawing.Size(122, 23);
+            this.campoTelefone1.Size = new System.Drawing.Size(122, 27);
             this.campoTelefone1.TabIndex = 47;
+            this.campoTelefone1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.campoTelefone1_MaskInputRejected);
             // 
             // campoTelefone2
             // 
@@ -461,8 +485,9 @@
             this.campoTelefone2.Margin = new System.Windows.Forms.Padding(2);
             this.campoTelefone2.Mask = "(00)00000-0000";
             this.campoTelefone2.Name = "campoTelefone2";
-            this.campoTelefone2.Size = new System.Drawing.Size(122, 23);
+            this.campoTelefone2.Size = new System.Drawing.Size(122, 27);
             this.campoTelefone2.TabIndex = 46;
+            this.campoTelefone2.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.campoTelefone2_MaskInputRejected);
             // 
             // label15
             // 
@@ -471,9 +496,10 @@
             this.label15.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label15.Location = new System.Drawing.Point(487, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(36, 12);
+            this.label15.Size = new System.Drawing.Size(48, 15);
             this.label15.TabIndex = 35;
             this.label15.Text = "Medico";
+            this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
             // campoRG
             // 
@@ -482,8 +508,9 @@
             this.campoRG.Margin = new System.Windows.Forms.Padding(2);
             this.campoRG.Mask = "00.000.000-0";
             this.campoRG.Name = "campoRG";
-            this.campoRG.Size = new System.Drawing.Size(105, 23);
+            this.campoRG.Size = new System.Drawing.Size(105, 27);
             this.campoRG.TabIndex = 38;
+            this.campoRG.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.campoRG_MaskInputRejected);
             // 
             // label22
             // 
@@ -492,9 +519,10 @@
             this.label22.Location = new System.Drawing.Point(268, 64);
             this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(33, 17);
+            this.label22.Size = new System.Drawing.Size(39, 20);
             this.label22.TabIndex = 37;
             this.label22.Text = "RG:";
+            this.label22.Click += new System.EventHandler(this.label22_Click);
             // 
             // campoEmail
             // 
@@ -502,7 +530,7 @@
             this.campoEmail.Location = new System.Drawing.Point(85, 260);
             this.campoEmail.Margin = new System.Windows.Forms.Padding(2);
             this.campoEmail.Name = "campoEmail";
-            this.campoEmail.Size = new System.Drawing.Size(446, 23);
+            this.campoEmail.Size = new System.Drawing.Size(446, 27);
             this.campoEmail.TabIndex = 44;
             // 
             // CadastrarMedico

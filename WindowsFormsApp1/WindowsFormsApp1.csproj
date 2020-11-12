@@ -54,35 +54,41 @@
     <Compile Include="Banco de Dados\BDMedico.cs" />
     <Compile Include="Banco de Dados\BDPaciente.cs" />
     <Compile Include="Banco de Dados\BDUsuario.cs" />
-    <Compile Include="CadastrarMedico.cs">
+    <Compile Include="view\Medico\CadastrarMedico.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CadastrarMedico.Designer.cs">
+    <Compile Include="view\Medico\CadastrarMedico.Designer.cs">
       <DependentUpon>CadastrarMedico.cs</DependentUpon>
     </Compile>
-    <Compile Include="CadastrarPaciente.cs">
+    <Compile Include="view\Medico\MenuMedico.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CadastrarPaciente.Designer.cs">
+    <Compile Include="view\Medico\MenuMedico.Designer.cs">
+      <DependentUpon>MenuMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\Paciente\CadastrarPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\Paciente\CadastrarPaciente.Designer.cs">
       <DependentUpon>CadastrarPaciente.cs</DependentUpon>
     </Compile>
-    <Compile Include="CadastroUsuario.cs">
+    <Compile Include="view\Usuario\CadastroUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CadastroUsuario.Designer.cs">
+    <Compile Include="view\Usuario\CadastroUsuario.Designer.cs">
       <DependentUpon>CadastroUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Banco de Dados\ConexaoBanco.cs" />
-    <Compile Include="JanelaMenu.cs">
+    <Compile Include="view\JanelaMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="JanelaMenu.Designer.cs">
+    <Compile Include="view\JanelaMenu.Designer.cs">
       <DependentUpon>JanelaMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="JanelaInicial.cs">
+    <Compile Include="view\JanelaInicial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="JanelaInicial.Designer.cs">
+    <Compile Include="view\JanelaInicial.Designer.cs">
       <DependentUpon>JanelaInicial.cs</DependentUpon>
     </Compile>
     <Compile Include="objetos\Medico.cs" />
@@ -93,19 +99,22 @@
     <Compile Include="objetos\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CadastrarMedico.resx">
+    <EmbeddedResource Include="view\Medico\CadastrarMedico.resx">
       <DependentUpon>CadastrarMedico.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CadastrarPaciente.resx">
+    <EmbeddedResource Include="view\Medico\MenuMedico.resx">
+      <DependentUpon>MenuMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\Paciente\CadastrarPaciente.resx">
       <DependentUpon>CadastrarPaciente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CadastroUsuario.resx">
+    <EmbeddedResource Include="view\Usuario\CadastroUsuario.resx">
       <DependentUpon>CadastroUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="JanelaMenu.resx">
+    <EmbeddedResource Include="view\JanelaMenu.resx">
       <DependentUpon>JanelaMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="JanelaInicial.resx">
+    <EmbeddedResource Include="view\JanelaInicial.resx">
       <DependentUpon>JanelaInicial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

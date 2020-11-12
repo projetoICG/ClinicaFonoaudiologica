@@ -75,8 +75,8 @@
             this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1904, 33);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1428, 46);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -86,29 +86,29 @@
             this.pacienteToolStripMenuItem,
             this.funcionárioToolStripMenuItem,
             this.médicoToolStripMenuItem});
-            this.aaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aaToolStripMenuItem.Name = "aaToolStripMenuItem";
-            this.aaToolStripMenuItem.Size = new System.Drawing.Size(105, 29);
+            this.aaToolStripMenuItem.Size = new System.Drawing.Size(147, 42);
             this.aaToolStripMenuItem.Text = "Cadastrar";
             this.aaToolStripMenuItem.Click += new System.EventHandler(this.aaToolStripMenuItem_Click);
             // 
             // pacienteToolStripMenuItem
             // 
             this.pacienteToolStripMenuItem.Name = "pacienteToolStripMenuItem";
-            this.pacienteToolStripMenuItem.Size = new System.Drawing.Size(184, 30);
+            this.pacienteToolStripMenuItem.Size = new System.Drawing.Size(253, 42);
             this.pacienteToolStripMenuItem.Text = "Paciente";
             this.pacienteToolStripMenuItem.Click += new System.EventHandler(this.pacienteToolStripMenuItem_Click);
             // 
             // funcionárioToolStripMenuItem
             // 
             this.funcionárioToolStripMenuItem.Name = "funcionárioToolStripMenuItem";
-            this.funcionárioToolStripMenuItem.Size = new System.Drawing.Size(184, 30);
+            this.funcionárioToolStripMenuItem.Size = new System.Drawing.Size(253, 42);
             this.funcionárioToolStripMenuItem.Text = "Funcionário";
             // 
             // médicoToolStripMenuItem
             // 
             this.médicoToolStripMenuItem.Name = "médicoToolStripMenuItem";
-            this.médicoToolStripMenuItem.Size = new System.Drawing.Size(184, 30);
+            this.médicoToolStripMenuItem.Size = new System.Drawing.Size(253, 42);
             this.médicoToolStripMenuItem.Text = "Médico";
             this.médicoToolStripMenuItem.Click += new System.EventHandler(this.médicoToolStripMenuItem_Click);
             // 
@@ -118,28 +118,28 @@
             this.novaConsultaToolStripMenuItem,
             this.cancelarConsultaToolStripMenuItem,
             this.cancelarConsultaToolStripMenuItem1});
-            this.testeToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.testeToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.testeToolStripMenuItem.Name = "testeToolStripMenuItem";
-            this.testeToolStripMenuItem.Size = new System.Drawing.Size(98, 29);
+            this.testeToolStripMenuItem.Size = new System.Drawing.Size(138, 42);
             this.testeToolStripMenuItem.Text = "Consulta";
             // 
             // novaConsultaToolStripMenuItem
             // 
             this.novaConsultaToolStripMenuItem.Name = "novaConsultaToolStripMenuItem";
-            this.novaConsultaToolStripMenuItem.Size = new System.Drawing.Size(253, 30);
+            this.novaConsultaToolStripMenuItem.Size = new System.Drawing.Size(356, 42);
             this.novaConsultaToolStripMenuItem.Text = "Nova Consulta";
             // 
             // cancelarConsultaToolStripMenuItem
             // 
             this.cancelarConsultaToolStripMenuItem.Name = "cancelarConsultaToolStripMenuItem";
-            this.cancelarConsultaToolStripMenuItem.Size = new System.Drawing.Size(253, 30);
+            this.cancelarConsultaToolStripMenuItem.Size = new System.Drawing.Size(356, 42);
             this.cancelarConsultaToolStripMenuItem.Text = "Reagender Consulta";
             this.cancelarConsultaToolStripMenuItem.Click += new System.EventHandler(this.cancelarConsultaToolStripMenuItem_Click);
             // 
             // cancelarConsultaToolStripMenuItem1
             // 
             this.cancelarConsultaToolStripMenuItem1.Name = "cancelarConsultaToolStripMenuItem1";
-            this.cancelarConsultaToolStripMenuItem1.Size = new System.Drawing.Size(253, 30);
+            this.cancelarConsultaToolStripMenuItem1.Size = new System.Drawing.Size(356, 42);
             this.cancelarConsultaToolStripMenuItem1.Text = "Cancelar Consulta";
             // 
             // pacienteToolStripMenuItem1
@@ -147,21 +147,21 @@
             this.pacienteToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.alterarDadosToolStripMenuItem,
             this.excluirPacienteToolStripMenuItem});
-            this.pacienteToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pacienteToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pacienteToolStripMenuItem1.Name = "pacienteToolStripMenuItem1";
-            this.pacienteToolStripMenuItem1.Size = new System.Drawing.Size(95, 29);
+            this.pacienteToolStripMenuItem1.Size = new System.Drawing.Size(135, 42);
             this.pacienteToolStripMenuItem1.Text = "Paciente";
             // 
             // alterarDadosToolStripMenuItem
             // 
             this.alterarDadosToolStripMenuItem.Name = "alterarDadosToolStripMenuItem";
-            this.alterarDadosToolStripMenuItem.Size = new System.Drawing.Size(216, 30);
+            this.alterarDadosToolStripMenuItem.Size = new System.Drawing.Size(300, 42);
             this.alterarDadosToolStripMenuItem.Text = "Alterar Dados";
             // 
             // excluirPacienteToolStripMenuItem
             // 
             this.excluirPacienteToolStripMenuItem.Name = "excluirPacienteToolStripMenuItem";
-            this.excluirPacienteToolStripMenuItem.Size = new System.Drawing.Size(216, 30);
+            this.excluirPacienteToolStripMenuItem.Size = new System.Drawing.Size(300, 42);
             this.excluirPacienteToolStripMenuItem.Text = "Excluir Paciente";
             // 
             // médicoToolStripMenuItem1
@@ -169,20 +169,21 @@
             this.médicoToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.alterarDadosToolStripMenuItem1,
             this.excluirMédicoToolStripMenuItem});
+            this.médicoToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.médicoToolStripMenuItem1.Name = "médicoToolStripMenuItem1";
-            this.médicoToolStripMenuItem1.Size = new System.Drawing.Size(87, 29);
+            this.médicoToolStripMenuItem1.Size = new System.Drawing.Size(123, 42);
             this.médicoToolStripMenuItem1.Text = "Médico";
             // 
             // alterarDadosToolStripMenuItem1
             // 
             this.alterarDadosToolStripMenuItem1.Name = "alterarDadosToolStripMenuItem1";
-            this.alterarDadosToolStripMenuItem1.Size = new System.Drawing.Size(208, 30);
+            this.alterarDadosToolStripMenuItem1.Size = new System.Drawing.Size(288, 42);
             this.alterarDadosToolStripMenuItem1.Text = "Alterar Dados";
             // 
             // excluirMédicoToolStripMenuItem
             // 
             this.excluirMédicoToolStripMenuItem.Name = "excluirMédicoToolStripMenuItem";
-            this.excluirMédicoToolStripMenuItem.Size = new System.Drawing.Size(208, 30);
+            this.excluirMédicoToolStripMenuItem.Size = new System.Drawing.Size(288, 42);
             this.excluirMédicoToolStripMenuItem.Text = "Excluir Médico";
             // 
             // funcionárioToolStripMenuItem1
@@ -190,26 +191,28 @@
             this.funcionárioToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.alterarDadosToolStripMenuItem2,
             this.excluirFuncionárioToolStripMenuItem});
+            this.funcionárioToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.funcionárioToolStripMenuItem1.Name = "funcionárioToolStripMenuItem1";
-            this.funcionárioToolStripMenuItem1.Size = new System.Drawing.Size(124, 29);
+            this.funcionárioToolStripMenuItem1.Size = new System.Drawing.Size(176, 42);
             this.funcionárioToolStripMenuItem1.Text = "Funcionário";
             // 
             // alterarDadosToolStripMenuItem2
             // 
             this.alterarDadosToolStripMenuItem2.Name = "alterarDadosToolStripMenuItem2";
-            this.alterarDadosToolStripMenuItem2.Size = new System.Drawing.Size(245, 30);
+            this.alterarDadosToolStripMenuItem2.Size = new System.Drawing.Size(341, 42);
             this.alterarDadosToolStripMenuItem2.Text = "Alterar Dados";
             // 
             // excluirFuncionárioToolStripMenuItem
             // 
             this.excluirFuncionárioToolStripMenuItem.Name = "excluirFuncionárioToolStripMenuItem";
-            this.excluirFuncionárioToolStripMenuItem.Size = new System.Drawing.Size(245, 30);
+            this.excluirFuncionárioToolStripMenuItem.Size = new System.Drawing.Size(341, 42);
             this.excluirFuncionárioToolStripMenuItem.Text = "Excluir Funcionário";
             // 
             // sairToolStripMenuItem
             // 
+            this.sairToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(56, 29);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(77, 42);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
@@ -219,11 +222,9 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Orange;
-            this.groupBox1.Location = new System.Drawing.Point(16, 103);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(12, 84);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(499, 616);
+            this.groupBox1.Size = new System.Drawing.Size(374, 500);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Alterações";
@@ -231,8 +232,7 @@
             // monthCalendar1
             // 
             this.monthCalendar1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.monthCalendar1.Location = new System.Drawing.Point(838, 86);
-            this.monthCalendar1.Margin = new System.Windows.Forms.Padding(12, 11, 12, 11);
+            this.monthCalendar1.Location = new System.Drawing.Point(628, 70);
             this.monthCalendar1.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 2;
@@ -251,10 +251,9 @@
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(984, 308);
-            this.listView1.Margin = new System.Windows.Forms.Padding(4);
+            this.listView1.Location = new System.Drawing.Point(738, 250);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(392, 415);
+            this.listView1.Size = new System.Drawing.Size(295, 338);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -297,10 +296,10 @@
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button1.Location = new System.Drawing.Point(1714, 737);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(1286, 599);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(176, 82);
+            this.button1.Size = new System.Drawing.Size(132, 67);
             this.button1.TabIndex = 1;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
@@ -308,16 +307,15 @@
             // 
             // JanelaMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.ClientSize = new System.Drawing.Size(1428, 846);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.monthCalendar1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "JanelaMenu";
             this.Text = "Janela2";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

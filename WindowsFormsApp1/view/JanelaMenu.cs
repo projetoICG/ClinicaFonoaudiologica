@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Banco_de_Dados;
 using WindowsFormsApp1.objetos;
-
+using WindowsFormsApp1.view.Medico;
 
 namespace WindowsFormsApp1
 {
@@ -27,10 +27,11 @@ namespace WindowsFormsApp1
             usuario.Login = login;
             usuario.Senha = senha;
             InitializeComponent();
-            this.CenterToScreen();
 
-           
-            
+            //TIRAR BORDA DE DEIXAR TELA CHEIA
+            FormBorderStyle = FormBorderStyle.None;
+            WindowState = FormWindowState.Maximized;
+            this.CenterToScreen();
             
         }
         
@@ -60,10 +61,8 @@ namespace WindowsFormsApp1
 
         private void médicoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CadastrarMedico cadastrarmedico = new CadastrarMedico();
-
-            cadastrarmedico.ShowDialog();
-           
+            MenuMedico menuMedico = new MenuMedico();
+            menuMedico.ShowDialog();
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
