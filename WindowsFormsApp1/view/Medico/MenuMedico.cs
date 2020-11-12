@@ -24,9 +24,6 @@ namespace WindowsFormsApp1.view.Medico
             this.CenterToScreen();
         }
 
-
-        
-
         private void DrawGroupBox(GroupBox box, Graphics g, Color textColor, Color borderColor)
         {
             if (box != null)

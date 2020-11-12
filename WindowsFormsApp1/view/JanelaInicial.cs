@@ -9,17 +9,22 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.objetos;
 using MySql.Data.MySqlClient;
-
+using WindowsFormsApp1.Banco_de_Dados;
 
 namespace WindowsFormsApp1
 {
     public partial class JanelaInicial : Form
     {
+        private Usuario usuario;
+        private BDUsuario bdusuario;
         public JanelaInicial()
         {
             InitializeComponent();
             
             this.CenterToScreen();
+
+            usuario = new Usuario();
+            bdusuario = new BDUsuario();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -35,14 +40,18 @@ namespace WindowsFormsApp1
 
         private void clicarBotao(object sender, EventArgs e)
         {
-            string login = campoLogin.Text;
-            string senha = campoSenha.Text;
-            JanelaMenu janela2 = new JanelaMenu(login, senha);
-            this.Hide();
-            
-            janela2.ShowDialog();
-            this.Close();
 
+            usuario = bdusuario.procurarUsuario(campoLogin.Text, campoSenha.Text);
+            if (usuario.Login != null)
+            {
+                JanelaMenu janela2 = new JanelaMenu(usuario);
+                this.Hide();
+                janela2.ShowDialog();
+                this.Close();
+            } else
+            {
+                MessageBox.Show("Usuario não encontrado!");
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e) 

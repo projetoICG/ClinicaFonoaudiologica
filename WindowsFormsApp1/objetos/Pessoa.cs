@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.objetos
 {
-    class Pessoa
+    public class Pessoa
     {
         private string cpf;
         private string rg;

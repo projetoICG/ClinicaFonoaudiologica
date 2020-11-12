@@ -21,21 +21,18 @@ namespace WindowsFormsApp1
 
         private Medico medicoSelecionado;
 
-        public JanelaMenu(string login, string senha)
+        public JanelaMenu(Usuario user)
         {
             usuario = new Usuario();
-            usuario.Login = login;
-            usuario.Senha = senha;
             InitializeComponent();
-
             //TIRAR BORDA DE DEIXAR TELA CHEIA
-            FormBorderStyle = FormBorderStyle.None;
+            //FormBorderStyle = FormBorderStyle.None;
             WindowState = FormWindowState.Maximized;
             this.CenterToScreen();
+
+            this.usuario = user;
             
         }
-        
-
        
         private void Janela2_Load(object sender, EventArgs e)
         {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.objetos
 {
-    class Usuario:Pessoa
+    public class Usuario
     {
         private int id;
         private string funcao;

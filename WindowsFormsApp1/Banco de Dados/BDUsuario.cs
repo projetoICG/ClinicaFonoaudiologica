@@ -33,10 +33,12 @@ namespace WindowsFormsApp1.Banco_de_Dados
                 ConexaoBanco conexao = new ConexaoBanco();
                 conexao.ObjetoConexao.Open();
                 MySqlCommand objetoComando = new MySqlCommand("SELECT * FROM usuario " +
-                    "where login like "+login+" and senha like "+senha+";", conexao.ObjetoConexao);
+                    "where login like \""+login+"\" and senha like \""+senha+"\";", conexao.ObjetoConexao);
                 MySqlDataReader dados = objetoComando.ExecuteReader();
 
+
                 Usuario usuario = new Usuario();
+
                 
                 while (dados.Read())
                 {
@@ -48,13 +50,13 @@ namespace WindowsFormsApp1.Banco_de_Dados
                     usuario.EmailRecuperacao = dados.GetString("emailRecuperacao");
                     usuario.Nome = dados.GetString("nome");
                 }
-                
-                
+
                 conexao.ObjetoConexao.Close();
                 return usuario;
             }
-            catch
+            catch (MySqlException x)
             {
+                return null;
             }
             return null;
         }
