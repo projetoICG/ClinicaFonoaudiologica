@@ -207,8 +207,100 @@ namespace WindowsFormsApp1.Banco_de_Dados
             }
             return 1;
         }
-            
 
+        public List<PacienteMenor> retornarListaPacientesMenor()
+        {
+
+            try
+            {
+                ConexaoBanco conexao = new ConexaoBanco();
+                conexao.ObjetoConexao.Open();
+                MySqlCommand objetoComando = new MySqlCommand("SELECT * FROM paciente_menor_idade;", conexao.ObjetoConexao);
+                MySqlDataReader dados = objetoComando.ExecuteReader();
+
+                List<PacienteMenor> pacientes = new List<PacienteMenor>();
+
+                while (dados.Read())
+                {
+
+                    PacienteMenor paciente = new PacienteMenor();
+                    paciente.Cpf = dados.GetString("cpf");
+                    paciente.Rg = dados.GetString("rg");
+                    paciente.Id = dados.GetInt32("id_paciente");
+                    paciente.Nome = dados.GetString("nome");
+                    paciente.Sexo = dados.GetChar("sexo");
+                    paciente.Rua = dados.GetString("rua");
+                    paciente.Bairro = dados.GetString("bairro");
+                    paciente.Numero = dados.GetString("numero");
+                    paciente.Complemento = dados.GetString("complemento");
+                    paciente.Telefone1 = dados.GetString("telefone1");
+                    paciente.Telefone2 = dados.GetString("telefone2");
+                    paciente.Email = dados.GetString("email");
+                    paciente.DataNascimento = dados.GetString("dataNascimento");
+                    paciente.Observacoes = dados.GetString("observacoes");
+                    paciente.NomeMae = dados.GetString("nomeMae");
+                    paciente.NomePai = dados.GetString("nomePai");
+                    paciente.NomeParente = dados.GetString("nomeParente");
+                    paciente.CpfMae = dados.GetString("cpfMae");
+                    paciente.CpfPai = dados.GetString("cpfPai");
+                    paciente.CpfParente = dados.GetString("cpfParente");
+                    pacientes.Add(paciente);
+                }
+
+                conexao.ObjetoConexao.Close();
+
+                return pacientes;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            return null;
+        }
+
+        public List<Paciente> retornarListaPacientesMaior()
+        {
+
+            try
+            {
+                ConexaoBanco conexao = new ConexaoBanco();
+                conexao.ObjetoConexao.Open();
+                MySqlCommand objetoComando = new MySqlCommand("SELECT * FROM paciente_maior_idade;", conexao.ObjetoConexao);
+                MySqlDataReader dados = objetoComando.ExecuteReader();
+
+                List<Paciente> pacientes = new List<Paciente>();
+
+                while (dados.Read())
+                {
+
+                    PacienteMenor paciente = new PacienteMenor();
+                    paciente.Cpf = dados.GetString("cpf");
+                    paciente.Rg = dados.GetString("rg");
+                    paciente.Id = dados.GetInt32("id_paciente");
+                    paciente.Nome = dados.GetString("nome");
+                    paciente.Sexo = dados.GetChar("sexo");
+                    paciente.Rua = dados.GetString("rua");
+                    paciente.Bairro = dados.GetString("bairro");
+                    paciente.Numero = dados.GetString("numero");
+                    paciente.Complemento = dados.GetString("complemento");
+                    paciente.Telefone1 = dados.GetString("telefone1");
+                    paciente.Telefone2 = dados.GetString("telefone2");
+                    paciente.Email = dados.GetString("email");
+                    paciente.DataNascimento = dados.GetString("dataNascimento");
+                    paciente.Observacoes = dados.GetString("observacoes");
+                    pacientes.Add(paciente);
+                }
+
+                conexao.ObjetoConexao.Close();
+
+                return pacientes;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            return null;
+        }
 
     }
 }
