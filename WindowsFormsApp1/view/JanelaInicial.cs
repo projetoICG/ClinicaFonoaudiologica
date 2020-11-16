@@ -27,20 +27,14 @@ namespace WindowsFormsApp1
             bdusuario = new BDUsuario();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
+        private void timer1_Tick(object sender, EventArgs e) 
+        { 
+            string time = DateTime.Now.ToLongDateString()+"\n"+DateTime.Now.ToLongTimeString();
+            label1.Text = time;
         }
 
-        private void interfaceInicio_KeyUp(object sender, KeyEventArgs e)
+        private void botaoLogin_Click(object sender, EventArgs e)
         {
-
-        }
-
-
-        private void clicarBotao(object sender, EventArgs e)
-        {
-
             usuario = bdusuario.procurarUsuario(campoLogin.Text, campoSenha.Text);
             if (usuario.Login != null)
             {
@@ -48,38 +42,23 @@ namespace WindowsFormsApp1
                 this.Hide();
                 janela2.ShowDialog();
                 this.Close();
-            } else
+            }
+            else
             {
                 MessageBox.Show("Usuario não encontrado!");
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e) 
-        { 
-            string time = DateTime.Now.ToLongTimeString();
-            label1.Text = time;
-        }
-
-        private void campoLogin_TextChanged(object sender, EventArgs e)
+        private void JanelaInicial_Load(object sender, EventArgs e)
         {
-
+            //Não deixar usuário redimencionar.
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            
+            label1.BackColor = Color.Transparent;
+            label2.BackColor = Color.Transparent;
+            label3.BackColor = Color.Transparent;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                MySqlConnection objetoConexao = new MySqlConnection("server=localhost;port=3306;User Id=root;database=clinicafono;password=123456");
-                objetoConexao.Open(); //abrir banco
-                MessageBox.Show("banco funcionando");
-                objetoConexao.Close(); //sempre fechar conexao
-             }
-            catch
-            {
-                MessageBox.Show("deu merda no banco");
-            }
-        }
-
-       
+    
     }
 }

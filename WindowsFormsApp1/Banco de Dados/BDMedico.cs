@@ -20,6 +20,7 @@ namespace WindowsFormsApp1.Banco_de_Dados
 
         public void prepararCadastrarMedico(Medico medico, MySqlCommand objetoComando)
         {
+
             objetoComando.Parameters.Add("@cpf", MySqlDbType.VarChar).Value = medico.Cpf;
             objetoComando.Parameters.Add("@rg", MySqlDbType.VarChar).Value = medico.Rg;
             objetoComando.Parameters.Add("@nome", MySqlDbType.VarChar).Value = medico.Nome;
@@ -106,7 +107,6 @@ namespace WindowsFormsApp1.Banco_de_Dados
 
         public List<Medico> retornarListaMedicos()
         {
-
             try
             {
                 ConexaoBanco conexao = new ConexaoBanco();
@@ -194,6 +194,34 @@ namespace WindowsFormsApp1.Banco_de_Dados
             }
             return 1;
         }
+
+        public void atualizarMedico(Medico medicoAtualizado)
+        {
+            try
+            {
+                ConexaoBanco conexao = new ConexaoBanco();
+
+                conexao.ObjetoConexao.Open();
+
+                MySqlCommand objetoComando = new MySqlCommand("update medico set cpf=?, rg=?, nome=?,sexo=?," +
+                    " rua=?, bairro=?, numero=?, complemento=?, telefone1=?, telefone2=?," +
+                    " email=?, dataNascimento=?, conselho=?, numeroConselho=?, funcao=?, formacao=?" +
+                    " where id_medico=?;", conexao.ObjetoConexao);
+
+                prepararCadastrarMedico(medicoAtualizado, objetoComando);
+                objetoComando.Parameters.Add("@id_medico", MySqlDbType.Int32).Value = medicoAtualizado.Id;
+
+                objetoComando.ExecuteReader();
+
+                conexao.ObjetoConexao.Close();
+            }
+            catch(MySqlException l)
+            {
+                Console.WriteLine(l);
+            }
+           
+        }
+
 
     }
 }

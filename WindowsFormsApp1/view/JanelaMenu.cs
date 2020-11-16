@@ -65,11 +65,6 @@ namespace WindowsFormsApp1
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void JanelaMenu_FormClosing_1(object sender, FormClosingEventArgs e)
-        {
             DialogResult confirm = MessageBox.Show("Tem certeza que deseja voltar a tela de Login ?", "Aviso", MessageBoxButtons.YesNo);
 
             if (confirm == DialogResult.Yes)
@@ -77,11 +72,26 @@ namespace WindowsFormsApp1
                 this.Hide();
                 JanelaInicial janela = new JanelaInicial();
                 janela.ShowDialog();
-                e.Cancel = false;
+                this.Close();
             }
-            else if (confirm == DialogResult.No)
-                e.Cancel = true;
+            
+             
         }
+
+        //private void JanelaMenu_FormClosing_1(object sender, FormClosingEventArgs e)
+        //{
+        //    DialogResult confirm = MessageBox.Show("Tem certeza que deseja voltar a tela de Login ?", "Aviso", MessageBoxButtons.YesNo);
+
+        //    if (confirm == DialogResult.Yes)
+        //    {
+        //        this.Hide();
+        //        JanelaInicial janela = new JanelaInicial();
+        //        janela.ShowDialog();
+        //        e.Cancel = false;
+        //    }
+        //    else if (confirm == DialogResult.No)
+        //        e.Cancel = true;
+        //}
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -91,45 +101,6 @@ namespace WindowsFormsApp1
         }
 
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                BDMedico bd = new BDMedico();
-                List<Medico> listaMedicos = new List<Medico>();
-                listaMedicos = bd.retornarListaMedicos();
-
-                listView1.Items.Clear();
-                 listView1.Refresh();
-
-                foreach (Medico m in listaMedicos){
-
-                    ListViewItem varItem = new ListViewItem(new string[]
-                    {
-                        Convert.ToString(m.Id),
-                        m.Nome,
-                        m.Cpf,
-                        m.Email,
-                        m.Telefone1,
-                        m.Telefone2,
-                        m.Funcao
-                    });
-                    listView1.Items.Add(varItem);
-                }
-
-                Console.WriteLine(monthCalendar1.SelectionRange.Start.ToShortDateString());
-               
-            }
-            catch (Exception j)
-            {
-                Console.WriteLine(j);
-            }
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -139,6 +110,9 @@ namespace WindowsFormsApp1
             Console.WriteLine(listView1.SelectedItems[0].Text);
         }
 
-        
+        private void funcionárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

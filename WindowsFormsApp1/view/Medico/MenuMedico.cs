@@ -19,6 +19,7 @@ namespace WindowsFormsApp1.view.Medico
     public partial class MenuMedico : Form
     {
         List<WindowsFormsApp1.objetos.Medico> listaMedicosNoBanco;
+        WindowsFormsApp1.objetos.Medico medicoSelecionado;
         public MenuMedico()
         {
             InitializeComponent();
@@ -84,11 +85,7 @@ namespace WindowsFormsApp1.view.Medico
 
         }
 
-        private void campoDataNascimento_Click(object sender, EventArgs e)
-        {
-            int startPos = this.campoDataNascimento.MaskedTextProvider.FindUnassignedEditPositionFrom(this.campoDataNascimento.MaskedTextProvider.LastAssignedPosition + 1, true);
-            this.campoDataNascimento.Select(startPos, 0);
-        }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -187,6 +184,10 @@ namespace WindowsFormsApp1.view.Medico
                         radioBotaoFeminino.Checked = true;
                     comboConselho.Text = m.Conselho;
                     comboFuncao.Text = m.Funcao;
+
+                    //selecionou, vai adicionar o objeto medico selecionado
+                    //nessa variavel
+                    medicoSelecionado = m;
                 }
             }
         }
@@ -231,6 +232,27 @@ namespace WindowsFormsApp1.view.Medico
             }
         }
 
+        private void limparCampos()
+        {
+            campoNome.Clear();
+            campoCPF.Clear();
+            campoRG.Clear();
+            campoRua.Clear(); 
+            campoBairro.Clear();
+            campoComplemento.Clear();
+            campoNumero.Clear();
+            campoDataNascimento.Clear();
+            campoEmail.Clear();
+            campoNConselho.Clear();
+            campoFormacao.Clear();
+            campoTelefone1.Clear();
+            campoTelefone2.Clear();
+            radioBotaoFeminino.Checked = false;
+            radioBotaoMasculino.Checked = false;
+            comboFuncao.SelectedIndex = 0;
+            comboConselho.SelectedIndex = 0;
+            campoNConselho.Clear();
+        }
         private void button3_Click(object sender, EventArgs e)
         {
             DialogResult confirm = MessageBox.Show("Tem certeza que deseja Excluir ?", "Aviso !", MessageBoxButtons.YesNo);
@@ -243,14 +265,71 @@ namespace WindowsFormsApp1.view.Medico
                     BDMedico bdmedico = new BDMedico();
                     bdmedico.excluirMedico(Convert.ToInt32(listView1.SelectedItems[0].Text));
                     MessageBox.Show("Excluido com sucesso!");
+                    botaoConfirmarAlteracoes.Enabled = false;
+                    botaoExcluir.Enabled = false;
+                    atualizarLista();
+                    alterarEstadoCampos(false);
+                    limparCampos();
                 }
                 catch
                 {
 
                 }
             }
-            atualizarLista();
             
+        }
+
+        private void botaoConfirmarAlteracoes_Click(object sender, EventArgs e)
+        {
+            DialogResult confirm = MessageBox.Show("Tem certeza que deseja confirmar as mudanças?", "Aviso !", MessageBoxButtons.YesNo);
+
+            if (confirm == DialogResult.Yes)
+            {
+
+                try
+                {
+                    BDMedico bdmedico = new BDMedico();
+
+                    WindowsFormsApp1.objetos.Medico medicoAlterado = medicoSelecionado;
+
+                    //vou mudar tudo menos o id que é padrão.
+                    medicoAlterado.Nome = campoNome.Text;
+                    medicoAlterado.Cpf = campoCPF.Text;
+                    medicoAlterado.Rg = campoRG.Text;
+                    medicoAlterado.Rua = campoRua.Text;
+                    medicoAlterado.Bairro = campoBairro.Text;
+                    medicoAlterado.Complemento = campoComplemento.Text;
+                    medicoAlterado.Numero = campoNumero.Text;
+                    medicoAlterado.DataNascimento = campoDataNascimento.Text;
+                    medicoAlterado.Email = campoEmail.Text;
+                    medicoAlterado.Conselho = campoNConselho.Text;
+                    medicoAlterado.Formacao = campoFormacao.Text;
+                    medicoAlterado.Telefone1 = campoTelefone1.Text;
+                    medicoAlterado.Telefone2 = campoTelefone2.Text;
+
+                    if (radioBotaoFeminino.Checked)
+                        medicoAlterado.Sexo = 'F';
+                    else
+                        medicoAlterado.Sexo = 'M';
+                    medicoAlterado.Conselho = comboConselho.Text;
+                    medicoAlterado.Funcao = comboFuncao.Text;
+
+                    bdmedico.atualizarMedico(medicoAlterado);
+                    MessageBox.Show("Atualizado com sucesso!");
+                    atualizarLista();
+
+                }
+                catch
+                {
+                   
+                }
+            }
+
+        }
+
+        private void campoNConselho_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

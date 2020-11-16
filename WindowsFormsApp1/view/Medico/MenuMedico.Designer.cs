@@ -75,12 +75,12 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.botaoConfirmarAlteracoes = new System.Windows.Forms.Button();
+            this.botaoExcluir = new System.Windows.Forms.Button();
             this.botaoAlterar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.botaoExcluir = new System.Windows.Forms.Button();
-            this.botaoConfirmarAlteracoes = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -154,10 +154,11 @@
             // 
             this.campoNConselho.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.campoNConselho.Location = new System.Drawing.Point(310, 489);
-            this.campoNConselho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.campoNConselho.Margin = new System.Windows.Forms.Padding(2);
             this.campoNConselho.Name = "campoNConselho";
             this.campoNConselho.Size = new System.Drawing.Size(130, 23);
             this.campoNConselho.TabIndex = 105;
+            this.campoNConselho.TextChanged += new System.EventHandler(this.campoNConselho_TextChanged);
             // 
             // label18
             // 
@@ -188,7 +189,7 @@
             // 
             this.campoFormacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.campoFormacao.Location = new System.Drawing.Point(11, 435);
-            this.campoFormacao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.campoFormacao.Margin = new System.Windows.Forms.Padding(2);
             this.campoFormacao.Multiline = true;
             this.campoFormacao.Name = "campoFormacao";
             this.campoFormacao.Size = new System.Drawing.Size(255, 82);
@@ -210,7 +211,7 @@
             // 
             this.campoTelefone2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.campoTelefone2.Location = new System.Drawing.Point(335, 336);
-            this.campoTelefone2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.campoTelefone2.Margin = new System.Windows.Forms.Padding(2);
             this.campoTelefone2.Mask = "(00)00000-0000";
             this.campoTelefone2.Name = "campoTelefone2";
             this.campoTelefone2.Size = new System.Drawing.Size(122, 23);
@@ -220,7 +221,7 @@
             // 
             this.campoTelefone1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.campoTelefone1.Location = new System.Drawing.Point(105, 336);
-            this.campoTelefone1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.campoTelefone1.Margin = new System.Windows.Forms.Padding(2);
             this.campoTelefone1.Mask = "(00)00000-0000";
             this.campoTelefone1.Name = "campoTelefone1";
             this.campoTelefone1.Size = new System.Drawing.Size(122, 23);
@@ -241,7 +242,7 @@
             // 
             this.campoEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.campoEmail.Location = new System.Drawing.Point(77, 375);
-            this.campoEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.campoEmail.Margin = new System.Windows.Forms.Padding(2);
             this.campoEmail.Name = "campoEmail";
             this.campoEmail.Size = new System.Drawing.Size(360, 23);
             this.campoEmail.TabIndex = 99;
@@ -250,7 +251,7 @@
             // 
             this.campoRG.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.campoRG.Location = new System.Drawing.Point(51, 178);
-            this.campoRG.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.campoRG.Margin = new System.Windows.Forms.Padding(2);
             this.campoRG.Mask = "00.000.000-0";
             this.campoRG.Name = "campoRG";
             this.campoRG.Size = new System.Drawing.Size(105, 23);
@@ -293,7 +294,7 @@
             // 
             this.campoComplemento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.campoComplemento.Location = new System.Drawing.Point(126, 295);
-            this.campoComplemento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.campoComplemento.Margin = new System.Windows.Forms.Padding(2);
             this.campoComplemento.Name = "campoComplemento";
             this.campoComplemento.Size = new System.Drawing.Size(279, 23);
             this.campoComplemento.TabIndex = 94;
@@ -313,7 +314,7 @@
             // 
             this.campoNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.campoNumero.Location = new System.Drawing.Point(351, 221);
-            this.campoNumero.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.campoNumero.Margin = new System.Windows.Forms.Padding(2);
             this.campoNumero.Name = "campoNumero";
             this.campoNumero.Size = new System.Drawing.Size(53, 23);
             this.campoNumero.TabIndex = 92;
@@ -333,7 +334,7 @@
             // 
             this.campoBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.campoBairro.Location = new System.Drawing.Point(71, 256);
-            this.campoBairro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.campoBairro.Margin = new System.Windows.Forms.Padding(2);
             this.campoBairro.Name = "campoBairro";
             this.campoBairro.Size = new System.Drawing.Size(181, 23);
             this.campoBairro.TabIndex = 90;
@@ -353,7 +354,7 @@
             // 
             this.campoRua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.campoRua.Location = new System.Drawing.Point(52, 216);
-            this.campoRua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.campoRua.Margin = new System.Windows.Forms.Padding(2);
             this.campoRua.Name = "campoRua";
             this.campoRua.Size = new System.Drawing.Size(213, 23);
             this.campoRua.TabIndex = 88;
@@ -373,7 +374,7 @@
             // 
             this.campoCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.campoCPF.Location = new System.Drawing.Point(52, 105);
-            this.campoCPF.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.campoCPF.Margin = new System.Windows.Forms.Padding(2);
             this.campoCPF.Mask = "000.000.000-00";
             this.campoCPF.Name = "campoCPF";
             this.campoCPF.Size = new System.Drawing.Size(122, 23);
@@ -383,13 +384,12 @@
             // 
             this.campoDataNascimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.campoDataNascimento.Location = new System.Drawing.Point(156, 143);
-            this.campoDataNascimento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.campoDataNascimento.Margin = new System.Windows.Forms.Padding(2);
             this.campoDataNascimento.Mask = "00/00/0000";
             this.campoDataNascimento.Name = "campoDataNascimento";
             this.campoDataNascimento.Size = new System.Drawing.Size(97, 23);
             this.campoDataNascimento.TabIndex = 85;
             this.campoDataNascimento.ValidatingType = typeof(System.DateTime);
-            this.campoDataNascimento.Click += new System.EventHandler(this.campoDataNascimento_Click);
             // 
             // label2
             // 
@@ -461,7 +461,7 @@
             // 
             this.campoNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.campoNome.Location = new System.Drawing.Point(68, 64);
-            this.campoNome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.campoNome.Margin = new System.Windows.Forms.Padding(2);
             this.campoNome.Name = "campoNome";
             this.campoNome.Size = new System.Drawing.Size(242, 23);
             this.campoNome.TabIndex = 78;
@@ -482,7 +482,7 @@
             this.radioBotaoFeminino.AutoSize = true;
             this.radioBotaoFeminino.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioBotaoFeminino.Location = new System.Drawing.Point(324, 67);
-            this.radioBotaoFeminino.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioBotaoFeminino.Margin = new System.Windows.Forms.Padding(2);
             this.radioBotaoFeminino.Name = "radioBotaoFeminino";
             this.radioBotaoFeminino.Size = new System.Drawing.Size(87, 22);
             this.radioBotaoFeminino.TabIndex = 76;
@@ -494,7 +494,7 @@
             this.radioBotaoMasculino.AutoSize = true;
             this.radioBotaoMasculino.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioBotaoMasculino.Location = new System.Drawing.Point(324, 90);
-            this.radioBotaoMasculino.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioBotaoMasculino.Margin = new System.Windows.Forms.Padding(2);
             this.radioBotaoMasculino.Name = "radioBotaoMasculino";
             this.radioBotaoMasculino.Size = new System.Drawing.Size(94, 22);
             this.radioBotaoMasculino.TabIndex = 75;
@@ -608,6 +608,26 @@
             this.groupBox2.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox2_Paint);
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // botaoConfirmarAlteracoes
+            // 
+            this.botaoConfirmarAlteracoes.Location = new System.Drawing.Point(6, 87);
+            this.botaoConfirmarAlteracoes.Name = "botaoConfirmarAlteracoes";
+            this.botaoConfirmarAlteracoes.Size = new System.Drawing.Size(229, 38);
+            this.botaoConfirmarAlteracoes.TabIndex = 3;
+            this.botaoConfirmarAlteracoes.Text = "Confirmar Alterações";
+            this.botaoConfirmarAlteracoes.UseVisualStyleBackColor = true;
+            this.botaoConfirmarAlteracoes.Click += new System.EventHandler(this.botaoConfirmarAlteracoes_Click);
+            // 
+            // botaoExcluir
+            // 
+            this.botaoExcluir.Location = new System.Drawing.Point(238, 87);
+            this.botaoExcluir.Name = "botaoExcluir";
+            this.botaoExcluir.Size = new System.Drawing.Size(223, 38);
+            this.botaoExcluir.TabIndex = 2;
+            this.botaoExcluir.Text = "Excluir";
+            this.botaoExcluir.UseVisualStyleBackColor = true;
+            this.botaoExcluir.Click += new System.EventHandler(this.button3_Click);
+            // 
             // botaoAlterar
             // 
             this.botaoAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F);
@@ -646,25 +666,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(279, 23);
             this.textBox2.TabIndex = 0;
-            // 
-            // botaoExcluir
-            // 
-            this.botaoExcluir.Location = new System.Drawing.Point(238, 87);
-            this.botaoExcluir.Name = "botaoExcluir";
-            this.botaoExcluir.Size = new System.Drawing.Size(223, 38);
-            this.botaoExcluir.TabIndex = 2;
-            this.botaoExcluir.Text = "Excluir";
-            this.botaoExcluir.UseVisualStyleBackColor = true;
-            this.botaoExcluir.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // botaoConfirmarAlteracoes
-            // 
-            this.botaoConfirmarAlteracoes.Location = new System.Drawing.Point(6, 87);
-            this.botaoConfirmarAlteracoes.Name = "botaoConfirmarAlteracoes";
-            this.botaoConfirmarAlteracoes.Size = new System.Drawing.Size(229, 38);
-            this.botaoConfirmarAlteracoes.TabIndex = 3;
-            this.botaoConfirmarAlteracoes.Text = "Confirmar Alterações";
-            this.botaoConfirmarAlteracoes.UseVisualStyleBackColor = true;
             // 
             // MenuMedico
             // 

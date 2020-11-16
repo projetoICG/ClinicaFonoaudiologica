@@ -158,37 +158,37 @@ namespace WindowsFormsApp1
                 ///DEU MERDA NA HORA DE CADASTRAR O MEDICO!!!
             }
         }
-
+        private void limparDados()
+        {           
+                campoNome.Clear();
+                campoCPF.Clear();
+                campoRG.Clear();
+                campoRua.Clear();
+                campoBairro.Clear();
+                campoComplemento.Clear();
+                campoNumero.Clear();
+                campoDataNascimento.Clear();
+                campoEmail.Clear();
+                campoNConselho.Clear();
+                campoFormacao.Clear();
+                campoTelefone1.Clear();
+                campoTelefone2.Clear();
+                radioBotaoFeminino.Checked = false;
+                radioBotaoMasculino.Checked = false;
+                comboFuncao.SelectedIndex = 0;
+                comboConselho.SelectedIndex = 0;
+                campoNConselho.Clear();
+            
+        }
         private void botaoCadastrar_Click(object sender, EventArgs e)
         {
             cadastrarMedico();
 
 
             if (MessageBox.Show("Deseja Cadastrar outro médico?", "Aviso", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                radioBotaoFeminino.Text = string.Empty;
-                campoNome.Text = string.Empty;
-                campoCPF.Text = string.Empty;
-                campoRG.Text = string.Empty;
-                campoRua.Text = string.Empty;
-                campoBairro.Text = string.Empty;
-                campoNumero.Text = string.Empty;
-                campoComplemento.Text = string.Empty;
-                campoTelefone1.Text = string.Empty;
-                campoTelefone2.Text = string.Empty;
-                campoEmail.Text = string.Empty;
-                campoDataNascimento.Text = string.Empty;
-                comboConselho.Text = string.Empty;
-                campoFormacao.Text = string.Empty;
-                campoNConselho.Text = string.Empty;
-                comboFuncao.Text = string.Empty;
-            }
+                limparDados();
             else
-            {
                 this.Close();
-                
-
-            }
 
         }
 
