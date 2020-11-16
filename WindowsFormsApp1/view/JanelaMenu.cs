@@ -65,16 +65,7 @@ namespace WindowsFormsApp1
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult confirm = MessageBox.Show("Tem certeza que deseja voltar a tela de Login ?", "Aviso", MessageBoxButtons.YesNo);
-
-            if (confirm == DialogResult.Yes)
-            {
-                this.Hide();
-                JanelaInicial janela = new JanelaInicial();
-                janela.ShowDialog();
-                this.Close();
-            }
-            
+           
              
         }
 
@@ -113,6 +104,26 @@ namespace WindowsFormsApp1
         private void funcionárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DialogResult confirm = MessageBox.Show("Tem certeza que deseja voltar a tela de Login ?", "Aviso", MessageBoxButtons.YesNo);
+
+            if (confirm == DialogResult.Yes)
+            {
+                this.Hide();
+                JanelaInicial janela = new JanelaInicial();
+                janela.ShowDialog();
+                this.Close();
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MenuMedico menuMedico = new MenuMedico();
+            menuMedico.ShowDialog();
         }
     }
 }
