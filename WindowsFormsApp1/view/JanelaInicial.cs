@@ -66,6 +66,9 @@ namespace WindowsFormsApp1
             label3.BackColor = Color.Transparent;
         }
 
-    
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

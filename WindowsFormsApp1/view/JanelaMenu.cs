@@ -84,12 +84,7 @@ namespace WindowsFormsApp1
         //        e.Cancel = true;
         //}
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //BDMedico conexaoMedico = new BDMedico();
-            //dataGridView1.DataSource = conexaoMedico.retornarListaMedicos();
         
-        }
 
 
 
@@ -101,11 +96,7 @@ namespace WindowsFormsApp1
             Console.WriteLine(listView1.SelectedItems[0].Text);
         }
 
-        private void funcionárioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
+  
         private void button4_Click(object sender, EventArgs e)
         {
             DialogResult confirm = MessageBox.Show("Tem certeza que deseja voltar a tela de Login ?", "Aviso", MessageBoxButtons.YesNo);
@@ -124,6 +115,22 @@ namespace WindowsFormsApp1
         {
             MenuMedico menuMedico = new MenuMedico();
             menuMedico.ShowDialog();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            string time = DateTime.Now.ToShortDateString() + "\n" + DateTime.Now.ToLongTimeString();
+            labelData.Text = time;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelData_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
