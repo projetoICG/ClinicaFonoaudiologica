@@ -16,6 +16,7 @@ CREATE TABLE `Consulta`
  `numero`          varchar(20) NULL ,
  `complemento`     varchar(20) NULL ,
  `nomeMedico`      varchar(100) NULL ,
+ `valorConsulta`   float NOT NULL,
 
 PRIMARY KEY (`idConsulta`,`idPaciente`, `idMedico`)
 );
@@ -42,27 +43,7 @@ CREATE TABLE `Medico`
 PRIMARY KEY (`id_medico`,`cpf`)
 );
 
-CREATE TABLE `Paciente_Maior_Idade`
-(
- `cpf`            varchar(30) NOT NULL ,
- `rg`             varchar(30) NULL ,
- `id_paciente`    int NOT NULL AUTO_INCREMENT,
- `nome`           varchar(100) NOT NULL ,
- `sexo`			  char NULL ,
- `rua`            varchar(100) NULL ,
- `bairro`         varchar(100) NULL ,
- `numero`         varchar(20) NULL ,
- `complemento`    varchar(100) NULL ,
- `telefone1`      varchar(45) NULL ,
- `telefone2`      varchar(45) NULL ,
- `email`          varchar(70) NULL ,
- `dataNascimento` varchar(45) NULL ,
- `observacoes`    varchar(5000) NULL ,
-
-PRIMARY KEY (`id_paciente`,`cpf`)
-);
-
-CREATE TABLE `Paciente_Menor_Idade`
+CREATE TABLE `Paciente`
 (
  `cpf`            varchar(30) NOT NULL ,
  `rg`             varchar(30) NULL ,

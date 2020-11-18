@@ -19,7 +19,7 @@ namespace WindowsFormsApp1.view.Paciente
     public partial class MenuPaciente : Form
     {
         List<WindowsFormsApp1.objetos.Paciente> listaPacientesNoBanco;
-        List<WindowsFormsApp1.objetos.PacienteMenor> listaPacientesMenorNoBanco;
+        BDPaciente bdPaciente;
         public MenuPaciente()
         {
             InitializeComponent();
@@ -27,12 +27,12 @@ namespace WindowsFormsApp1.view.Paciente
             botaoExcluir.Enabled = false;
             botaoAlterar.Enabled = false;
             listaPacientesNoBanco = new List<WindowsFormsApp1.objetos.Paciente>();
-            listaPacientesMenorNoBanco = new List<WindowsFormsApp1.objetos.PacienteMenor>();
             alterarEstadoCampos(false);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
-            atualizarLista();
+            bdPaciente = new BDPaciente();
+            atualizarLista(listaPacientesNoBanco = bdPaciente.retornarListaPacientes());
             this.CenterToScreen();
         }
 
@@ -97,21 +97,17 @@ namespace WindowsFormsApp1.view.Paciente
             CadastrarPaciente cadastrarpaciente = new CadastrarPaciente();
             
             cadastrarpaciente.ShowDialog();
-            atualizarLista();
+            atualizarLista(listaPacientesNoBanco = bdPaciente.retornarListaPacientes());
         }
-        private void atualizarLista()
+        private void atualizarLista(List<WindowsFormsApp1.objetos.Paciente> listaPacientes)
         {
 
             try
             {
-                BDPaciente bd = new BDPaciente();
-               
-                listaPacientesMenorNoBanco = bd.retornarListaPacientesMenor();
-                listaPacientesNoBanco = bd.retornarListaPacientesMaior();
                 listView1.Items.Clear();
                 listView1.Refresh();
                 
-                foreach (objetos.Paciente m in listaPacientesNoBanco)
+                foreach (objetos.Paciente m in listaPacientes)
                 {
 
                     ListViewItem varItem = new ListViewItem(new string[]
@@ -126,23 +122,6 @@ namespace WindowsFormsApp1.view.Paciente
                     });
                     listView1.Items.Add(varItem);
                 }
-
-                foreach (WindowsFormsApp1.objetos.PacienteMenor m in listaPacientesMenorNoBanco)
-                {
-
-                    ListViewItem varItem = new ListViewItem(new string[]
-                    {
-                        Convert.ToString(m.Id),
-                        m.Nome,
-                        m.Cpf,
-                        m.Email,
-                        m.Telefone1,
-                        m.Telefone2,
-                        m.Rg
-                    });
-                    listView1.Items.Add(varItem);
-                }
-
             }
             catch (Exception j)
             {
@@ -260,6 +239,22 @@ namespace WindowsFormsApp1.view.Paciente
         private void botaoConfirmarAlteracoes_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void botaoPesquisar_Click(object sender, EventArgs e)
+        {
+            if (campoPesquisar.Text != "")
+            {
+                List<WindowsFormsApp1.objetos.Paciente> pacientes = new List<WindowsFormsApp1.objetos.Paciente>();
+                if ((pacientes = bdPaciente.buscarEspecificacaoPaciente(comboPesquisar.Text, campoPesquisar.Text)) != null)
+                {
+                    atualizarLista(pacientes);
+                }
+            }
+            else
+            {
+                atualizarLista(listaPacientesNoBanco);
+            }
         }
         /*
 private void button3_Click(object sender, EventArgs e)

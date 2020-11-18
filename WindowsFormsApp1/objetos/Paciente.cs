@@ -9,7 +9,19 @@ namespace WindowsFormsApp1.objetos
     public class Paciente:Pessoa
     {
         private string observacoes;
+        private string nomeMae;
+        private string nomePai;
+        private string nomeParente;
+        private string cpfMae;
+        private string cpfPai;
+        private string cpfParente;
 
         public string Observacoes { get => observacoes; set => observacoes = value; }
+        public string NomeMae { get => nomeMae; set => nomeMae = value; }
+        public string NomePai { get => nomePai; set => nomePai = value; }
+        public string NomeParente { get => nomeParente; set => nomeParente = value; }
+        public string CpfMae { get => cpfMae; set => cpfMae = value; }
+        public string CpfPai { get => cpfPai; set => cpfPai = value; }
+        public string CpfParente { get => cpfParente; set => cpfParente = value; }
     }
 }

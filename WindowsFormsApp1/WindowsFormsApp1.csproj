@@ -105,7 +105,6 @@
     <Compile Include="objetos\Medico.cs" />
     <Compile Include="objetos\OperacaoCadastro.cs" />
     <Compile Include="objetos\Paciente.cs" />
-    <Compile Include="objetos\PacienteMenor.cs" />
     <Compile Include="objetos\Pessoa.cs" />
     <Compile Include="objetos\Usuario.cs" />
     <Compile Include="Program.cs" />

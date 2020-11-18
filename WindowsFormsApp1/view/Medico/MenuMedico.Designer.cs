@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuMedico));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboFuncao = new System.Windows.Forms.ComboBox();
             this.campoNConselho = new System.Windows.Forms.TextBox();
@@ -80,7 +82,11 @@
             this.botaoAlterar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.campoPesquisar = new System.Windows.Forms.TextBox();
+            this.comboPesquisar = new System.Windows.Forms.ComboBox();
+            this.botaoPesquisar = new System.Windows.Forms.Button();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -652,20 +658,65 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.label19);
+            this.panel1.Controls.Add(this.campoPesquisar);
+            this.panel1.Controls.Add(this.comboPesquisar);
+            this.panel1.Controls.Add(this.botaoPesquisar);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Location = new System.Drawing.Point(475, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(674, 91);
             this.panel1.TabIndex = 3;
             // 
-            // textBox2
+            // label19
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox2.Location = new System.Drawing.Point(389, 51);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(279, 23);
-            this.textBox2.TabIndex = 0;
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(311, 19);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(74, 13);
+            this.label19.TabIndex = 110;
+            this.label19.Text = "Pesquisar por:";
+            // 
+            // campoPesquisar
+            // 
+            this.campoPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoPesquisar.Location = new System.Drawing.Point(247, 54);
+            this.campoPesquisar.Margin = new System.Windows.Forms.Padding(2);
+            this.campoPesquisar.Name = "campoPesquisar";
+            this.campoPesquisar.Size = new System.Drawing.Size(248, 23);
+            this.campoPesquisar.TabIndex = 109;
+            // 
+            // comboPesquisar
+            // 
+            this.comboPesquisar.FormattingEnabled = true;
+            this.comboPesquisar.Items.AddRange(new object[] {
+            "Nome",
+            "CPF",
+            "RG",
+            "Conselho",
+            "Função",
+            "Número Conselho"});
+            this.comboPesquisar.Location = new System.Drawing.Point(391, 15);
+            this.comboPesquisar.Name = "comboPesquisar";
+            this.comboPesquisar.Size = new System.Drawing.Size(206, 21);
+            this.comboPesquisar.TabIndex = 4;
+            this.comboPesquisar.Text = "Nome";
+            // 
+            // botaoPesquisar
+            // 
+            this.botaoPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.botaoPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botaoPesquisar.Image = ((System.Drawing.Image)(resources.GetObject("botaoPesquisar.Image")));
+            this.botaoPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.botaoPesquisar.Location = new System.Drawing.Point(500, 49);
+            this.botaoPesquisar.Name = "botaoPesquisar";
+            this.botaoPesquisar.Size = new System.Drawing.Size(164, 34);
+            this.botaoPesquisar.TabIndex = 3;
+            this.botaoPesquisar.Text = "Pesquisar";
+            this.botaoPesquisar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.botaoPesquisar.UseVisualStyleBackColor = true;
+            this.botaoPesquisar.Click += new System.EventHandler(this.botaoPesquisar_Click);
+            
             // 
             // MenuMedico
             // 
@@ -742,6 +793,10 @@
         private System.Windows.Forms.Button botaoConfirmarAlteracoes;
         private System.Windows.Forms.Button botaoExcluir;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button botaoPesquisar;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox campoPesquisar;
+        private System.Windows.Forms.ComboBox comboPesquisar;
+        private System.Windows.Forms.Timer timer2;
     }
 }

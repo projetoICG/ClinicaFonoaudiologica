@@ -46,7 +46,7 @@ namespace WindowsFormsApp1.Banco_de_Dados
                 ConexaoBanco conexao = new ConexaoBanco();
                 conexao.ObjetoConexao.Open();
                 MySqlCommand objetoComando = new MySqlCommand("SELECT * FROM medico " +
-                    "where " + coluna + " like \"" + busca + "\";", conexao.ObjetoConexao);
+                    "where " + coluna + " like \"%" + busca + "%\";", conexao.ObjetoConexao);
                 MySqlDataReader dados = objetoComando.ExecuteReader();
                 
                 List<Medico> medicos = new List<Medico>();

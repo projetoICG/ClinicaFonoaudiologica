@@ -145,88 +145,38 @@ namespace WindowsFormsApp1
 
         }
 
-        private void cadastrarMedico()
-        {
-
-
-
-        }
         private void botaoCadastrar_Click(object sender, EventArgs e)
         {
-            if (int.Parse(campoIdade.Text) < 18)
-            {
-                //Cadastrando Paciente Menor idade
-                try
-                {
-                    PacienteMenor menor = new PacienteMenor();
-                    menor.Cpf = campoCPF.Text;
-                    menor.Nome = campoNome.Text;
-                    if (radioBotaoFeminino.Checked)
-                        menor.Sexo = 'F';
-                    else
-                        menor.Sexo = 'M';
-                    menor.Rg = campoRG.Text;
-                    menor.Rua = campoRua.Text;
-                    menor.Bairro = campoBairro.Text;
-                    menor.Numero = campoNumero.Text;
-                    menor.Complemento = campoComplemento.Text;
-                    menor.Telefone1 = campoTelefone1.Text;
-                    menor.Telefone2 = campoTelefone2.Text;
-                    menor.Email = campoEmail.Text;
-                    menor.DataNascimento = campoDataNascimento.Text;
-                    menor.Observacoes = campoObservacao.Text;
-                    menor.NomeMae = campoNomeMae.Text;
-                    menor.NomePai = campoNomePai.Text;
-                    menor.NomeParente = campoNomeParente.Text;
-                    menor.CpfMae = campoCPFMae.Text;
-                    menor.CpfPai = campoCPFPai.Text;
-                    menor.CpfParente = campoCPFParente.Text;
-                    BDPaciente bdPaciente = new BDPaciente();
-                    bdPaciente.cadastrarPacienteMenorDeIdade(menor);
+            
+                Paciente paciente = new Paciente();
+                paciente.Cpf = campoCPF.Text;
+                paciente.Nome = campoNome.Text;
+                if (radioBotaoFeminino.Checked)
+                    paciente.Sexo = 'F';
+                else
+                    paciente.Sexo = 'M';
+                paciente.Rg = campoRG.Text;
+                paciente.Rua = campoRua.Text;
+                paciente.Bairro = campoBairro.Text;
+                paciente.Numero = campoNumero.Text;
+                paciente.Complemento = campoComplemento.Text;
+                paciente.Telefone1 = campoTelefone1.Text;
+                paciente.Telefone2 = campoTelefone2.Text;
+                paciente.Email = campoEmail.Text;
+                paciente.DataNascimento = campoDataNascimento.Text;
+                paciente.Observacoes = campoObservacao.Text;
+                paciente.NomeMae = campoNomeMae.Text;
+                paciente.NomePai = campoNomePai.Text;
+                paciente.NomeParente = campoNomeParente.Text;
+                paciente.CpfMae = campoCPFMae.Text;
+                paciente.CpfPai = campoCPFPai.Text;
+                paciente.CpfParente = campoCPFParente.Text;
+                BDPaciente bdPaciente = new BDPaciente();
+                bdPaciente.cadastrarPaciente(paciente);
 
-                    MessageBox.Show("Cadastrado com Sucesso !");
-                }
-                catch
-                {
-                    //DEU MERDA NA HORA DE CADASTRAR MENOR DE IDADE
-                }
-            } 
-            else
-            {
-                //Cadastrando Paciente Maior Idade
-                try
-                {
-                    Paciente maior = new Paciente();
-
-                    maior.Cpf = campoCPF.Text;
-                    maior.Nome = campoNome.Text;
-                    if (radioBotaoFeminino.Checked)
-                        maior.Sexo = 'F';
-                    else
-                        maior.Sexo = 'M';
-                    maior.Rua = campoRua.Text;
-                    maior.Rg = campoRG.Text;
-                    maior.Bairro = campoBairro.Text;
-                    maior.Numero = campoNumero.Text;
-                    maior.Complemento = campoComplemento.Text;
-                    maior.Telefone1 = campoTelefone1.Text;
-                    maior.Telefone2 = campoTelefone2.Text;
-                    maior.Email = campoEmail.Text;
-                    maior.DataNascimento = campoDataNascimento.Text;
-                    maior.Observacoes = campoObservacao.Text;
-
-                    BDPaciente bdPaciente = new BDPaciente();
-                    bdPaciente.cadastrarPacienteMaiorDeIdade(maior);
-
-                    MessageBox.Show("Cadastrado com Sucesso !");
-                }
-                catch
-                {
-                    //DEU MERDA NA HORA DE INSERIR MAIOR DE IDADE
-                }
-
+                MessageBox.Show("Cadastrado com Sucesso !");
                 
-            }
+            
         }
                
         private void CadastrarPaciente_FormClosing(object sender, FormClosingEventArgs e)

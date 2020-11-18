@@ -20,6 +20,7 @@ namespace WindowsFormsApp1.view.Medico
     {
         List<WindowsFormsApp1.objetos.Medico> listaMedicosNoBanco;
         WindowsFormsApp1.objetos.Medico medicoSelecionado;
+        BDMedico bdMedico;
         public MenuMedico()
         {
             InitializeComponent();
@@ -31,7 +32,9 @@ namespace WindowsFormsApp1.view.Medico
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
-            atualizarLista();
+            bdMedico = new BDMedico();
+            listaMedicosNoBanco = bdMedico.retornarListaMedicos();
+            atualizarLista(listaMedicosNoBanco);
             this.CenterToScreen();
         }
 
@@ -85,28 +88,25 @@ namespace WindowsFormsApp1.view.Medico
 
         }
 
-        
+
 
         private void button1_Click(object sender, EventArgs e)
         {
             CadastrarMedico cadastrarmedico = new CadastrarMedico();
-            
+
             cadastrarmedico.ShowDialog();
-            atualizarLista();
+            atualizarLista(listaMedicosNoBanco = bdMedico.retornarListaMedicos());
         }
-        private void atualizarLista()
+        private void atualizarLista(List<WindowsFormsApp1.objetos.Medico> listaMedicos)
         {
 
             try
             {
-                BDMedico bd = new BDMedico();
-               
-                listaMedicosNoBanco = bd.retornarListaMedicos();
 
                 listView1.Items.Clear();
                 listView1.Refresh();
-                
-                foreach (WindowsFormsApp1.objetos.Medico m in listaMedicosNoBanco)
+
+                foreach (WindowsFormsApp1.objetos.Medico m in listaMedicos)
                 {
 
                     ListViewItem varItem = new ListViewItem(new string[]
@@ -237,7 +237,7 @@ namespace WindowsFormsApp1.view.Medico
             campoNome.Clear();
             campoCPF.Clear();
             campoRG.Clear();
-            campoRua.Clear(); 
+            campoRua.Clear();
             campoBairro.Clear();
             campoComplemento.Clear();
             campoNumero.Clear();
@@ -262,12 +262,11 @@ namespace WindowsFormsApp1.view.Medico
 
                 try
                 {
-                    BDMedico bdmedico = new BDMedico();
-                    bdmedico.excluirMedico(Convert.ToInt32(listView1.SelectedItems[0].Text));
+                    bdMedico.excluirMedico(Convert.ToInt32(listView1.SelectedItems[0].Text));
                     MessageBox.Show("Excluido com sucesso!");
                     botaoConfirmarAlteracoes.Enabled = false;
                     botaoExcluir.Enabled = false;
-                    atualizarLista();
+                    atualizarLista(listaMedicosNoBanco = bdMedico.retornarListaMedicos());
                     alterarEstadoCampos(false);
                     limparCampos();
                 }
@@ -276,7 +275,7 @@ namespace WindowsFormsApp1.view.Medico
 
                 }
             }
-            
+
         }
 
         private void botaoConfirmarAlteracoes_Click(object sender, EventArgs e)
@@ -316,12 +315,12 @@ namespace WindowsFormsApp1.view.Medico
 
                     bdmedico.atualizarMedico(medicoAlterado);
                     MessageBox.Show("Atualizado com sucesso!");
-                    atualizarLista();
+                    atualizarLista(listaMedicosNoBanco = bdMedico.retornarListaMedicos());
 
                 }
                 catch
                 {
-                   
+
                 }
             }
 
@@ -330,6 +329,22 @@ namespace WindowsFormsApp1.view.Medico
         private void campoNConselho_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void botaoPesquisar_Click(object sender, EventArgs e)
+        {
+            if (campoPesquisar.Text != "")
+            {
+                List<WindowsFormsApp1.objetos.Medico> medicos = new List<WindowsFormsApp1.objetos.Medico>();
+                if ((medicos = bdMedico.buscarEspecificacaoMedico(comboPesquisar.Text, campoPesquisar.Text)) != null)
+                {
+                    atualizarLista(medicos);
+                }
+            }
+            else
+            {
+                atualizarLista(listaMedicosNoBanco);
+            }
         }
     }
 }
