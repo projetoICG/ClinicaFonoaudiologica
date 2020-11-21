@@ -90,10 +90,10 @@ namespace WindowsFormsApp1
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listView1.SelectedItems.Count == 0)
+            if (listaConsultas.SelectedItems.Count == 0)
                 return;
             
-            Console.WriteLine(listView1.SelectedItems[0].Text);
+            Console.WriteLine(listaConsultas.SelectedItems[0].Text);
         }
 
   
@@ -137,6 +137,11 @@ namespace WindowsFormsApp1
         {
             MenuPaciente menupaciente = new MenuPaciente();
             menupaciente.Show();
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
