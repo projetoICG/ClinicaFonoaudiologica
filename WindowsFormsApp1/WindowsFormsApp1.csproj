@@ -51,13 +51,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Banco de Dados\BDConsulta.cs" />
     <Compile Include="Banco de Dados\BDMedico.cs" />
     <Compile Include="Banco de Dados\BDPaciente.cs" />
     <Compile Include="Banco de Dados\BDUsuario.cs" />
+    <Compile Include="objetos\Consulta.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="view\Consulta\CadastrarConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\Consulta\CadastrarConsulta.Designer.cs">
+      <DependentUpon>CadastrarConsulta.cs</DependentUpon>
     </Compile>
     <Compile Include="view\Medico\CadastrarMedico.cs">
       <SubType>Form</SubType>
@@ -109,6 +117,9 @@
     <Compile Include="objetos\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="view\Consulta\CadastrarConsulta.resx">
+      <DependentUpon>CadastrarConsulta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\Medico\CadastrarMedico.resx">
       <DependentUpon>CadastrarMedico.cs</DependentUpon>
     </EmbeddedResource>

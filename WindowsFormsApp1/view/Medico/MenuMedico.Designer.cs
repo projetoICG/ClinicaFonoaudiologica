@@ -716,7 +716,6 @@
             this.botaoPesquisar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.botaoPesquisar.UseVisualStyleBackColor = true;
             this.botaoPesquisar.Click += new System.EventHandler(this.botaoPesquisar_Click);
-            
             // 
             // MenuMedico
             // 

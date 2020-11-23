@@ -346,5 +346,6 @@ namespace WindowsFormsApp1.view.Medico
                 atualizarLista(listaMedicosNoBanco);
             }
         }
+
     }
 }

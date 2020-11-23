@@ -13,6 +13,7 @@ using WindowsFormsApp1.Banco_de_Dados;
 using WindowsFormsApp1.objetos;
 using WindowsFormsApp1.view.Medico;
 using WindowsFormsApp1.view.Paciente;
+using WindowsFormsApp1.view.Consulta;
 
 namespace WindowsFormsApp1
 {
@@ -37,7 +38,10 @@ namespace WindowsFormsApp1
        
         private void Janela2_Load(object sender, EventArgs e)
         {
-
+            List<Consulta> listaConsultas = new List<Consulta>();
+                
+        
+        
         }
 
      
@@ -117,26 +121,38 @@ namespace WindowsFormsApp1
             menuMedico.ShowDialog();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            string time = DateTime.Now.ToShortDateString() + "\n" + DateTime.Now.ToLongTimeString();
-            labelData.Text = time;
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelData_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
             MenuPaciente menupaciente = new MenuPaciente();
-            menupaciente.Show();
+            menupaciente.ShowDialog();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            string time = DateTime.Now.ToLongDateString() + "\n" + DateTime.Now.ToLongTimeString();
+            labelDataEhora.Text = time;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            CadastrarConsulta cadastrarconsulta = new CadastrarConsulta();
+            cadastrarconsulta.ShowDialog();
+        }
+
+        private void botaoAlterarConsulta_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var teste = listaConsultas.SelectedItems[0].Text;
+                
+                botaoAlterarConsulta.Enabled = true;
+                botaoExcluirConsulta.Enabled = true;
+            }
+            catch
+            {
+                MessageBox.Show("Por favor Selecione na tabela !");
+            }
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
