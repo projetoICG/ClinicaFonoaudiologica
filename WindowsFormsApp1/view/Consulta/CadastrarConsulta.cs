@@ -29,6 +29,7 @@ namespace WindowsFormsApp1.view.Consulta
 
         }
 
+        /*
         private void CadastrarConsulta_Load(object sender, EventArgs e)
         {
 
@@ -42,7 +43,7 @@ namespace WindowsFormsApp1.view.Consulta
             
 
             
-        }
+        } */
 
         private void botaoSelecionarMedico_Click(object sender, EventArgs e)
         {

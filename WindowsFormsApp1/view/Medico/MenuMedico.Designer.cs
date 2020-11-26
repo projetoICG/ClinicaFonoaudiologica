@@ -730,7 +730,6 @@
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MenuMedico";
             this.Text = "MenuMedico";
-            this.Load += new System.EventHandler(this.MenuMedico_Load_1);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
