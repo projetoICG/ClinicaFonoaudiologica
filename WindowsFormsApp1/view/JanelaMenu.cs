@@ -22,12 +22,19 @@ namespace WindowsFormsApp1
     {
         private Usuario usuario;
 
-        private Medico medicoSelecionado;
+        List<Consulta> listaConsultas;
 
         public JanelaMenu(Usuario user)
         {
             usuario = new Usuario();
             InitializeComponent();
+
+
+            //desabilitando campos de consulta
+            alterarEstadoCampos(false);
+
+            listaConsultas = new List<Consulta>();
+
             //TIRAR BORDA DE DEIXAR TELA CHEIA
             //FormBorderStyle = FormBorderStyle.None;
             WindowState = FormWindowState.Maximized;
@@ -36,15 +43,51 @@ namespace WindowsFormsApp1
             this.usuario = user;
             
         }
-       
-        private void Janela2_Load(object sender, EventArgs e)
+
+        private void atualizarLista(List<Consulta> listaConsultas)
         {
-            List<Consulta> listaConsultas = new List<Consulta>();
-                
-        
-        
+
+            try
+            {
+
+                listView.Items.Clear();
+                listView.Refresh();
+
+                foreach (Consulta m in listaConsultas)
+                {
+
+                    ListViewItem varItem = new ListViewItem(new string[]
+                    {
+                        Convert.ToString(m.IdConsulta),
+                        m.NomePaciente,
+                        m.NomeMedico,
+                        m.Data,
+                        m.HoraInicio,
+                        m.HoraFim,
+                        Convert.ToString(m.ValorConsulta)
+                    });
+                    listView.Items.Add(varItem);
+                }
+
+            }
+            catch (Exception j)
+            {
+                Console.WriteLine(j);
+            }
         }
 
+        private void alterarEstadoCampos(bool estado)
+        {
+            campoHoraFim.Enabled = estado;
+            campoHoraInicio.Enabled = estado;
+            campoNomePaciente.Enabled = estado;
+            campoValorConsulta.Enabled = estado;
+            campoNomeMedico.Enabled = estado;
+            dateTimePicker3.Enabled = estado;
+
+        }
+
+    
      
         private void aaToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -95,10 +138,10 @@ namespace WindowsFormsApp1
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listaConsultas.SelectedItems.Count == 0)
+            if (listView.SelectedItems.Count == 0)
                 return;
             
-            Console.WriteLine(listaConsultas.SelectedItems[0].Text);
+            Console.WriteLine(listView.SelectedItems[0].Text);
         }
 
   
@@ -145,7 +188,7 @@ namespace WindowsFormsApp1
         {
             try
             {
-                var teste = listaConsultas.SelectedItems[0].Text;
+                var teste = listView.SelectedItems[0].Text;
                 
                 botaoAlterarConsulta.Enabled = true;
                 botaoExcluirConsulta.Enabled = true;
@@ -165,6 +208,11 @@ namespace WindowsFormsApp1
         {
             MenuUsuario menuUsuario = new MenuUsuario();
             menuUsuario.ShowDialog();
+        }
+
+        private void JanelaMenu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
