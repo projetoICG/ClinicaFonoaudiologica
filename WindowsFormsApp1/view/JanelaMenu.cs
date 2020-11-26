@@ -14,6 +14,7 @@ using WindowsFormsApp1.objetos;
 using WindowsFormsApp1.view.Medico;
 using WindowsFormsApp1.view.Paciente;
 using WindowsFormsApp1.view.Consulta;
+using WindowsFormsApp1.view.Usuario;
 
 namespace WindowsFormsApp1
 {
@@ -158,6 +159,12 @@ namespace WindowsFormsApp1
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MenuUsuario menuUsuario = new MenuUsuario();
+            menuUsuario.ShowDialog();
         }
     }
 }

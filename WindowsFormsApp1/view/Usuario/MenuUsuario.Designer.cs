@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuUsuario));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.campoFuncao = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.campoNome = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -51,8 +50,6 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.botaoConfirmarAlteracoes = new System.Windows.Forms.Button();
             this.botaoExcluir = new System.Windows.Forms.Button();
@@ -63,6 +60,8 @@
             this.campoPesquisar = new System.Windows.Forms.TextBox();
             this.comboPesquisar = new System.Windows.Forms.ComboBox();
             this.botaoPesquisar = new System.Windows.Forms.Button();
+            this.comboFuncao = new System.Windows.Forms.ComboBox();
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -71,7 +70,7 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.groupBox1.Controls.Add(this.campoFuncao);
+            this.groupBox1.Controls.Add(this.comboFuncao);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.campoNome);
             this.groupBox1.Controls.Add(this.label5);
@@ -95,14 +94,6 @@
             this.groupBox1.Text = "Modificações";
             this.groupBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox1_Paint);
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // campoFuncao
-            // 
-            this.campoFuncao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.campoFuncao.Location = new System.Drawing.Point(167, 255);
-            this.campoFuncao.Name = "campoFuncao";
-            this.campoFuncao.Size = new System.Drawing.Size(234, 23);
-            this.campoFuncao.TabIndex = 86;
             // 
             // label6
             // 
@@ -248,8 +239,7 @@
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7});
+            this.columnHeader6});
             this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
@@ -265,37 +255,27 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "ID";
-            this.columnHeader1.Width = 33;
+            this.columnHeader1.Width = 30;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Nome";
-            this.columnHeader2.Width = 90;
+            this.columnHeader2.Width = 130;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "CPF";
-            this.columnHeader3.Width = 106;
+            this.columnHeader3.Text = "Função";
+            this.columnHeader3.Width = 130;
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "Email";
-            this.columnHeader4.Width = 115;
+            this.columnHeader4.Text = "Senha";
+            this.columnHeader4.Width = 100;
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "Telefone (1)";
-            this.columnHeader5.Width = 110;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Telefone (2)";
-            this.columnHeader6.Width = 110;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Função";
-            this.columnHeader7.Width = 176;
+            this.columnHeader5.Text = "Email";
+            this.columnHeader5.Width = 130;
             // 
             // groupBox2
             // 
@@ -411,6 +391,24 @@
             this.botaoPesquisar.UseVisualStyleBackColor = true;
             this.botaoPesquisar.Click += new System.EventHandler(this.botaoPesquisar_Click);
             // 
+            // comboFuncao
+            // 
+            this.comboFuncao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboFuncao.FormattingEnabled = true;
+            this.comboFuncao.Items.AddRange(new object[] {
+            "Administrador",
+            "Funcionario",
+            "Medico"});
+            this.comboFuncao.Location = new System.Drawing.Point(169, 255);
+            this.comboFuncao.Name = "comboFuncao";
+            this.comboFuncao.Size = new System.Drawing.Size(233, 21);
+            this.comboFuncao.TabIndex = 86;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Dica Senha";
+            this.columnHeader6.Width = 154;
+            // 
             // MenuUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -440,8 +438,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button1;
@@ -467,6 +463,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox campoLogin;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox campoFuncao;
+        private System.Windows.Forms.ComboBox comboFuncao;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
     }
 }

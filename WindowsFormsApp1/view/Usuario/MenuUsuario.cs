@@ -113,11 +113,10 @@ namespace WindowsFormsApp1.view.Usuario
                     {
                         Convert.ToString(m.Id),
                         m.Nome,
-                        m.Cpf,
-                        m.Email,
-                        m.Telefone1,
-                        m.Telefone2,
-                        m.Funcao
+                        m.Funcao,
+                        m.Senha,
+                        m.EmailRecuperacao,
+                        m.DicaSenha
                     });
                     listView1.Items.Add(varItem);
                 }
@@ -138,23 +137,11 @@ namespace WindowsFormsApp1.view.Usuario
         private void alterarEstadoCampos(bool estado)
         {
             campoNome.Enabled = estado;
-            campoCPF.Enabled = estado;
-            campoRG.Enabled = estado;
-            campoRua.Enabled = estado;
-            campoBairro.Enabled = estado;
-            campoComplemento.Enabled = estado;
-            campoNumero.Enabled = estado;
-            campoDataNascimento.Enabled = estado;
+            campoDicaDaSenha.Enabled = estado;
             campoEmail.Enabled = estado;
-            campoNConselho.Enabled = estado;
-            campoFormacao.Enabled = estado;
-            campoTelefone1.Enabled = estado;
-            campoTelefone2.Enabled = estado;
-            radioBotaoFeminino.Enabled = estado;
-            radioBotaoMasculino.Enabled = estado;
+            campoLogin.Enabled = estado;
+            campoSenha.Enabled = estado;
             comboFuncao.Enabled = estado;
-            comboConselho.Enabled = estado;
-            campoNConselho.Enabled = estado;
         }
 
         private void mostrarDadosNoPainel(int ID)
@@ -166,28 +153,11 @@ namespace WindowsFormsApp1.view.Usuario
                 if (ID == m.Id)
                 {
                     campoNome.Text = m.Nome;
-                    campoCPF.Text = m.Cpf;
-                    campoRG.Text = m.Rg;
-                    campoRua.Text = m.Rua;
-                    campoBairro.Text = m.Bairro;
-                    campoComplemento.Text = m.Complemento;
-                    campoNumero.Text = m.Numero;
-                    campoDataNascimento.Text = m.DataNascimento;
-                    campoEmail.Text = m.Email;
-                    campoNConselho.Text = m.Conselho;
-                    campoFormacao.Text = m.Formacao;
-                    campoTelefone1.Text = m.Telefone1;
-                    campoTelefone2.Text = m.Telefone2;
-                    if (m.Sexo == 'M')
-                        radioBotaoMasculino.Checked = true;
-                    else
-                        radioBotaoFeminino.Checked = true;
-                    comboConselho.Text = m.Conselho;
+                    campoDicaDaSenha.Text = m.DicaSenha;
+                    campoEmail.Text = m.EmailRecuperacao;
+                    campoLogin.Text = m.Login;
+                    campoSenha.Text = m.Senha;
                     comboFuncao.Text = m.Funcao;
-
-                    //selecionou, vai adicionar o objeto usuario selecionado
-                    //nessa variavel
-                    usuarioSelecionado = m;
                 }
             }
         }
@@ -235,23 +205,11 @@ namespace WindowsFormsApp1.view.Usuario
         private void limparCampos()
         {
             campoNome.Clear();
-            campoCPF.Clear();
-            campoRG.Clear();
-            campoRua.Clear();
-            campoBairro.Clear();
-            campoComplemento.Clear();
-            campoNumero.Clear();
-            campoDataNascimento.Clear();
+            campoDicaDaSenha.Clear();
             campoEmail.Clear();
-            campoNConselho.Clear();
-            campoFormacao.Clear();
-            campoTelefone1.Clear();
-            campoTelefone2.Clear();
-            radioBotaoFeminino.Checked = false;
-            radioBotaoMasculino.Checked = false;
-            comboFuncao.SelectedIndex = 0;
-            comboConselho.SelectedIndex = 0;
-            campoNConselho.Clear();
+            campoLogin.Clear();
+            campoSenha.Clear();
+            comboFuncao.Text = "";
         }
         private void button3_Click(object sender, EventArgs e)
         {
@@ -293,25 +251,11 @@ namespace WindowsFormsApp1.view.Usuario
 
                     //vou mudar tudo menos o id que é padrão.
                     usuarioAlterado.Nome = campoNome.Text;
-                    usuarioAlterado.Cpf = campoCPF.Text;
-                    usuarioAlterado.Rg = campoRG.Text;
-                    usuarioAlterado.Rua = campoRua.Text;
-                    usuarioAlterado.Bairro = campoBairro.Text;
-                    usuarioAlterado.Complemento = campoComplemento.Text;
-                    usuarioAlterado.Numero = campoNumero.Text;
-                    usuarioAlterado.DataNascimento = campoDataNascimento.Text;
-                    usuarioAlterado.Email = campoEmail.Text;
-                    usuarioAlterado.Conselho = campoNConselho.Text;
-                    usuarioAlterado.Formacao = campoFormacao.Text;
-                    usuarioAlterado.Telefone1 = campoTelefone1.Text;
-                    usuarioAlterado.Telefone2 = campoTelefone2.Text;
-
-                    if (radioBotaoFeminino.Checked)
-                        usuarioAlterado.Sexo = 'F';
-                    else
-                        usuarioAlterado.Sexo = 'M';
-                    usuarioAlterado.Conselho = comboConselho.Text;
+                    usuarioAlterado.DicaSenha = campoDicaDaSenha.Text;
+                    usuarioAlterado.EmailRecuperacao = campoEmail.Text;
                     usuarioAlterado.Funcao = comboFuncao.Text;
+                    usuarioAlterado.Login = campoLogin.Text;
+                    usuarioAlterado.Senha = campoSenha.Text;
 
                     bdusuario.atualizarUsuario(usuarioAlterado);
                     MessageBox.Show("Atualizado com sucesso!");
@@ -349,14 +293,3 @@ namespace WindowsFormsApp1.view.Usuario
 
     }
 }
-/* 
- Usuario usuario = new Usuario();
-            usuario.Funcao = comboFuncao.Text;
-            usuario.Nome = campoNome.Text;
-            usuario.Login = campoLogin.Text;
-            usuario.Senha = campoSenha.Text;
-            usuario.DicaSenha = campoDicaDaSenha.Text;
-            usuario.EmailRecuperacao = campoEmail.Text;
-
-            BDUsuario bdusuario = new BDUsuario();
-            bdusuario.cadastrarUsuario(usuario);*/
