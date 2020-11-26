@@ -79,6 +79,12 @@
     <Compile Include="view\Medico\MenuMedico.Designer.cs">
       <DependentUpon>MenuMedico.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\Medico\SelecionarMedicoConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\Medico\SelecionarMedicoConsulta.Designer.cs">
+      <DependentUpon>SelecionarMedicoConsulta.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\Paciente\CadastrarPaciente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view\Medico\MenuMedico.resx">
       <DependentUpon>MenuMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\Medico\SelecionarMedicoConsulta.resx">
+      <DependentUpon>SelecionarMedicoConsulta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\Paciente\CadastrarPaciente.resx">
       <DependentUpon>CadastrarPaciente.cs</DependentUpon>

@@ -676,6 +676,7 @@
             this.label19.Size = new System.Drawing.Size(74, 13);
             this.label19.TabIndex = 110;
             this.label19.Text = "Pesquisar por:";
+            this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // campoPesquisar
             // 
@@ -685,6 +686,7 @@
             this.campoPesquisar.Name = "campoPesquisar";
             this.campoPesquisar.Size = new System.Drawing.Size(248, 23);
             this.campoPesquisar.TabIndex = 109;
+            this.campoPesquisar.TextChanged += new System.EventHandler(this.campoPesquisar_TextChanged);
             // 
             // comboPesquisar
             // 
@@ -701,6 +703,7 @@
             this.comboPesquisar.Size = new System.Drawing.Size(206, 21);
             this.comboPesquisar.TabIndex = 4;
             this.comboPesquisar.Text = "Nome";
+            this.comboPesquisar.SelectedIndexChanged += new System.EventHandler(this.comboPesquisar_SelectedIndexChanged);
             // 
             // botaoPesquisar
             // 

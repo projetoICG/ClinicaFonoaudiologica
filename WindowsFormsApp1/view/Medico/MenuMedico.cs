@@ -351,5 +351,20 @@ namespace WindowsFormsApp1.view.Medico
         {
 
         }
+
+        private void comboPesquisar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void campoPesquisar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

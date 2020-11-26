@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBoxListaPacientes = new System.Windows.Forms.ComboBox();
-            this.comboBoxListaMedicos = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -42,23 +40,9 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.botaoSelecionarMedico = new System.Windows.Forms.Button();
+            this.botaoSelecionarPaciente = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // comboBoxListaPacientes
-            // 
-            this.comboBoxListaPacientes.FormattingEnabled = true;
-            this.comboBoxListaPacientes.Location = new System.Drawing.Point(95, 16);
-            this.comboBoxListaPacientes.Name = "comboBoxListaPacientes";
-            this.comboBoxListaPacientes.Size = new System.Drawing.Size(201, 21);
-            this.comboBoxListaPacientes.TabIndex = 0;
-            // 
-            // comboBoxListaMedicos
-            // 
-            this.comboBoxListaMedicos.FormattingEnabled = true;
-            this.comboBoxListaMedicos.Location = new System.Drawing.Point(95, 52);
-            this.comboBoxListaMedicos.Name = "comboBoxListaMedicos";
-            this.comboBoxListaMedicos.Size = new System.Drawing.Size(201, 21);
-            this.comboBoxListaMedicos.TabIndex = 1;
             // 
             // label1
             // 
@@ -84,14 +68,14 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(95, 92);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(69, 20);
+            this.textBox1.Size = new System.Drawing.Size(97, 20);
             this.textBox1.TabIndex = 4;
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(95, 129);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(69, 20);
+            this.textBox2.Size = new System.Drawing.Size(97, 20);
             this.textBox2.TabIndex = 5;
             // 
             // label3
@@ -169,11 +153,34 @@
             this.button3.Text = "Confirmar";
             this.button3.UseVisualStyleBackColor = true;
             // 
+            // botaoSelecionarMedico
+            // 
+            this.botaoSelecionarMedico.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botaoSelecionarMedico.Location = new System.Drawing.Point(95, 55);
+            this.botaoSelecionarMedico.Name = "botaoSelecionarMedico";
+            this.botaoSelecionarMedico.Size = new System.Drawing.Size(97, 26);
+            this.botaoSelecionarMedico.TabIndex = 15;
+            this.botaoSelecionarMedico.Text = "Selecionar";
+            this.botaoSelecionarMedico.UseVisualStyleBackColor = true;
+            this.botaoSelecionarMedico.Click += new System.EventHandler(this.botaoSelecionarMedico_Click);
+            // 
+            // botaoSelecionarPaciente
+            // 
+            this.botaoSelecionarPaciente.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botaoSelecionarPaciente.Location = new System.Drawing.Point(95, 16);
+            this.botaoSelecionarPaciente.Name = "botaoSelecionarPaciente";
+            this.botaoSelecionarPaciente.Size = new System.Drawing.Size(97, 26);
+            this.botaoSelecionarPaciente.TabIndex = 16;
+            this.botaoSelecionarPaciente.Text = "Selecionar";
+            this.botaoSelecionarPaciente.UseVisualStyleBackColor = true;
+            // 
             // CadastrarConsulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(348, 288);
+            this.Controls.Add(this.botaoSelecionarPaciente);
+            this.Controls.Add(this.botaoSelecionarMedico);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox3);
@@ -186,8 +193,6 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBoxListaMedicos);
-            this.Controls.Add(this.comboBoxListaPacientes);
             this.Name = "CadastrarConsulta";
             this.Text = " ";
             this.Load += new System.EventHandler(this.CadastrarConsulta_Load);
@@ -197,9 +202,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox comboBoxListaPacientes;
-        private System.Windows.Forms.ComboBox comboBoxListaMedicos;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
@@ -212,5 +214,7 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button botaoSelecionarMedico;
+        private System.Windows.Forms.Button botaoSelecionarPaciente;
     }
 }
