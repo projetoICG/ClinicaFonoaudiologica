@@ -23,8 +23,10 @@ namespace WindowsFormsApp1
     {
         private Usuario usuario;
 
+
         List<Consulta> listaConsultas;
         BDConsulta bdconsulta;
+        Consulta consultaSelecionada;
         public JanelaMenu(Usuario user)
         {
             usuario = new Usuario();
@@ -189,6 +191,7 @@ namespace WindowsFormsApp1
         {
             CadastrarConsulta cadastrarconsulta = new CadastrarConsulta();
             cadastrarconsulta.ShowDialog();
+            
         }
 
         private void botaoAlterarConsulta_Click(object sender, EventArgs e)
@@ -222,6 +225,8 @@ namespace WindowsFormsApp1
         {
             dateTimePicker3.Format = DateTimePickerFormat.Custom;
             dateTimePicker3.CustomFormat = "dd/MM/yyyy";
+            
+
 
         }
 
@@ -238,6 +243,9 @@ namespace WindowsFormsApp1
                     campoValorConsulta.Text = Convert.ToString(m.ValorConsulta);
                     dateTimePicker3.Value = DateTime.ParseExact(m.Data, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None);
 
+
+                    consultaSelecionada = m;
+                    
                     //selecionou, vai adicionar o objeto medico selecionado
                     //nessa variavel
                     //medicoSelecionado = m;
@@ -261,8 +269,72 @@ namespace WindowsFormsApp1
 
         private void botaoConfirmarAlteracoesConsulta_Click(object sender, EventArgs e)
         {
+            DialogResult confirm = MessageBox.Show("Tem certeza que deseja confirmar as mudanças?", "Aviso !", MessageBoxButtons.YesNo);
 
+            if (confirm == DialogResult.Yes)
+            {
+
+                try
+                {
+                    BDMedico bdmedico = new BDMedico();
+
+                    Consulta consultaAlterada = consultaSelecionada;
+
+                    //vou mudar tudo menos o id que é padrão.
+                    consultaAlterada.NomePaciente = campoNomePaciente.Text;
+                    consultaAlterada.Data = dateTimePicker3.Text;
+                    consultaAlterada.HoraInicio = campoHoraInicio.Text;
+                    consultaAlterada.HoraFim = campoHoraFim.Text;
+                    consultaAlterada.ValorConsulta = Convert.ToInt32(campoValorConsulta.Text);
+
+             
+                    bdconsulta.atualizarConsulta(consultaAlterada);
+                    MessageBox.Show("Atualizado com sucesso!");
+                    atualizarLista(listaConsultas  = bdconsulta.retornarListaConsulta());
+                    limparCampos();
+                    botaoExcluirConsulta.Enabled = false;
+                    alterarEstadoCampos(false);
+                }
+                catch
+                {
+
+                }
+            }
             botaoConfirmarAlteracoesConsulta.Enabled = false;
+        }
+
+
+        private void limparCampos()
+        {
+            campoHoraFim.Clear();
+            campoHoraInicio.Clear();
+            campoNomePaciente.Clear();
+            campoValorConsulta.Clear();
+            dateTimePicker3.ResetText();
+        }
+
+        private void botaoExcluirConsulta_Click(object sender, EventArgs e)
+        {
+            DialogResult confirm = MessageBox.Show("Tem certeza que deseja Excluir ?", "Aviso !", MessageBoxButtons.YesNo);
+
+            if (confirm == DialogResult.Yes)
+            {
+
+                try
+                {
+                    bdconsulta.excluirMedico(Convert.ToInt32(listView.SelectedItems[0].Text));
+                    MessageBox.Show("Excluido com sucesso!");
+                    botaoConfirmarAlteracoesConsulta.Enabled = false;
+                    botaoExcluirConsulta.Enabled = false;
+                    atualizarLista(listaConsultas = bdconsulta.retornarListaConsulta());
+                    alterarEstadoCampos(false);
+                    limparCampos();
+                }
+                catch
+                {
+
+                }
+            }
         }
     }
 }

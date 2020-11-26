@@ -187,6 +187,7 @@
             this.Controls.Add(this.comboPesquisar);
             this.Controls.Add(this.botaoPesquisar);
             this.Controls.Add(this.listView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SelecionarMedicoConsulta";
             this.Text = "SelecionarMedicoConsulta";
             this.ResumeLayout(false);

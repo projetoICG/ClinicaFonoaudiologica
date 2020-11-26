@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastrarMedico));
             this.radioBotaoMasculino = new System.Windows.Forms.RadioButton();
             this.radioBotaoFeminino = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -566,6 +567,7 @@
             this.Controls.Add(this.radioBotaoFeminino);
             this.Controls.Add(this.radioBotaoMasculino);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CadastrarMedico";
             this.Text = "CadastrarMedico";

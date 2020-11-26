@@ -317,6 +317,9 @@ namespace WindowsFormsApp1.view.Medico
                     MessageBox.Show("Atualizado com sucesso!");
                     atualizarLista(listaMedicosNoBanco = bdMedico.retornarListaMedicos());
 
+                    limparCampos();
+                    botaoExcluir.Enabled = false;
+                    alterarEstadoCampos(false);
                 }
                 catch
                 {
@@ -365,6 +368,11 @@ namespace WindowsFormsApp1.view.Medico
         private void label19_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void MenuMedico_Load_1(object sender, EventArgs e)
+        {
+           
         }
     }
 }

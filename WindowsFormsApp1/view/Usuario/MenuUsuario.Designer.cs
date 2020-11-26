@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuUsuario));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboFuncao = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.campoNome = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -50,6 +51,7 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.botaoConfirmarAlteracoes = new System.Windows.Forms.Button();
             this.botaoExcluir = new System.Windows.Forms.Button();
@@ -60,8 +62,6 @@
             this.campoPesquisar = new System.Windows.Forms.TextBox();
             this.comboPesquisar = new System.Windows.Forms.ComboBox();
             this.botaoPesquisar = new System.Windows.Forms.Button();
-            this.comboFuncao = new System.Windows.Forms.ComboBox();
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -94,6 +94,19 @@
             this.groupBox1.Text = "Modificações";
             this.groupBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox1_Paint);
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // comboFuncao
+            // 
+            this.comboFuncao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboFuncao.FormattingEnabled = true;
+            this.comboFuncao.Items.AddRange(new object[] {
+            "Administrador",
+            "Funcionario",
+            "Medico"});
+            this.comboFuncao.Location = new System.Drawing.Point(169, 255);
+            this.comboFuncao.Name = "comboFuncao";
+            this.comboFuncao.Size = new System.Drawing.Size(233, 21);
+            this.comboFuncao.TabIndex = 86;
             // 
             // label6
             // 
@@ -277,6 +290,11 @@
             this.columnHeader5.Text = "Email";
             this.columnHeader5.Width = 130;
             // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Dica Senha";
+            this.columnHeader6.Width = 154;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.botaoConfirmarAlteracoes);
@@ -391,24 +409,6 @@
             this.botaoPesquisar.UseVisualStyleBackColor = true;
             this.botaoPesquisar.Click += new System.EventHandler(this.botaoPesquisar_Click);
             // 
-            // comboFuncao
-            // 
-            this.comboFuncao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboFuncao.FormattingEnabled = true;
-            this.comboFuncao.Items.AddRange(new object[] {
-            "Administrador",
-            "Funcionario",
-            "Medico"});
-            this.comboFuncao.Location = new System.Drawing.Point(169, 255);
-            this.comboFuncao.Name = "comboFuncao";
-            this.comboFuncao.Size = new System.Drawing.Size(233, 21);
-            this.comboFuncao.TabIndex = 86;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Dica Senha";
-            this.columnHeader6.Width = 154;
-            // 
             // MenuUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -419,6 +419,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuUsuario";
             this.Text = "MenuUsuario";
             this.groupBox1.ResumeLayout(false);

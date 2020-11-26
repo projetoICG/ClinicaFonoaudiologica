@@ -87,11 +87,61 @@ namespace WindowsFormsApp1.Banco_de_Dados
                 Console.WriteLine(e);
             }
             return null;
+        }
 
+        public void prepararCadastrarConsulta(Consulta consulta, MySqlCommand objetoComando)
+        {
 
+            objetoComando.Parameters.Add("@nomePaciente", MySqlDbType.VarChar).Value = consulta.NomePaciente;
+            objetoComando.Parameters.Add("@valorConsulta", MySqlDbType.Int32).Value = consulta.ValorConsulta;
+            objetoComando.Parameters.Add("@data", MySqlDbType.VarChar).Value = consulta.Data;
+            objetoComando.Parameters.Add("@horaInicio", MySqlDbType.VarChar).Value = consulta.HoraInicio;
+            objetoComando.Parameters.Add("@horaFim", MySqlDbType.VarChar).Value = consulta.HoraFim;
+        }
+
+        public void atualizarConsulta(Consulta consultaAtualizada)
+        {
+            try
+            {
+                ConexaoBanco conexao = new ConexaoBanco();
+
+                conexao.ObjetoConexao.Open();
+
+                MySqlCommand objetoComando = new MySqlCommand("update consulta set nomePaciente=?, "+
+                    "valorConsulta=?, data=?, horaInicio=?, horaFim=?"+
+                    " where idConsulta=?;", conexao.ObjetoConexao);
+
+                prepararCadastrarConsulta(consultaAtualizada, objetoComando);
+                objetoComando.Parameters.Add("@idConsulta", MySqlDbType.Int32).Value = consultaAtualizada.IdConsulta;
+
+                objetoComando.ExecuteReader();
+
+                conexao.ObjetoConexao.Close();
+            }
+            catch (MySqlException l)
+            {
+                Console.WriteLine(l);
+            }
 
         }
 
+
+
+        public void excluirMedico(int id)
+        {
+            try
+            {
+                ConexaoBanco conexao = new ConexaoBanco();
+                conexao.ObjetoConexao.Open();
+                MySqlCommand objetoComando = new MySqlCommand("delete FROM consulta where idConsulta = " + Convert.ToString(id) + ";", conexao.ObjetoConexao);
+                objetoComando.ExecuteReader();
+                conexao.ObjetoConexao.Close();
+            }
+            catch
+            {
+
+            }
+        }
 
     }
 }
