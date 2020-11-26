@@ -54,27 +54,23 @@ namespace WindowsFormsApp1.Banco_de_Dados
                 while (dados.Read())
                 {
                     Medico medico = new Medico();
-                    medico.Cpf = dados.GetString("cpf");
-                    medico.Rg = dados.GetString("rg");
-                    medico.Id = dados.GetInt32("id_medico");
-                    medico.Nome = dados.GetString("nome");
-                    medico.Sexo = dados.GetChar("sexo");
-                    medico.Rua = dados.GetString("rua");
-                    medico.Bairro = dados.GetString("bairro");
-                    medico.Numero = dados.GetString("numero");
-                    medico.Complemento = dados.GetString("complemento");
-                    medico.Telefone1 = dados.GetString("telefone1");
-                    medico.Telefone2 = dados.GetString("telefone2");
-                    medico.Email = dados.GetString("email");
-                    medico.DataNascimento = dados.GetString("dataNascimento");
-                    medico.Conselho = dados.GetString("conselho");
-                    medico.NumeroConselho = dados.GetString("numeroConselho");
-                    medico.Funcao = dados.GetString("funcao");
-                    medico.Formacao = dados.GetString("formacao");
-                    medico.Complemento = dados.GetString("complemento");
-                    medico.Telefone1 = dados.GetString("telefone1");
-                    medico.Telefone2 = dados.GetString("telefone2");
-                    medico.Email = dados.GetString("email");
+                    medico.Cpf = GetString(dados, "cpf");
+                    medico.Rg = GetString(dados, "rg");
+                    medico.Id = Convert.ToInt32(GetColumnValueAsString(dados, "id_medico"));
+                    medico.Nome = GetString(dados, "nome");
+                    medico.Sexo = Convert.ToChar(GetString(dados, "sexo"));
+                    medico.Rua = GetString(dados, "rua");
+                    medico.Bairro = GetString(dados, "bairro");
+                    medico.Numero = GetString(dados, "numero");
+                    medico.Complemento = GetString(dados, "complemento");
+                    medico.Telefone1 = GetString(dados, "telefone1");
+                    medico.Telefone2 = GetString(dados, "telefone2");
+                    medico.Email = GetString(dados, "email");
+                    medico.DataNascimento = GetString(dados, "dataNascimento");
+                    medico.Conselho = GetString(dados, "conselho");
+                    medico.NumeroConselho = GetString(dados, "numeroConselho");
+                    medico.Funcao = GetString(dados, "funcao");
+                    medico.Formacao = GetString(dados, "formacao");
                     medicos.Add(medico);
                 }
 

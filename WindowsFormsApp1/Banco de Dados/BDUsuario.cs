@@ -61,8 +61,113 @@ namespace WindowsFormsApp1.Banco_de_Dados
             return null;
         }
 
-        /*
-        public int cadastrarMedico(Medico medico)
+
+        public List<Usuario> buscarEspecificacaoUsuario(string coluna, string busca)
+        {
+            try
+            {
+                ConexaoBanco conexao = new ConexaoBanco();
+                conexao.ObjetoConexao.Open();
+                MySqlCommand objetoComando = new MySqlCommand("SELECT * FROM usuario " +
+                    "where " + coluna + " like \"%" + busca + "%\";", conexao.ObjetoConexao);
+                MySqlDataReader dados = objetoComando.ExecuteReader();
+
+                List<Usuario> usuarios = new List<Usuario>();
+
+                while (dados.Read())
+                {
+                    Usuario usuario = new Usuario();
+                    usuario.Id = Convert.ToInt32(GetColumnValueAsString(dados, "id")); ;
+                    usuario.Funcao = GetString(dados, "funcao");
+                    usuario.Login = GetString(dados, "login");
+                    usuario.Senha = GetString(dados, "senha");
+                    usuario.DicaSenha = GetString(dados, "dicaSenha");
+                    usuario.EmailRecuperacao = GetString(dados, "emailRecuperacao");
+                    usuario.Nome = GetString(dados, "nome");
+                    usuarios.Add(usuario);
+                }
+
+                conexao.ObjetoConexao.Close();
+                return usuarios;
+            }
+            catch (MySqlException x)
+            {
+                return null;
+            }
+            return null;
+        }
+
+        public static string GetString(MySqlDataReader reader, string colName)
+        {
+            if (reader[colName] == DBNull.Value)
+                return string.Empty;
+            else
+                return (string)reader[colName];
+        }
+
+        public static string GetColumnValueAsString(MySqlDataReader reader, string colName)
+        {
+            if (reader[colName] == DBNull.Value)
+                return string.Empty;
+            else
+                return reader[colName].ToString();
+        }
+
+
+        public List<Usuario> retornarListaUsuarios()
+        {
+            try
+            {
+                ConexaoBanco conexao = new ConexaoBanco();
+                conexao.ObjetoConexao.Open();
+                MySqlCommand objetoComando = new MySqlCommand("SELECT * FROM usuario;", conexao.ObjetoConexao);
+                MySqlDataReader dados = objetoComando.ExecuteReader();
+
+                List<Usuario> lista = new List<Usuario>();
+
+                while (dados.Read())
+                {
+
+                    Usuario usuario = new Usuario();
+                    usuario.Id = Convert.ToInt32(GetColumnValueAsString(dados, "id")); ;
+                    usuario.Funcao = GetString(dados, "funcao");
+                    usuario.Login = GetString(dados, "login");
+                    usuario.Senha = GetString(dados, "senha");
+                    usuario.DicaSenha = GetString(dados, "dicaSenha");
+                    usuario.EmailRecuperacao = GetString(dados, "emailRecuperacao");
+                    usuario.Nome = GetString(dados, "nome");
+
+                    lista.Add(usuario);
+                }
+
+                conexao.ObjetoConexao.Close();
+
+                return lista;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            return null;
+        }
+
+        public void excluirUsuario(int id)
+        {
+            try
+            {
+                ConexaoBanco conexao = new ConexaoBanco();
+                conexao.ObjetoConexao.Open();
+                MySqlCommand objetoComando = new MySqlCommand("delete FROM usuario where id = " + Convert.ToString(id) + ";", conexao.ObjetoConexao);
+                objetoComando.ExecuteReader();
+                conexao.ObjetoConexao.Close();
+            }
+            catch
+            {
+
+            }
+        }
+
+        public int cadastrarUsuario(Usuario usuario)
         {
             try
             {
@@ -70,12 +175,9 @@ namespace WindowsFormsApp1.Banco_de_Dados
 
                 conexao.ObjetoConexao.Open();
                 MySqlCommand objetoComando = new MySqlCommand("insert into " +
-                    "medico (cpf, rg, nome, sexo, " +
-                    "rua, bairro, numero, complemento, telefone1, telefone2, " +
-                    "email, dataNascimento, conselho, numeroConselho, funcao, formacao) values (? , ? , ?, " +
-                    "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);", conexao.ObjetoConexao);
+                    "usuario (funcao, login, senha, dicaSenha, emailRecuperacao, nome) values (?, ?, ?, ?, ?, ?);", conexao.ObjetoConexao);
 
-                prepararCadastrarMedico(medico, objetoComando);
+                prepararCadastrarUsuario(usuario, objetoComando);
 
                 objetoComando.ExecuteNonQuery();
 
@@ -87,7 +189,31 @@ namespace WindowsFormsApp1.Banco_de_Dados
                 Console.WriteLine(e);
             }
             return 1;
-        } 
-        */
+        }
+
+        public void atualizarUsuario(Usuario usuarioAtualizado)
+        {
+            try
+            {
+                ConexaoBanco conexao = new ConexaoBanco();
+
+                conexao.ObjetoConexao.Open();
+
+                MySqlCommand objetoComando = new MySqlCommand("update usuario set funcao=?, login=?, senha=?, dicaSenha=?, " +
+                    "emailRecuperacao=?, nome=? where id=?;", conexao.ObjetoConexao);
+
+                prepararCadastrarUsuario(usuarioAtualizado, objetoComando);
+                objetoComando.Parameters.Add("@id_usuario", MySqlDbType.Int32).Value = usuarioAtualizado.Id;
+
+                objetoComando.ExecuteReader();
+
+                conexao.ObjetoConexao.Close();
+            }
+            catch (MySqlException l)
+            {
+                Console.WriteLine(l);
+            }
+
+        }
     }
 }
