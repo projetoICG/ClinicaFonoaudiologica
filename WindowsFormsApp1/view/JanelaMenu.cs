@@ -41,6 +41,14 @@ namespace WindowsFormsApp1
             this.CenterToScreen();
 
             this.usuario = user;
+
+            labelNome.Text = usuario.Nome;
+            if (usuario.Funcao != "Administrador")
+            {
+                button3.Enabled = false;
+                button2.Enabled = false;
+            }
+            
             
         }
 

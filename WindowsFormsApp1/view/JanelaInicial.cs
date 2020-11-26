@@ -35,25 +35,26 @@ namespace WindowsFormsApp1
 
         private void botaoLogin_Click(object sender, EventArgs e)
         {
-            //usuario = bdusuario.procurarUsuario(campoLogin.Text, campoSenha.Text);
-            //if (usuario.Login != null)
-            //{
-            //    JanelaMenu janela2 = new JanelaMenu(usuario);
-            //    this.Hide();
-            //    janela2.ShowDialog();
-            //    this.Close();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Usuario não encontrado!");
-            //}
+            usuario = bdusuario.procurarUsuario(campoLogin.Text, campoSenha.Text);
+            if (usuario.Login != null)
+            {
+                JanelaMenu janela2 = new JanelaMenu(usuario);
+                this.Hide();
+                janela2.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Usuario não encontrado!");
+            }
+            
 
             //MODO DESENVOLVEDOR ABAIXO, DESCOMENTAR ACIMA E DESCOMENTAR EM BAIXO QUANDO ACABAR
 
-            JanelaMenu janela2 = new JanelaMenu(usuario);
-            this.Hide();
-            janela2.ShowDialog();
-            this.Close();
+            //JanelaMenu janela2 = new JanelaMenu(usuario);
+            //this.Hide();
+            //janela2.ShowDialog();
+            //this.Close();
         }
 
         private void JanelaInicial_Load(object sender, EventArgs e)

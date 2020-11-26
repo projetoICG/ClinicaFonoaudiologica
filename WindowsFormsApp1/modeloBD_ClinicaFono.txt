@@ -76,4 +76,4 @@ CREATE TABLE `Usuario`
 PRIMARY KEY (`id`)
 );
 
-insert into usuario (funcao, login, senha, dicaSenha, emailRecuperacao, nome) values ("ADMINISTRADOR", "ADMIN", "ADMIN", "ADMIN", "ADMIN@gmail.com", "ADMIN");
+insert into usuario (funcao, login, senha, dicaSenha, emailRecuperacao, nome) values ("Administrador", "ADMIN", "ADMIN", "ADMIN", "ADMIN@gmail.com", "ADMIN");

@@ -73,7 +73,7 @@ namespace WindowsFormsApp1
             cadastrarUsuario();
 
 
-            if (MessageBox.Show("Deseja Cadastrar outro médico?", "Aviso", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Deseja Cadastrar outro usuário?", "Aviso", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 limparDados();
             else
                 this.Close();
