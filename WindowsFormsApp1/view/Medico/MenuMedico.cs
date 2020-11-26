@@ -351,5 +351,10 @@ namespace WindowsFormsApp1.view.Medico
         {
 
         }
+
+        private void MenuMedico_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

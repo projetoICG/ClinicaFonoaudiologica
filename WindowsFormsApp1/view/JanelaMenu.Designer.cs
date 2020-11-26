@@ -53,8 +53,6 @@
             this.campoHoraFim = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.campoHoraInicio = new System.Windows.Forms.TextBox();
-            this.campoNomeMedico = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.campoNomePaciente = new System.Windows.Forms.TextBox();
             this.botaoAlterarConsulta = new System.Windows.Forms.Button();
@@ -106,7 +104,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(716, 895);
+            this.panel2.Size = new System.Drawing.Size(743, 895);
             this.panel2.TabIndex = 5;
             // 
             // labelNome
@@ -114,7 +112,7 @@
             this.labelNome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelNome.AutoSize = true;
             this.labelNome.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNome.Location = new System.Drawing.Point(445, 741);
+            this.labelNome.Location = new System.Drawing.Point(477, 741);
             this.labelNome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNome.Name = "labelNome";
             this.labelNome.Size = new System.Drawing.Size(70, 27);
@@ -130,7 +128,7 @@
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(450, 801);
+            this.button4.Location = new System.Drawing.Point(482, 801);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(255, 80);
@@ -179,7 +177,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(441, 706);
+            this.label1.Location = new System.Drawing.Point(473, 706);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(169, 31);
@@ -190,7 +188,7 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(617, 706);
+            this.pictureBox1.Location = new System.Drawing.Point(649, 706);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(88, 62);
@@ -212,7 +210,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(714, 893);
+            this.panel3.Size = new System.Drawing.Size(741, 893);
             this.panel3.TabIndex = 0;
             // 
             // panel4
@@ -232,8 +230,6 @@
             this.panel4.Controls.Add(this.campoHoraFim);
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.campoHoraInicio);
-            this.panel4.Controls.Add(this.campoNomeMedico);
-            this.panel4.Controls.Add(this.label9);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.campoNomePaciente);
             this.panel4.Controls.Add(this.botaoAlterarConsulta);
@@ -251,7 +247,7 @@
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(712, 891);
+            this.panel4.Size = new System.Drawing.Size(739, 891);
             this.panel4.TabIndex = 8;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
@@ -261,7 +257,7 @@
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(438, 462);
+            this.button6.Location = new System.Drawing.Point(470, 462);
             this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(264, 59);
@@ -275,7 +271,7 @@
             // 
             this.radioButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(524, 44);
+            this.radioButton2.Location = new System.Drawing.Point(556, 44);
             this.radioButton2.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(89, 21);
@@ -288,7 +284,7 @@
             // 
             this.radioButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(422, 44);
+            this.radioButton1.Location = new System.Drawing.Point(454, 44);
             this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(89, 21);
@@ -314,7 +310,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(562, 178);
+            this.label14.Location = new System.Drawing.Point(594, 178);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(103, 54);
             this.label14.TabIndex = 26;
@@ -326,7 +322,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.campoValorConsulta.Enabled = false;
             this.campoValorConsulta.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.campoValorConsulta.Location = new System.Drawing.Point(567, 236);
+            this.campoValorConsulta.Location = new System.Drawing.Point(599, 236);
             this.campoValorConsulta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.campoValorConsulta.Name = "campoValorConsulta";
             this.campoValorConsulta.Size = new System.Drawing.Size(108, 27);
@@ -367,12 +363,13 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dateTimePicker3.Enabled = false;
             this.dateTimePicker3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.dateTimePicker3.Location = new System.Drawing.Point(229, 318);
+            this.dateTimePicker3.Location = new System.Drawing.Point(229, 271);
             this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker3.MinDate = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(349, 27);
             this.dateTimePicker3.TabIndex = 23;
+            this.dateTimePicker3.Value = new System.DateTime(2020, 11, 26, 0, 0, 0, 0);
             // 
             // label12
             // 
@@ -380,7 +377,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(61, 318);
+            this.label12.Location = new System.Drawing.Point(61, 271);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(64, 27);
             this.label12.TabIndex = 22;
@@ -392,7 +389,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(61, 411);
+            this.label11.Location = new System.Drawing.Point(61, 388);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(109, 27);
             this.label11.TabIndex = 21;
@@ -404,7 +401,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.campoHoraFim.Enabled = false;
             this.campoHoraFim.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.campoHoraFim.Location = new System.Drawing.Point(229, 411);
+            this.campoHoraFim.Location = new System.Drawing.Point(229, 388);
             this.campoHoraFim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.campoHoraFim.Name = "campoHoraFim";
             this.campoHoraFim.Size = new System.Drawing.Size(108, 27);
@@ -416,7 +413,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(61, 366);
+            this.label10.Location = new System.Drawing.Point(61, 331);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(127, 27);
             this.label10.TabIndex = 19;
@@ -428,40 +425,11 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.campoHoraInicio.Enabled = false;
             this.campoHoraInicio.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.campoHoraInicio.Location = new System.Drawing.Point(229, 366);
+            this.campoHoraInicio.Location = new System.Drawing.Point(229, 331);
             this.campoHoraInicio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.campoHoraInicio.Name = "campoHoraInicio";
             this.campoHoraInicio.Size = new System.Drawing.Size(108, 27);
             this.campoHoraInicio.TabIndex = 18;
-            // 
-            // campoNomeMedico
-            // 
-            this.campoNomeMedico.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.campoNomeMedico.Enabled = false;
-            this.campoNomeMedico.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.campoNomeMedico.FormattingEnabled = true;
-            this.campoNomeMedico.Items.AddRange(new object[] {
-            "Nome Paciente",
-            "Data",
-            "Médico"});
-            this.campoNomeMedico.Location = new System.Drawing.Point(229, 254);
-            this.campoNomeMedico.Margin = new System.Windows.Forms.Padding(4);
-            this.campoNomeMedico.Name = "campoNomeMedico";
-            this.campoNomeMedico.Size = new System.Drawing.Size(292, 27);
-            this.campoNomeMedico.TabIndex = 17;
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(61, 254);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(97, 27);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "Médico: ";
             // 
             // label8
             // 
@@ -517,6 +485,7 @@
             this.botaoConfirmarAlteracoesConsulta.Text = "Confirmar Alterações";
             this.botaoConfirmarAlteracoesConsulta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.botaoConfirmarAlteracoesConsulta.UseVisualStyleBackColor = true;
+            this.botaoConfirmarAlteracoesConsulta.Click += new System.EventHandler(this.botaoConfirmarAlteracoesConsulta_Click);
             // 
             // botaoExcluirConsulta
             // 
@@ -525,7 +494,7 @@
             this.botaoExcluirConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botaoExcluirConsulta.Image = ((System.Drawing.Image)(resources.GetObject("botaoExcluirConsulta.Image")));
             this.botaoExcluirConsulta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.botaoExcluirConsulta.Location = new System.Drawing.Point(438, 558);
+            this.botaoExcluirConsulta.Location = new System.Drawing.Point(470, 558);
             this.botaoExcluirConsulta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.botaoExcluirConsulta.Name = "botaoExcluirConsulta";
             this.botaoExcluirConsulta.Size = new System.Drawing.Size(264, 59);
@@ -543,7 +512,7 @@
             this.label7.Location = new System.Drawing.Point(-3, 158);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(715, 4);
+            this.label7.Size = new System.Drawing.Size(747, 4);
             this.label7.TabIndex = 8;
             // 
             // label4
@@ -555,13 +524,13 @@
             this.label4.Location = new System.Drawing.Point(-4, 630);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(715, 4);
+            this.label4.Size = new System.Drawing.Size(747, 4);
             this.label4.TabIndex = 7;
             // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(419, 73);
+            this.dateTimePicker2.Location = new System.Drawing.Point(451, 73);
             this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(281, 22);
@@ -572,7 +541,7 @@
             this.labelDataEhora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelDataEhora.AutoSize = true;
             this.labelDataEhora.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDataEhora.Location = new System.Drawing.Point(391, 638);
+            this.labelDataEhora.Location = new System.Drawing.Point(423, 638);
             this.labelDataEhora.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDataEhora.Name = "labelDataEhora";
             this.labelDataEhora.Size = new System.Drawing.Size(232, 27);
@@ -589,7 +558,7 @@
             "Nome Paciente",
             "Data",
             "Médico"});
-            this.comboBox2.Location = new System.Drawing.Point(419, 7);
+            this.comboBox2.Location = new System.Drawing.Point(451, 7);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(281, 24);
@@ -600,7 +569,7 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(258, 7);
+            this.label6.Location = new System.Drawing.Point(290, 7);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(148, 27);
@@ -613,7 +582,7 @@
             this.botaoPesquisarConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botaoPesquisarConsulta.Image = ((System.Drawing.Image)(resources.GetObject("botaoPesquisarConsulta.Image")));
             this.botaoPesquisarConsulta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.botaoPesquisarConsulta.Location = new System.Drawing.Point(538, 110);
+            this.botaoPesquisarConsulta.Location = new System.Drawing.Point(570, 110);
             this.botaoPesquisarConsulta.Margin = new System.Windows.Forms.Padding(4);
             this.botaoPesquisarConsulta.Name = "botaoPesquisarConsulta";
             this.botaoPesquisarConsulta.Size = new System.Drawing.Size(173, 37);
@@ -626,7 +595,7 @@
             // 
             this.campoPesquisarConsulta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.campoPesquisarConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.campoPesquisarConsulta.Location = new System.Drawing.Point(263, 110);
+            this.campoPesquisarConsulta.Location = new System.Drawing.Point(295, 110);
             this.campoPesquisarConsulta.Margin = new System.Windows.Forms.Padding(4);
             this.campoPesquisarConsulta.Name = "campoPesquisarConsulta";
             this.campoPesquisarConsulta.Size = new System.Drawing.Size(265, 34);
@@ -641,13 +610,13 @@
             this.label3.Location = new System.Drawing.Point(-4, 587);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(716, 4);
+            this.label3.Size = new System.Drawing.Size(748, 4);
             this.label3.TabIndex = 7;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(420, 74);
+            this.dateTimePicker1.Location = new System.Drawing.Point(452, 74);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(281, 22);
@@ -658,7 +627,7 @@
             this.labelData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelData.AutoSize = true;
             this.labelData.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelData.Location = new System.Drawing.Point(442, 608);
+            this.labelData.Location = new System.Drawing.Point(474, 608);
             this.labelData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelData.Name = "labelData";
             this.labelData.Size = new System.Drawing.Size(70, 27);
@@ -674,7 +643,7 @@
             "Nome Paciente",
             "Data",
             "Médico"});
-            this.comboBox1.Location = new System.Drawing.Point(420, 25);
+            this.comboBox1.Location = new System.Drawing.Point(452, 25);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(281, 24);
@@ -685,7 +654,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(258, 25);
+            this.label2.Location = new System.Drawing.Point(290, 25);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(148, 27);
@@ -698,7 +667,7 @@
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(223, 107);
+            this.button5.Location = new System.Drawing.Point(255, 107);
             this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(189, 37);
@@ -711,7 +680,7 @@
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(420, 107);
+            this.textBox1.Location = new System.Drawing.Point(452, 107);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(281, 37);
@@ -742,15 +711,17 @@
             this.columnHeader7});
             this.listView.Dock = System.Windows.Forms.DockStyle.Right;
             this.listView.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView.FullRowSelect = true;
             this.listView.GridLines = true;
             this.listView.HideSelection = false;
-            this.listView.Location = new System.Drawing.Point(716, 0);
+            this.listView.Location = new System.Drawing.Point(743, 0);
             this.listView.Margin = new System.Windows.Forms.Padding(4);
             this.listView.Name = "listView";
-            this.listView.Size = new System.Drawing.Size(1082, 895);
+            this.listView.Size = new System.Drawing.Size(1055, 895);
             this.listView.TabIndex = 1;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
+            this.listView.SelectedIndexChanged += new System.EventHandler(this.listView_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -854,8 +825,6 @@
         private System.Windows.Forms.Button botaoExcluirConsulta;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox campoNomePaciente;
-        private System.Windows.Forms.ComboBox campoNomeMedico;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;

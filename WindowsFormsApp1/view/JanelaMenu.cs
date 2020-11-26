@@ -15,6 +15,7 @@ using WindowsFormsApp1.view.Medico;
 using WindowsFormsApp1.view.Paciente;
 using WindowsFormsApp1.view.Consulta;
 using WindowsFormsApp1.view.Usuario;
+using System.Globalization;
 
 namespace WindowsFormsApp1
 {
@@ -23,17 +24,23 @@ namespace WindowsFormsApp1
         private Usuario usuario;
 
         List<Consulta> listaConsultas;
-
+        BDConsulta bdconsulta;
         public JanelaMenu(Usuario user)
         {
             usuario = new Usuario();
+            bdconsulta = new BDConsulta();
             InitializeComponent();
 
 
             //desabilitando campos de consulta
             alterarEstadoCampos(false);
 
-            listaConsultas = new List<Consulta>();
+            listaConsultas = bdconsulta.retornarListaConsulta();
+            atualizarLista(listaConsultas);
+
+
+
+
 
             //TIRAR BORDA DE DEIXAR TELA CHEIA
             //FormBorderStyle = FormBorderStyle.None;
@@ -90,7 +97,6 @@ namespace WindowsFormsApp1
             campoHoraInicio.Enabled = estado;
             campoNomePaciente.Enabled = estado;
             campoValorConsulta.Enabled = estado;
-            campoNomeMedico.Enabled = estado;
             dateTimePicker3.Enabled = estado;
 
         }
@@ -144,13 +150,6 @@ namespace WindowsFormsApp1
 
 
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (listView.SelectedItems.Count == 0)
-                return;
-            
-            Console.WriteLine(listView.SelectedItems[0].Text);
-        }
 
   
         private void button4_Click(object sender, EventArgs e)
@@ -197,9 +196,10 @@ namespace WindowsFormsApp1
             try
             {
                 var teste = listView.SelectedItems[0].Text;
-                
+                alterarEstadoCampos(true);
                 botaoAlterarConsulta.Enabled = true;
                 botaoExcluirConsulta.Enabled = true;
+                botaoConfirmarAlteracoesConsulta.Enabled = true;
             }
             catch
             {
@@ -220,7 +220,49 @@ namespace WindowsFormsApp1
 
         private void JanelaMenu_Load(object sender, EventArgs e)
         {
+            dateTimePicker3.Format = DateTimePickerFormat.Custom;
+            dateTimePicker3.CustomFormat = "dd/MM/yyyy";
 
+        }
+
+        private void mostrarDadosNoPainel(int ID)
+        {
+
+            foreach (Consulta m in listaConsultas)
+            {
+                if (ID == m.IdConsulta)
+                {
+                    campoHoraFim.Text = m.HoraFim;
+                    campoHoraInicio.Text = m.HoraInicio;
+                    campoNomePaciente.Text = m.NomePaciente;
+                    campoValorConsulta.Text = Convert.ToString(m.ValorConsulta);
+                    dateTimePicker3.Value = DateTime.ParseExact(m.Data, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None);
+
+                    //selecionou, vai adicionar o objeto medico selecionado
+                    //nessa variavel
+                    //medicoSelecionado = m;
+                }
+            }
+        }
+
+
+        private void listView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            botaoConfirmarAlteracoesConsulta.Enabled = false;
+            botaoExcluirConsulta.Enabled = false;
+
+            alterarEstadoCampos(false);
+            if (listView.SelectedItems.Count == 0)
+                return;
+
+            mostrarDadosNoPainel(Convert.ToInt32(listView.SelectedItems[0].Text));
+            botaoAlterarConsulta.Enabled = true;
+        }
+
+        private void botaoConfirmarAlteracoesConsulta_Click(object sender, EventArgs e)
+        {
+
+            botaoConfirmarAlteracoesConsulta.Enabled = false;
         }
     }
 }
