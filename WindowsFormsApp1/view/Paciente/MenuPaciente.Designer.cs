@@ -565,6 +565,7 @@
             this.botaoAlterar.TabIndex = 5;
             this.botaoAlterar.Text = "Alterar";
             this.botaoAlterar.UseVisualStyleBackColor = true;
+            this.botaoAlterar.Click += new System.EventHandler(this.botaoAlterar_Click);
             // 
             // botaoExcluir
             // 
@@ -668,6 +669,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuPaciente";
             this.Text = "MenuPaciente";
+            this.Load += new System.EventHandler(this.MenuPaciente_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
