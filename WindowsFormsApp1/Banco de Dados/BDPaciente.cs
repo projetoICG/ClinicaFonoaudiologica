@@ -40,6 +40,8 @@ namespace WindowsFormsApp1.Banco_de_Dados
             objetoComando.Parameters.Add("@cpfParente", MySqlDbType.VarChar).Value = paciente.CpfParente;
         }
 
+        
+
         public List<Paciente> buscarEspecificacaoPaciente(string coluna, string busca)
         {
             try
@@ -88,7 +90,21 @@ namespace WindowsFormsApp1.Banco_de_Dados
             return null;
         }
 
-        
+        public void excluirPaciente(int id)
+        {
+            try
+            {
+                ConexaoBanco conexao = new ConexaoBanco();
+                conexao.ObjetoConexao.Open();
+                MySqlCommand objetoComando = new MySqlCommand("delete FROM paciente where id_paciente = " + Convert.ToString(id) + ";", conexao.ObjetoConexao);
+                objetoComando.ExecuteReader();
+                conexao.ObjetoConexao.Close();
+            }
+            catch
+            {
+
+            }
+        }
 
         public int cadastrarPaciente(Paciente paciente)
         {
@@ -123,7 +139,7 @@ namespace WindowsFormsApp1.Banco_de_Dados
         }
 
 
-        public List<Paciente> retornarListaPacientes()
+        public List<WindowsFormsApp1.objetos.Paciente> retornarListaPacientes()
         {
 
             try
@@ -171,6 +187,53 @@ namespace WindowsFormsApp1.Banco_de_Dados
                 Console.WriteLine(e);
             }
             return null;
+        }
+        
+        //sem precisar de responsável
+        //public void prepararCadastrarPaciente(WindowsFormsApp1.objetos.Paciente paciente, MySqlCommand objetoComando)
+        //{
+
+        //    objetoComando.Parameters.Add("@cpf", MySqlDbType.VarChar).Value = paciente.Cpf;
+        //    objetoComando.Parameters.Add("@rg", MySqlDbType.VarChar).Value = paciente.Rg;
+        //    objetoComando.Parameters.Add("@nome", MySqlDbType.VarChar).Value = paciente.Nome;
+        //    objetoComando.Parameters.Add("@sexo", MySqlDbType.VarChar).Value = paciente.Sexo;
+        //    objetoComando.Parameters.Add("@rua", MySqlDbType.VarChar).Value = paciente.Rua;
+        //    objetoComando.Parameters.Add("@bairro", MySqlDbType.VarChar).Value = paciente.Bairro;
+        //    objetoComando.Parameters.Add("@numero", MySqlDbType.VarChar).Value = paciente.Numero;
+        //    objetoComando.Parameters.Add("@complemento", MySqlDbType.VarChar).Value = paciente.Complemento;
+        //    objetoComando.Parameters.Add("@telefone1", MySqlDbType.VarChar).Value = paciente.Telefone1;
+        //    objetoComando.Parameters.Add("@telefone2", MySqlDbType.VarChar).Value = paciente.Telefone2;
+        //    objetoComando.Parameters.Add("@email", MySqlDbType.VarChar).Value = paciente.Email;
+        //    objetoComando.Parameters.Add("@dataNascimento", MySqlDbType.VarChar).Value = paciente.DataNascimento;
+        //    objetoComando.Parameters.Add("@observacoes", MySqlDbType.VarChar).Value = paciente.Observacoes;
+        //}
+
+        public void atualizarPaciente(WindowsFormsApp1.objetos.Paciente pacienteAtualizado)
+        {
+            try
+            {
+                ConexaoBanco conexao = new ConexaoBanco();
+
+                conexao.ObjetoConexao.Open();
+
+                Console.WriteLine(pacienteAtualizado.Observacoes);
+                Console.ReadLine();
+                    MySqlCommand objetoComando = new MySqlCommand("update paciente set cpf=?, rg=?, nome=?,sexo=?," +
+                    " rua=?, bairro=?, numero=?, complemento=?, telefone1=?, telefone2=?," +
+                    " email=?, dataNascimento=?, observacoes=?, nomeMae=?, nomePai=?, nomeParente=?,cpfMAE=?,cpfPai=?,cpfParente=?" +
+                    " where id_paciente=?;", conexao.ObjetoConexao);
+                prepararCadastrarPaciente(pacienteAtualizado, objetoComando);
+                objetoComando.Parameters.Add("@id_paciente", MySqlDbType.Int32).Value = pacienteAtualizado.Id;
+
+                objetoComando.ExecuteReader();
+
+                conexao.ObjetoConexao.Close();
+            }
+            catch (MySqlException l)
+            {
+                Console.WriteLine(l);
+            }
+
         }
 
     }

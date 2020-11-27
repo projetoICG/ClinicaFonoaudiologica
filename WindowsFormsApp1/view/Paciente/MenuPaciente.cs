@@ -20,6 +20,7 @@ namespace WindowsFormsApp1.view.Paciente
     {
         List<WindowsFormsApp1.objetos.Paciente> listaPacientesNoBanco;
         BDPaciente bdPaciente;
+        WindowsFormsApp1.objetos.Paciente pacienteSelecionado;
         public MenuPaciente()
         {
             InitializeComponent();
@@ -101,7 +102,6 @@ namespace WindowsFormsApp1.view.Paciente
         }
         private void atualizarLista(List<WindowsFormsApp1.objetos.Paciente> listaPacientes)
         {
-
             try
             {
                 listView1.Items.Clear();
@@ -152,7 +152,23 @@ namespace WindowsFormsApp1.view.Paciente
             radioBotaoFeminino.Enabled = estado;
             radioBotaoMasculino.Enabled = estado;
         }
-
+        private void limparCampos()
+        {
+            campoNome.Clear();
+            campoCPF.Clear();
+            campoRG.Clear();
+            campoRua.Clear();
+            campoBairro.Clear();
+            campoComplemento.Clear();
+            campoNumero.Clear();
+            campoDataNascimento.Clear();
+            campoEmail.Clear();
+            campoTelefone1.Clear();
+            campoTelefone2.Clear();
+            radioBotaoFeminino.Checked = false;
+            radioBotaoMasculino.Checked = false;
+            campoObservacao.Clear();
+        }
         private void mostrarDadosNoPainel(int ID)
         {
 
@@ -177,6 +193,8 @@ namespace WindowsFormsApp1.view.Paciente
                     else
                         radioBotaoFeminino.Checked = true;
                     campoObservacao.Text = m.Observacoes;
+
+                    pacienteSelecionado = m;
                 }
             }
         }
@@ -228,7 +246,26 @@ namespace WindowsFormsApp1.view.Paciente
 
         private void botaoExcluir_Click(object sender, EventArgs e)
         {
+            DialogResult confirm = MessageBox.Show("Tem certeza que deseja Excluir ?", "Aviso !", MessageBoxButtons.YesNo);
 
+            if (confirm == DialogResult.Yes)
+            {
+
+                try
+                {
+                    bdPaciente.excluirPaciente(Convert.ToInt32(listView1.SelectedItems[0].Text));
+                    MessageBox.Show("Excluido com sucesso!");
+                    botaoConfirmarAlteracoes.Enabled = false;
+                    botaoExcluir.Enabled = false;
+                    atualizarLista(listaPacientesNoBanco = bdPaciente.retornarListaPacientes());
+                    alterarEstadoCampos(false);
+                    limparCampos();
+                }
+                catch
+                {
+
+                }
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -238,7 +275,50 @@ namespace WindowsFormsApp1.view.Paciente
 
         private void botaoConfirmarAlteracoes_Click(object sender, EventArgs e)
         {
+            DialogResult confirm = MessageBox.Show("Tem certeza que deseja confirmar as mudanças?", "Aviso !", MessageBoxButtons.YesNo);
 
+            if (confirm == DialogResult.Yes)
+            {
+
+                try
+                {
+                    BDMedico bdmedico = new BDMedico();
+
+                    WindowsFormsApp1.objetos.Paciente pacienteAlterado = pacienteSelecionado;
+
+                    //vou mudar tudo menos o id que é padrão.
+                    pacienteAlterado.Nome = campoNome.Text;
+                    pacienteAlterado.Cpf = campoCPF.Text;
+                    pacienteAlterado.Rg = campoRG.Text;
+                    pacienteAlterado.Rua = campoRua.Text;
+                    pacienteAlterado.Bairro = campoBairro.Text;
+                    pacienteAlterado.Complemento = campoComplemento.Text;
+                    pacienteAlterado.Numero = campoNumero.Text;
+                    pacienteAlterado.DataNascimento = campoDataNascimento.Text;
+                    pacienteAlterado.Email = campoEmail.Text;
+                    pacienteAlterado.Observacoes = campoObservacao.Text;
+                    pacienteAlterado.Telefone1 = campoTelefone1.Text;
+                    pacienteAlterado.Telefone2 = campoTelefone2.Text;
+
+                    if (radioBotaoFeminino.Checked)
+                        pacienteAlterado.Sexo = 'F';
+                    else
+                        pacienteAlterado.Sexo = 'M';
+                    
+                    bdPaciente.atualizarPaciente(pacienteAlterado);
+
+                    MessageBox.Show("Atualizado com sucesso!");
+                    atualizarLista(listaPacientesNoBanco = bdPaciente.retornarListaPacientes());
+
+                    limparCampos();
+                    botaoExcluir.Enabled = false;
+                    alterarEstadoCampos(false);
+                }
+                catch
+                {
+
+                }
+            }
         }
 
         private void botaoPesquisar_Click(object sender, EventArgs e)
@@ -255,6 +335,26 @@ namespace WindowsFormsApp1.view.Paciente
             {
                 atualizarLista(listaPacientesNoBanco);
             }
+        }
+
+        private void botaoAlterar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var teste = listView1.SelectedItems[0].Text;
+                alterarEstadoCampos(true);
+                botaoConfirmarAlteracoes.Enabled = true;
+                botaoExcluir.Enabled = true;
+            }
+            catch
+            {
+                MessageBox.Show("Por favor Selecione na tabela !");
+            }
+        }
+
+        private void MenuPaciente_Load(object sender, EventArgs e)
+        {
+
         }
         /*
 private void button3_Click(object sender, EventArgs e)
