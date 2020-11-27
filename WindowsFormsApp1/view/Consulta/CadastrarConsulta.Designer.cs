@@ -31,14 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastrarConsulta));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.campoHoraInicio = new System.Windows.Forms.TextBox();
+            this.campoHoraFim = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.campoValor = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.botaoSelecionarMedico = new System.Windows.Forms.Button();
@@ -65,19 +65,19 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Médico:";
             // 
-            // textBox1
+            // campoHoraInicio
             // 
-            this.textBox1.Location = new System.Drawing.Point(95, 92);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(97, 20);
-            this.textBox1.TabIndex = 4;
+            this.campoHoraInicio.Location = new System.Drawing.Point(95, 92);
+            this.campoHoraInicio.Name = "campoHoraInicio";
+            this.campoHoraInicio.Size = new System.Drawing.Size(97, 20);
+            this.campoHoraInicio.TabIndex = 4;
             // 
-            // textBox2
+            // campoHoraFim
             // 
-            this.textBox2.Location = new System.Drawing.Point(95, 129);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(97, 20);
-            this.textBox2.TabIndex = 5;
+            this.campoHoraFim.Location = new System.Drawing.Point(95, 129);
+            this.campoHoraFim.Name = "campoHoraFim";
+            this.campoHoraFim.Size = new System.Drawing.Size(97, 20);
+            this.campoHoraFim.TabIndex = 5;
             // 
             // label3
             // 
@@ -108,6 +108,7 @@
             this.button2.TabIndex = 9;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // dateTimePicker1
             // 
@@ -127,12 +128,12 @@
             this.label5.Text = "Data:";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // textBox3
+            // campoValor
             // 
-            this.textBox3.Location = new System.Drawing.Point(95, 208);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(40, 20);
-            this.textBox3.TabIndex = 12;
+            this.campoValor.Location = new System.Drawing.Point(95, 208);
+            this.campoValor.Name = "campoValor";
+            this.campoValor.Size = new System.Drawing.Size(97, 20);
+            this.campoValor.TabIndex = 12;
             // 
             // label6
             // 
@@ -153,6 +154,7 @@
             this.button3.TabIndex = 14;
             this.button3.Text = "Confirmar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // botaoSelecionarMedico
             // 
@@ -174,6 +176,7 @@
             this.botaoSelecionarPaciente.TabIndex = 16;
             this.botaoSelecionarPaciente.Text = "Selecionar";
             this.botaoSelecionarPaciente.UseVisualStyleBackColor = true;
+            this.botaoSelecionarPaciente.Click += new System.EventHandler(this.botaoSelecionarPaciente_Click);
             // 
             // CadastrarConsulta
             // 
@@ -184,14 +187,14 @@
             this.Controls.Add(this.botaoSelecionarMedico);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.campoValor);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.campoHoraFim);
+            this.Controls.Add(this.campoHoraInicio);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -205,14 +208,14 @@
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox campoHoraInicio;
+        private System.Windows.Forms.TextBox campoHoraFim;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox campoValor;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button botaoSelecionarMedico;

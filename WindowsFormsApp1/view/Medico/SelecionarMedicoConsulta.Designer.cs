@@ -162,6 +162,7 @@
             this.botaoCancelar.TabIndex = 116;
             this.botaoCancelar.Text = "Cancelar";
             this.botaoCancelar.UseVisualStyleBackColor = true;
+            this.botaoCancelar.Click += new System.EventHandler(this.botaoCancelar_Click);
             // 
             // botaoCadastrar
             // 

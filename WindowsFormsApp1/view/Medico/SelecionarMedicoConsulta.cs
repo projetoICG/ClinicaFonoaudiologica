@@ -78,18 +78,24 @@ namespace WindowsFormsApp1.view.Medico
 
         private void botaoCadastrar_Click(object sender, EventArgs e)
         {
-            string cpf;
+            string id;
             try
             {
-                cpf = listView1.SelectedItems[2].Text;
+                id = listView1.SelectedItems[0].Text;
                 listaMedicosNoBanco.Clear();
-                listaMedicosNoBanco = bdMedico.buscarEspecificacaoMedico("cpf", cpf);
+                listaMedicosNoBanco = bdMedico.buscarEspecificacaoMedico("id_medico", id);
                 this.RetornarMedico = listaMedicosNoBanco[0];
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             } catch {
                 MessageBox.Show("Selecione um medico");
             }
+        }
+
+        private void botaoCancelar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }
