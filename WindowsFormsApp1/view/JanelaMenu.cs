@@ -22,7 +22,7 @@ namespace WindowsFormsApp1
     public partial class JanelaMenu : Form
     {
         private Usuario usuario;
-
+        private int indexSelecionado;
 
         List<Consulta> listaConsultas;
         BDConsulta bdconsulta;
@@ -32,7 +32,7 @@ namespace WindowsFormsApp1
             usuario = new Usuario();
             bdconsulta = new BDConsulta();
             InitializeComponent();
-
+            indexSelecionado = -1;
 
             //desabilitando campos de consulta
             alterarEstadoCampos(false);
@@ -200,7 +200,7 @@ namespace WindowsFormsApp1
         {
             try
             {
-                var teste = listView.SelectedItems[0].Text;
+                indexSelecionado = Convert.ToInt32(listView.SelectedItems[0].Text);
                 alterarEstadoCampos(true);
                 botaoAlterarConsulta.Enabled = true;
                 botaoExcluirConsulta.Enabled = true;
@@ -259,21 +259,21 @@ namespace WindowsFormsApp1
         private void listView_SelectedIndexChanged(object sender, EventArgs e)
         {
             botaoConfirmarAlteracoesConsulta.Enabled = false;
-            botaoExcluirConsulta.Enabled = false;
-
+            
             alterarEstadoCampos(false);
             if (listView.SelectedItems.Count == 0)
                 return;
 
             mostrarDadosNoPainel(Convert.ToInt32(listView.SelectedItems[0].Text));
             botaoAlterarConsulta.Enabled = true;
+            botaoExcluirConsulta.Enabled = true;
         }
 
         private void botaoConfirmarAlteracoesConsulta_Click(object sender, EventArgs e)
         {
             DialogResult confirm = MessageBox.Show("Tem certeza que deseja confirmar as mudanças?", "Aviso !", MessageBoxButtons.YesNo);
 
-            if (confirm == DialogResult.Yes)
+            if (confirm == DialogResult.Yes && indexSelecionado >= 0)
             {
 
                 try
@@ -288,14 +288,15 @@ namespace WindowsFormsApp1
                     consultaAlterada.HoraInicio = campoHoraInicio.Text;
                     consultaAlterada.HoraFim = campoHoraFim.Text;
                     consultaAlterada.ValorConsulta = Convert.ToInt32(campoValorConsulta.Text);
+                    consultaAlterada.IdConsulta = indexSelecionado;
 
-             
                     bdconsulta.atualizarConsulta(consultaAlterada);
                     MessageBox.Show("Atualizado com sucesso!");
                     atualizarLista(listaConsultas  = bdconsulta.retornarListaConsulta());
                     limparCampos();
                     botaoExcluirConsulta.Enabled = false;
                     alterarEstadoCampos(false);
+                    indexSelecionado = -1;
                 }
                 catch
                 {
