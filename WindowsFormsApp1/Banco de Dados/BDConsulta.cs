@@ -127,7 +127,7 @@ namespace WindowsFormsApp1.Banco_de_Dados
 
 
 
-        public void excluirMedico(int id)
+        public void excluirConsulta(int id)
         {
             try
             {

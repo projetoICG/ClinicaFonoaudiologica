@@ -322,7 +322,7 @@ namespace WindowsFormsApp1
 
                 try
                 {
-                    bdconsulta.excluirMedico(Convert.ToInt32(listView.SelectedItems[0].Text));
+                    bdconsulta.excluirConsulta(consultaSelecionada.IdConsulta);
                     MessageBox.Show("Excluido com sucesso!");
                     botaoConfirmarAlteracoesConsulta.Enabled = false;
                     botaoExcluirConsulta.Enabled = false;
