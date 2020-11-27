@@ -204,7 +204,6 @@ namespace WindowsFormsApp1.view.Paciente
         private void listView1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             botaoConfirmarAlteracoes.Enabled = false;
-            botaoExcluir.Enabled = false;
 
             alterarEstadoCampos(false);
             if (listView1.SelectedItems.Count == 0)
@@ -212,6 +211,7 @@ namespace WindowsFormsApp1.view.Paciente
 
             mostrarDadosNoPainel(Convert.ToInt32(listView1.SelectedItems[0].Text));
             botaoAlterar.Enabled = true;
+            botaoExcluir.Enabled = true;
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
